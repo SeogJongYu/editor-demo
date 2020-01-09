@@ -1,0 +1,65 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"eslint.workingDirectories": ["./bigtree_app_frontend/src"]
+	},
+	"launch": {
+		"configurations": [
+			{
+				"name": "Backend (Django)",
+				"type": "python",
+				"request": "launch",
+				"program": "${workspaceFolder}/manage.py",
+				"args": [
+					"runserver"
+				],
+				"django": true
+			},
+			{
+				"type": "node",
+				"request": "launch",
+				"name": "Frontend (NodeJS)",
+				"runtimeExecutable": "npm",
+				"cwd": "${workspaceFolder}/bigtree_app_frontend",
+				"runtimeArgs": [
+					"run-script",
+					"start"
+				],
+				"noDebug": true,
+				"skipFiles": [
+					"<node_internals>/**"
+				]
+			},
+			{
+				"type": "chrome",
+				"request": "launch",
+				"name": "Launch Chrome",
+				"url": "http://localhost:3000",
+				"webRoot": "${workspaceFolder}/bigtree_app_frontend/"
+			},
+			{
+				"type": "firefox",
+				"request": "launch",
+				"name": "Launch Firefox",
+				"url": "http://localhost:3000",
+				"webRoot": "${workspaceFolder}/bigtree_app_frontend/",
+				"pathMappings": [
+					{
+						"url": "http://localhost:3000/",
+						"path": ""
+					}
+				]
+			}
+		],
+		"compounds": [
+			{
+			  "name": "Backend/Frontend",
+			  "configurations": ["Backend (Django)", "Frontend (NodeJS)"]
+			}
+		]
+	}
+}
