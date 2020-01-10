@@ -4,9 +4,7 @@ import './App.css';
 
 function App() {
   const [responseData, setResponseData] = useState({ message: "" });
-
-  console.log("???");
-
+  
   useEffect(() => {
     fetch("/api/v1/samples/")
       .then(response => response.json())
