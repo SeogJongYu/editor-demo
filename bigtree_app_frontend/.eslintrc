@@ -3,6 +3,7 @@
         "react-app"
     ],
     "rules": {
+        "react/jsx-indent": "warn",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn"
     },
