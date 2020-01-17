@@ -63,6 +63,14 @@ cd bigtree_app_frontend
 npm run start
 ```
 
+배포
+----
+
+```
+docker-compose up --build
+```
+
+
 Visual Studio Code
 ------------------
 

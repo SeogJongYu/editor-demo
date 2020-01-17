@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'bigtree_app.wsgi.application'
 DATABASES = get_external_settings('DATABASES', {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'dist/db.sqlite3'),
     }
 })
 
@@ -132,3 +132,6 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

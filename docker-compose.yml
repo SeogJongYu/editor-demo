@@ -38,6 +38,7 @@ services:
       - backend_wsgi
       - frontend
     volumes:
+      - ./media:/usr/share/nginx/html/media
       - type: volume
         source: webroot
         target: /usr/share/nginx/html
