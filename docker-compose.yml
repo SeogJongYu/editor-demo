@@ -1,0 +1,46 @@
+version: "3.7"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: bigtree_app_docker/backend/Dockerfile
+    image: ${COMPOSE_PROJECT_NAME}_backend_base
+    command: cp -r /app/static/. /webroot/static
+    volumes:
+      - type: volume
+        source: webroot
+        target: /webroot
+
+  backend_wsgi:
+    image: ${COMPOSE_PROJECT_NAME}_backend_base
+    command: pipenv run waitress-serve --port=8080 bigtree_app.wsgi:application
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
+
+  frontend:
+    build:
+      context: .
+      dockerfile: bigtree_app_docker/frontend/Dockerfile
+    volumes:
+      - type: volume
+        source: webroot
+        target: /webroot
+
+  webserver:
+    build:
+      context: .
+      dockerfile: bigtree_app_docker/webserver/Dockerfile
+    ports:
+        - "8080:80"
+    depends_on:
+      - backend
+      - backend_wsgi
+      - frontend
+    volumes:
+      - type: volume
+        source: webroot
+        target: /usr/share/nginx/html
+
+volumes:
+  webroot:

@@ -11,6 +11,15 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from dotenv import load_dotenv
+load_dotenv()
+
+def get_external_settings(key, default_value):
+    try:
+        from . import external_settings 
+        return getattr(external_settings, key, default_value)
+    except (NameError, ImportError):
+        return default_value
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,12 +29,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7rq6actci8v-#@f9lnm(81g#ypqa-e(p0y&0e$jn6jl(+n7v@e'
+SECRET_KEY = get_external_settings('SECRET_KEY', "changeme")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = get_external_settings('DEBUG', True)
 
-ALLOWED_HOSTS = []
+assert not (DEBUG is False and SECRET_KEY == "changeme"), "You must change secret key in production mode!"
+
+ALLOWED_HOSTS = get_external_settings('ALLOWED_HOSTS', [])
 
 
 # Application definition
@@ -75,12 +86,12 @@ WSGI_APPLICATION = 'bigtree_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+DATABASES = get_external_settings('DATABASES', {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+})
 
 
 # Password validation
@@ -120,8 +131,4 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "bigtree_app_webapp/build/")
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

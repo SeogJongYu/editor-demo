@@ -4,7 +4,7 @@
 # Edit at https://www.gitignore.io/?templates=visualstudiocode,macos,node,python
 
 /db.sqlite3
-
+/static
 ### macOS ###
 # General
 .DS_Store
@@ -76,6 +76,7 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+/bigtree_app/external_settings.py
 
 # TypeScript v1 declaration files
 typings/

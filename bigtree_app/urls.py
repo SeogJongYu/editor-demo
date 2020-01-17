@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/<version>/', include('bigtree_app_backend.routers')),
+    path('backend/', include('bigtree_app_backend.urls')),
 ]
