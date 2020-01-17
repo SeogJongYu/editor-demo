@@ -66,6 +66,13 @@ npm run start
 배포
 ----
 
+.env 파일 생성(아래 내용은 없을시 기본값)
+
+```
+COMPOSE_PROJECT_NAME=bigtree_app
+BIGTREE_APP_PORT=8080
+```
+
 ```
 docker-compose up --build
 ```
