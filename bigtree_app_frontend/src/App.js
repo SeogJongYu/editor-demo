@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { hot } from 'react-hot-loader/root';
+import { hot } from 'react-hot-loader';
 
 import logo from './logo.svg';
 import './App.css';
@@ -36,4 +36,4 @@ function App() {
   );
 }
 
-export default hot(App);
+export default hot(module)(App);
