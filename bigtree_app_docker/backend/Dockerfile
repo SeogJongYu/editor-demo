@@ -9,3 +9,4 @@ COPY bigtree_app/ /app/bigtree_app
 COPY bigtree_app_backend/ /app/bigtree_app_backend
 COPY manage.py /app/manage.py
 RUN pipenv run python manage.py collectstatic
+COPY . /app
