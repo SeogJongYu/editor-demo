@@ -32,14 +32,15 @@ v2 변경사항:
 * Visual Studio Code Workspace 설정(Firefox/Chrome 디버그 설정 포함)
 
 
-의존성 설치
+개발환경 구성
 -----------
 
 ### Backend
 
+* [Poetry 설치](https://python-poetry.org/docs/#installation) 후 진행
+
 ```
-pip install pipenv  # pipenv가 설치되어 있지 않은 경우
-pipenv install
+poetry install
 ```
 
 ### Frontend
@@ -54,7 +55,7 @@ npm install
 
 ### Backend
 ```
-python manage.py runserver
+poetry run python manage.py runserver
 ```
 
 ### Frontend
