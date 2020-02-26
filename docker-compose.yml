@@ -16,7 +16,7 @@ services:
 
   backend_wsgi:
     image: ${COMPOSE_PROJECT_NAME:-bigtree_app}_backend_base
-    command: poetry run waitress-serve --port=8080 bigtree_app.wsgi:application
+    command: poetry run hupper -m waitress --port=8080 bigtree_app.wsgi:application
     volumes:
       - ./db.sqlite3:/app/db.sqlite3
 

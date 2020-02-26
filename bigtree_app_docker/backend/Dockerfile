@@ -6,7 +6,7 @@ WORKDIR /app
 COPY pyproject.toml /app/pyproject.toml
 COPY poetry.lock /app/poetry.lock
 RUN poetry install
-RUN poetry run pip install waitress
+RUN poetry run pip install waitress hupper
 COPY bigtree_app/ /app/bigtree_app
 COPY bigtree_app_backend/ /app/bigtree_app_backend
 COPY manage.py /app/manage.py
