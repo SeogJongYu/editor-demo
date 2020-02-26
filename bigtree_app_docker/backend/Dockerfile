@@ -1,4 +1,6 @@
 FROM python:3.8
+ARG timezone=Asia/Seoul
+RUN ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime
 RUN pip install pipenv
 WORKDIR /app
 COPY Pipfile /app/Pipfile

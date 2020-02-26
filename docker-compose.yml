@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: bigtree_app_docker/backend/Dockerfile
+      args:
+        timezone: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
     image: ${COMPOSE_PROJECT_NAME:-bigtree_app}_backend_base
     command: cp -r /app/static/. /webroot/static
     volumes:
@@ -22,6 +24,8 @@ services:
     build:
       context: .
       dockerfile: bigtree_app_docker/frontend/Dockerfile
+      args:
+        timezone: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
     volumes:
       - type: volume
         source: webroot
@@ -31,6 +35,8 @@ services:
     build:
       context: .
       dockerfile: bigtree_app_docker/webserver/Dockerfile
+      args:
+        timezone: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
     ports:
         - "${BIGTREE_APP_PORT:-8080}:80"
     depends_on:
