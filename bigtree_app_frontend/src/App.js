@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { hot } from 'react-hot-loader';
 
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 
 function App() {
   const [responseData, setResponseData] = useState({ message: "" });
-  
+
   useEffect(() => {
     fetch("/api/v1/samples/")
       .then(response => response.json())
@@ -16,7 +16,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <div className="App-logo-container">
+          <img src={logo} className="App-logo" alt="logo" />
+        </div>
         <p>
           {responseData.message}
         </p>
@@ -25,11 +27,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://www.ibigtree.kr"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Hello Bigtree!
         </a>
       </header>
     </div>
