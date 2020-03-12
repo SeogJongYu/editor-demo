@@ -12,6 +12,10 @@ python-dotenv = "^0.11.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+sphinx = "^2.4.4"
+sphinx-rtd-theme = "^0.4.3"
+sphinx-js = "^2.8"
+sphinxcontrib-plantuml = "^0.18"
 
 [build-system]
 requires = ["poetry>=0.12"]

@@ -7,3 +7,4 @@ db.sqlite3
 media/
 static/
 bigtree_app_frontend/build/
+bigtree_app_document/

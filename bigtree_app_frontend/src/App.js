@@ -4,6 +4,12 @@ import { hot } from 'react-hot-loader';
 import logo from './logo.png';
 import './App.css';
 
+
+/**
+ * Example Component
+ * 로고 출력 및 샘플 API 연동
+ * @returns JSX.Element
+ */
 function App() {
   const [responseData, setResponseData] = useState({ message: "" });
 

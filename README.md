@@ -79,6 +79,21 @@ docker-compose up --build
 ```
 
 
+문서 빌드
+--------
+
+* 문서 내 UML 다이어그램 빌드를 위해서는 [PlantUML](https://plantuml.com)을 다운로드받아 경로를 지정해야 합니다.
+  (환경변수 PLANTUML 또는 .env 파일에 지정)
+
+아래 명령어를 실행하면 bigtree_app_document/build/ 폴더에 html 파일로 생성됨.
+
+```
+cd bigtree_app_document
+npm install
+poetry shell
+make html
+```
+
 Visual Studio Code
 ------------------
 
