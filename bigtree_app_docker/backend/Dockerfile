@@ -5,8 +5,8 @@ RUN pip install poetry
 WORKDIR /app
 COPY pyproject.toml /app/pyproject.toml
 COPY poetry.lock /app/poetry.lock
-RUN poetry install
-RUN poetry run pip install waitress hupper
+RUN poetry run pip install gunicorn hupper
+RUN poetry install --no-dev
 COPY bigtree_app/ /app/bigtree_app
 COPY bigtree_app_backend/ /app/bigtree_app_backend
 COPY manage.py /app/manage.py

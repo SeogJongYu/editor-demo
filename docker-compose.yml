@@ -16,7 +16,15 @@ services:
 
   backend_wsgi:
     image: ${COMPOSE_PROJECT_NAME:-bigtree_app}_backend_base
-    command: poetry run hupper -m waitress --port=8080 bigtree_app.wsgi:application
+    command: [
+      "poetry", "run",
+      "hupper", "-m", "gunicorn.app.wsgiapp",
+      "--workers=${WSGI_WORKERS:-2}",
+      "--threads=${WSGI_THREADS:-4}",
+      "--bind=backend_wsgi:8080",
+      "--forwarded-allow-ips=webserver",
+      "bigtree_app.wsgi:application"
+    ]
     volumes:
       - ./db.sqlite3:/app/db.sqlite3
 
