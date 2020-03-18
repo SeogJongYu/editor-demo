@@ -82,8 +82,10 @@ docker-compose up --build
 문서 빌드
 --------
 
-* 문서 내 UML 다이어그램 빌드를 위해서는 [PlantUML](https://plantuml.com)을 다운로드받아 경로를 지정해야 합니다.
-  (환경변수 PLANTUML 또는 .env 파일에 지정)
+문서 빌드시 외부 프로그램 설치가 필요함(문서 내 그래프 이미지 자동생성 관련)
+
+* [PlantUML](https://plantuml.com) - jar 다운받아서 환경변수(또는 bigtree_app_document/.env)에 PLANTUML로 경로 추가
+* [GraphViz](https://www.graphviz.org) - 설치 후 PATH에 추가
 
 아래 명령어를 실행하면 bigtree_app_document/build/ 폴더에 html 파일로 생성됨.
 
