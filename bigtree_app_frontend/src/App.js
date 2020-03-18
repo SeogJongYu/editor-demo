@@ -37,11 +37,34 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Hello Bigtree!
+          <ClassComponent/>
         </a>
       </header>
     </div>
   );
+}
+
+
+class ClassComponent extends React.Component {
+  /**
+   * Class Component는 Constructor에 달아야 인식됨
+   * @returns JSX.Element
+   */
+  constructor() {
+    super();
+
+    this.state = {
+      message: "Hello Bigtree!"
+    };
+  }
+
+  render() {
+    return (
+      <>
+        {this.state.message}
+      </>
+    )
+  }
 }
 
 export default hot(module)(App);
