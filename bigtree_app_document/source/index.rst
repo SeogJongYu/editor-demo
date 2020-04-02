@@ -9,7 +9,7 @@ bigtree_app 개발자 문서
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: API Document
 
    ../api_document/backend

@@ -91,7 +91,5 @@ html_static_path = ['_static']
 # -- sphinxcontrib-apidoc settings ------------------------------------------
 apidoc_module_dir = '../../'
 apidoc_output_dir = 'api_document/backend'
-apidoc_excluded_paths = [
-    '../manage.py'
-]
+apidoc_excluded_paths = []
 apidoc_separate_modules = True
