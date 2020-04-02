@@ -172,14 +172,11 @@ six = "*"
 
 [[package]]
 category = "dev"
-description = "(Soon to be) the fastest pure-Python PEG parser I could muster"
-name = "parsimonious"
+description = "Python Build Reasonableness"
+name = "pbr"
 optional = false
 python-versions = "*"
-version = "0.7.0"
-
-[package.dependencies]
-six = "*"
+version = "5.4.4"
 
 [[package]]
 category = "dev"
@@ -324,21 +321,6 @@ test = ["pytest (<5.3.3)", "pytest-cov", "html5lib", "flake8 (>=3.5.0)", "flake8
 
 [[package]]
 category = "dev"
-description = "Support for using Sphinx on JSDoc-documented JS code"
-name = "sphinx-js"
-optional = false
-python-versions = "*"
-version = "2.8"
-
-[package.dependencies]
-Jinja2 = ">2.0,<3.0"
-Sphinx = ">=1.6,<3.0"
-docutils = "*"
-parsimonious = ">=0.7.0,<0.8.0"
-six = ">=1.9.0,<2.0"
-
-[[package]]
-category = "dev"
 description = "Read the Docs theme for Sphinx"
 name = "sphinx-rtd-theme"
 optional = false
@@ -347,6 +329,18 @@ version = "0.4.3"
 
 [package.dependencies]
 sphinx = "*"
+
+[[package]]
+category = "dev"
+description = "A Sphinx extension for running 'sphinx-apidoc' on each build"
+name = "sphinxcontrib-apidoc"
+optional = false
+python-versions = "*"
+version = "0.3.0"
+
+[package.dependencies]
+Sphinx = ">=1.6.0"
+pbr = "*"
 
 [[package]]
 category = "dev"
@@ -460,7 +454,7 @@ python-versions = "*"
 version = "0.1.8"
 
 [metadata]
-content-hash = "1c747df3f0931b6f4caddf1202abf3a40cd512d7155dd64a5a76f7197ee2b7b8"
+content-hash = "57a900503b57adeeaf44b2227d8d9671128cf93d29f2fd217b300aa9bdb4bb95"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -563,8 +557,9 @@ packaging = [
     {file = "packaging-20.1-py2.py3-none-any.whl", hash = "sha256:170748228214b70b672c581a3dd610ee51f733018650740e98c7df862a583f73"},
     {file = "packaging-20.1.tar.gz", hash = "sha256:e665345f9eef0c621aa0bf2f8d78cf6d21904eef16a93f020240b704a57f1334"},
 ]
-parsimonious = [
-    {file = "parsimonious-0.7.0.tar.gz", hash = "sha256:396d424f64f834f9463e81ba79a331661507a21f1ed7b644f7f6a744006fd938"},
+pbr = [
+    {file = "pbr-5.4.4-py2.py3-none-any.whl", hash = "sha256:61aa52a0f18b71c5cc58232d2cf8f8d09cd67fcad60b742a60124cb8d6951488"},
+    {file = "pbr-5.4.4.tar.gz", hash = "sha256:139d2625547dbfa5fb0b81daebb39601c478c21956dc57e2e07b74450a8c506b"},
 ]
 pluggy = [
     {file = "pluggy-0.13.1-py2.py3-none-any.whl", hash = "sha256:966c145cd83c96502c3c3868f50408687b38434af77734af1e9ca461a4081d2d"},
@@ -610,13 +605,13 @@ sphinx = [
     {file = "Sphinx-2.4.4-py3-none-any.whl", hash = "sha256:fc312670b56cb54920d6cc2ced455a22a547910de10b3142276495ced49231cb"},
     {file = "Sphinx-2.4.4.tar.gz", hash = "sha256:b4c750d546ab6d7e05bdff6ac24db8ae3e8b8253a3569b754e445110a0a12b66"},
 ]
-sphinx-js = [
-    {file = "sphinx-js-2.8.tar.gz", hash = "sha256:c7a97c4d23d592d41a38fc9c6b3a5902578ad1bfcf0ed5094691909fd5f372cd"},
-    {file = "sphinx_js-2.8-py2.py3-none-any.whl", hash = "sha256:8c6775b8be82b6edbac12e1f8b590e6f5a24585549bd18043ec47d1051560de2"},
-]
 sphinx-rtd-theme = [
     {file = "sphinx_rtd_theme-0.4.3-py2.py3-none-any.whl", hash = "sha256:00cf895504a7895ee433807c62094cf1e95f065843bf3acd17037c3e9a2becd4"},
     {file = "sphinx_rtd_theme-0.4.3.tar.gz", hash = "sha256:728607e34d60456d736cc7991fd236afb828b21b82f956c5ea75f94c8414040a"},
+]
+sphinxcontrib-apidoc = [
+    {file = "sphinxcontrib-apidoc-0.3.0.tar.gz", hash = "sha256:729bf592cf7b7dd57c4c05794f732dc026127275d785c2a5494521fdde773fb9"},
+    {file = "sphinxcontrib_apidoc-0.3.0-py2.py3-none-any.whl", hash = "sha256:6671a46b2c6c5b0dca3d8a147849d159065e50443df79614f921b42fbd15cb09"},
 ]
 sphinxcontrib-applehelp = [
     {file = "sphinxcontrib-applehelp-1.0.2.tar.gz", hash = "sha256:a072735ec80e7675e3f432fcae8610ecf509c5f1869d17e2eecff44389cdbc58"},

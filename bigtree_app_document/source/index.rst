@@ -10,11 +10,10 @@ bigtree_app 개발자 문서
 
 .. toctree::
    :maxdepth: 2
-   :caption: 패키지
+   :caption: API Document
 
-   packages/bigtree_app_backend/index.rst
-   packages/bigtree_app_frontend/index.rst
-
+   ../api_document/backend
+   ../api_document/frontend
 
 
 찾아보기

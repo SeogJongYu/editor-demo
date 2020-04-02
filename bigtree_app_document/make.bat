@@ -1,9 +1,5 @@
 @ECHO OFF
 
-SET PATH=%PATH%;%~dp0\node_modules\.bin
-
-pushd %~dp0
-
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (

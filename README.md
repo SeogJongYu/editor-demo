@@ -93,7 +93,7 @@ docker-compose up --build
 cd bigtree_app_document
 npm install
 poetry shell
-make html
+npm run build
 ```
 
 Visual Studio Code

@@ -55,8 +55,8 @@ author = 'Bigtree'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinxcontrib.apidoc',
     'sphinxcontrib.plantuml',
-    'sphinx_js',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -86,3 +86,12 @@ html_theme = 'sphinx_rtd_theme'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+
+
+# -- sphinxcontrib-apidoc settings ------------------------------------------
+apidoc_module_dir = '../../'
+apidoc_output_dir = 'api_document/backend'
+apidoc_excluded_paths = [
+    '../manage.py'
+]
+apidoc_separate_modules = True

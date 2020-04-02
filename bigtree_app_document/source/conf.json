@@ -1,0 +1,23 @@
+{
+    "tags": {
+        "allowUnknownTags": ["category"]
+    },
+    "source": {
+        "include": [
+            "../bigtree_app_frontend/src"
+        ],
+        "includePattern": "\\.(jsx|js|ts|tsx)$",
+        "exclude": [
+            "node_modules"
+        ]
+    },
+    "plugins": [
+        "plugins/markdown"
+    ],
+    "opts": {
+        "template": "node_modules/docdash",
+        "recurse": true,
+        "destination": "build/html/api_document/frontend/",
+        "readme": "../bigtree_app_frontend/README.md"
+    }
+}
