@@ -93,3 +93,7 @@ apidoc_module_dir = '../../'
 apidoc_output_dir = 'api_document/backend'
 apidoc_excluded_paths = []
 apidoc_separate_modules = True
+
+
+def setup(app):
+    app.add_stylesheet("style.css")

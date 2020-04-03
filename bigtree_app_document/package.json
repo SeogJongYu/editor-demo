@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "make html && jsdoc -c source/conf.json",
-    "clean": "make clean"
+    "clean": "make clean && python clean.py"
   },
   "author": "",
   "license": "ISC",
