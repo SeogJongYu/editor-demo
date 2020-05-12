@@ -37,7 +37,7 @@ services:
       dockerfile: bigtree_app_docker/frontend/Dockerfile
       args:
         BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
-        BIGTREE_APP_BACKEND_ONLY: ${BIGTREE_APP_BACKEND_ONLY:-false}
+        BIGTREE_APP_BACKEND_ONLY: ${BIGTREE_APP_DOCKER_BACKEND_ONLY:-false}
     command: /bin/bash -c "rm -rf /frontend_static/*; cp -r /app/build/. /frontend_static"
     volumes:
       - type: volume
@@ -51,7 +51,7 @@ services:
       args:
         timezone: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
     ports:
-        - "${BIGTREE_APP_PORT:-8080}:80"
+        - "${BIGTREE_APP_DOCKER_PORT:-8080}:80"
     depends_on:
       - backend
       - backend_wsgi

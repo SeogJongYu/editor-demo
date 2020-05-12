@@ -6,11 +6,11 @@ COPY bigtree_app_frontend/package-lock.json /app/package-lock.json
 WORKDIR /app
 RUN mkdir -p /app/build/
 RUN touch /app/build/index.html
-ARG BIGTREE_APP_BACKEND_ONLY=false
-RUN if [ "$BIGTREE_APP_BACKEND_ONLY" = "false" ]; then \
+ARG BIGTREE_APP_DOCKER_BACKEND_ONLY=false
+RUN if [ "$BIGTREE_APP_DOCKER_BACKEND_ONLY" = "false" ]; then \
         npm install; \
     fi
 COPY bigtree_app_frontend/ /app
-RUN if [ "$BIGTREE_APP_BACKEND_ONLY" = "false" ]; then \
+RUN if [ "$BIGTREE_APP_DOCKER_BACKEND_ONLY" = "false" ]; then \
         npm run build-web; \
     fi
