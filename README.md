@@ -1,5 +1,8 @@
 bigtree_app_template
 =======================
+
+![스크린샷](bigtree_app_template.png)
+
 Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 * Django, Django REST Framework 기반 Backend
