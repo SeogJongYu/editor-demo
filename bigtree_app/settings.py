@@ -14,12 +14,14 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
+
 def get_external_settings(key, default_value):
     try:
-        from . import external_settings 
+        from . import external_settings
         return getattr(external_settings, key, default_value)
     except (NameError, ImportError):
         return default_value
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,7 +36,9 @@ SECRET_KEY = get_external_settings('SECRET_KEY', "changeme")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = get_external_settings('DEBUG', True)
 
-assert not (DEBUG is False and SECRET_KEY == "changeme"), "You must change secret key in production mode!"
+assert not (DEBUG is False and SECRET_KEY == "changeme"), (
+    "You must change secret key in production mode!"
+)
 
 ALLOWED_HOSTS = get_external_settings('ALLOWED_HOSTS', [])
 
@@ -99,16 +103,20 @@ DATABASES = get_external_settings('DATABASES', {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': 'django.contrib.auth.password_validation.'
+                'NumericPasswordValidator',
     },
 ]
 

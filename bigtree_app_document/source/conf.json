@@ -4,7 +4,7 @@
     },
     "source": {
         "include": [
-            "../bigtree_app_frontend/src"
+            "../bigtree_app_frontend/app"
         ],
         "includePattern": "\\.(jsx|js|ts|tsx)$",
         "exclude": [

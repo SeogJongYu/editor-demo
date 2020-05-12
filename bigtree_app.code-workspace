@@ -5,12 +5,52 @@
 		}
 	],
 	"settings": {
-		"eslint.workingDirectories": ["./bigtree_app_frontend/src"]
+		"[python]": {
+			"editor.rulers": [79],
+			"editor.tabSize": 4
+		},
+		"[javascript]": {
+			"editor.rulers": [100],
+			"editor.tabSize": 2
+		},
+		"python.linting.enabled": true,
+		"python.linting.flake8Enabled": true,
+		"eslint.workingDirectories": [
+			"./bigtree_app_frontend"
+		],
+		"flow.pathToFlow": "${workspaceFolder}/bigtree_app_frontend/node_modules/.bin/flow",
+		"javascript.validate.enable": false,
+		"files.encoding": "utf8"
+	},
+	"tasks": {
+		// See https://go.microsoft.com/fwlink/?LinkId=733558
+		// for the documentation about the tasks.json format
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Build Web",
+				"type": "process",
+				"command": "npm",
+				"args": ["run", "build-web"],
+				"options": {
+					"cwd": "${workspaceFolder}/bigtree_app_frontend",
+				}
+			},
+			{
+				"label": "Build Android",
+				"type": "process",
+				"command": "./gradlew",
+				"args": ["assembleRelease"],
+				"options": {
+					"cwd": "${workspaceFolder}/bigtree_app_frontend/android",
+				}
+			},
+		]
 	},
 	"launch": {
 		"configurations": [
 			{
-				"name": "Backend (Django)",
+				"name": "Backend",
 				"type": "python",
 				"request": "launch",
 				"program": "${workspaceFolder}/manage.py",
@@ -22,12 +62,42 @@
 			{
 				"type": "node",
 				"request": "launch",
-				"name": "Frontend (NodeJS)",
+				"name": "Frontend - Web",
 				"runtimeExecutable": "npm",
 				"cwd": "${workspaceFolder}/bigtree_app_frontend",
 				"runtimeArgs": [
 					"run-script",
-					"start"
+					"web"
+				],
+				"noDebug": true,
+				"skipFiles": [
+					"<node_internals>/**"
+				]
+			},
+			{
+				"type": "node",
+				"request": "launch",
+				"name": "Frontend - iOS",
+				"runtimeExecutable": "npm",
+				"cwd": "${workspaceFolder}/bigtree_app_frontend",
+				"runtimeArgs": [
+					"run-script",
+					"ios"
+				],
+				"noDebug": true,
+				"skipFiles": [
+					"<node_internals>/**"
+				]
+			},
+			{
+				"type": "node",
+				"request": "launch",
+				"name": "Frontend - Android",
+				"runtimeExecutable": "npm",
+				"cwd": "${workspaceFolder}/bigtree_app_frontend",
+				"runtimeArgs": [
+					"run-script",
+					"android"
 				],
 				"noDebug": true,
 				"skipFiles": [
@@ -37,29 +107,38 @@
 			{
 				"type": "chrome",
 				"request": "launch",
-				"name": "Launch Chrome",
-				"url": "http://localhost:3000",
+				"name": "Frotend - Launch Chrome",
+				"url": "http://127.0.0.1:8080",
 				"webRoot": "${workspaceFolder}/bigtree_app_frontend/"
 			},
 			{
 				"type": "firefox",
 				"request": "launch",
-				"name": "Launch Firefox",
-				"url": "http://localhost:3000",
+				"name": "Frontend - Launch Firefox",
+				"url": "http://127.0.0.1:8080",
 				"webRoot": "${workspaceFolder}/bigtree_app_frontend/",
 				"pathMappings": [
 					{
-						"url": "http://localhost:3000/",
+						"url": "http://127.0.0.1:8080/",
 						"path": ""
 					}
 				]
-			}
+			},
 		],
 		"compounds": [
 			{
-			  "name": "Backend/Frontend",
-			  "configurations": ["Backend (Django)", "Frontend (NodeJS)"]
+			  "name": "Backend + Frontend - Web",
+			  "configurations": ["Backend", "Frontend - Web"]
 			}
+		]
+	},
+	"extensions": {
+		"recommendations": [
+			"editorconfig.editorconfig",
+			"ms-python.python",
+			"dbaeumer.vscode-eslint",
+			"flowtype.flow-for-vscode",
+			"jpoissonnier.vscode-styled-components",
 		]
 	}
 }

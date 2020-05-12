@@ -1,4 +1,4 @@
-bigtree_app_template_v2
+bigtree_app_template
 =======================
 Django Backend / React Frontend 를 사용하는 앱 템플릿
 
@@ -70,8 +70,20 @@ npm run start
 .env 파일 생성(아래 내용은 없을시 기본값)
 
 ```
-COMPOSE_PROJECT_NAME=bigtree_app
+# docker-compose 프로젝트 이름
+COMPOSE_PROJECT_NAME=bigtree_app_template_v2
+
+# 노출될 웹서버 포트
 BIGTREE_APP_PORT=8080
+
+# true로 설정시 frontend 빌드하지 않고 backend만 활성화 됨
+BIGTREE_APP_BACKEND_ONLY=false
+
+# 서버가 사용할 TimeZone 설정
+BIGTREE_APP_TIMEZONE=Asia/Seoul
+
+
+
 ```
 
 ```

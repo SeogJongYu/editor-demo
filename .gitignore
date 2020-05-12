@@ -4,8 +4,7 @@
 # Edit at https://www.gitignore.io/?templates=visualstudiocode,macos,node,python
 
 /db.sqlite3
-/static
-/media
+/public
 ### macOS ###
 # General
 .DS_Store

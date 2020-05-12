@@ -1,11 +1,12 @@
 FROM python:3.8
-ARG timezone=Asia/Seoul
-RUN ln -sf /usr/share/zoneinfo/${timezone} /etc/localtime
-RUN pip install poetry
+ARG BIGTREE_APP_TIMEZONE=Asia/Seoul
+RUN ln -sf /usr/share/zoneinfo/${BIGTREE_APP_TIMEZONE} /etc/localtime
+RUN pip install poetry==1.0.5
 WORKDIR /app
 COPY pyproject.toml /app/pyproject.toml
 COPY poetry.lock /app/poetry.lock
-RUN poetry run pip install gunicorn hupper
+COPY bigtree_app_docker/backend/requirements.txt /tmp/requirements.txt
+RUN poetry run pip install -r /tmp/requirements.txt
 RUN poetry install --no-dev
 COPY bigtree_app/ /app/bigtree_app
 COPY bigtree_app_backend/ /app/bigtree_app_backend
