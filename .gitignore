@@ -76,7 +76,6 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-/bigtree_app/external_settings.py
 
 # TypeScript v1 declaration files
 typings/

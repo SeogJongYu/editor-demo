@@ -31,16 +31,20 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_external_settings('SECRET_KEY', "changeme")
+SECRET_KEY = os.environ.get('BIGTREE_APP_SECRET_KEY', 'changeme')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = get_external_settings('DEBUG', True)
+DEBUG = os.environ.get('BIGTREE_APP_DEBUG', 'true') == 'true'
 
 assert not (DEBUG is False and SECRET_KEY == "changeme"), (
     "You must change secret key in production mode!"
 )
 
-ALLOWED_HOSTS = get_external_settings('ALLOWED_HOSTS', [])
+
+ALLOWED_HOSTS = ['*']
+
+if not DEBUG:
+    ALLOWED_HOSTS = os.environ.get('BIGTREE_APP_HOSTS').split(',')
 
 
 # Application definition
@@ -90,12 +94,12 @@ WSGI_APPLICATION = 'bigtree_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = get_external_settings('DATABASES', {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-})
+}
 
 
 # Password validation
@@ -126,7 +130,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko'
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = os.environ.get('BIGTREE_APP_TIMEZONE', 'Asia/Seoul')
 
 USE_I18N = True
 
