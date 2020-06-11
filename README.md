@@ -38,6 +38,15 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 * [Poetry 설치](https://python-poetry.org/docs/#installation) 후 진행
 
 ```
+git clone git@bitbucket.org:bigtree-developers/bigtree_app_template.git my_app
+
+cd my_app
+
+python init.py
+# 대화상자에서 앱 및 패키지 이름 입력
+# App Name(example: bigtree_app): my_app
+# Package Name(example: kr.ibigtree.app): kr.ibigtree.my_app
+
 # poetry 없을 경우 먼저 설치
 pip install poetry
 
@@ -60,8 +69,13 @@ python manage.py runserver
 ```
 
 #### Frontend
+
+* Android: my_app_frontend/android 를 Android Studio로 한번 열어줘야 정상 실행 됨
+* iOS: cd my_app_frotnend/ios && pod install 한번 실행한 이후 실행 가능
+
+
 ```
-cd bigtree_app_frontend
+cd my_app_frontend
 
 # 웹 화면 실행
 npm run web
@@ -88,22 +102,22 @@ docker-compose up -d --build
 
 ```
 # Django Secret Key
-BIGTREE_APP_SECRET_KEY=changeme
+MY_APP_SECRET_KEY=changeme
 
 # Django Debug Flag
-BIGTREE_APP_DEBUG=true
+MY_APP_DEBUG=true
 
 # 접속 허용 호스트 지정
-BIGTREE_APP_HOSTS=myapp.bigbot.kr
+MY_APP_HOSTS=myapp.bigbot.kr
 
 # Django Timezone 설정
-BIGTREE_APP_TIMEZONE=Asia/Seoul
+MY_APP_TIMEZONE=Asia/Seoul
 ```
 
 #### Frontend
 
-* bigtree_app_frontend/.env.development
-* bigtree_app_frontend/.env.production
+* my_app_frontend/.env.development
+* my_app_frontend/.env.production
 
 개발/프로덕션 및 OS별로 다르게 지정할 수 있음.
 
@@ -125,16 +139,16 @@ adb reverse tcp:8000 tcp:8000
 
 ```
 # docker-compose 프로젝트 이름
-COMPOSE_PROJECT_NAME=bigtree_app_template
+COMPOSE_PROJECT_NAME=my_app
 
 # 노출될 웹서버 포트
-BIGTREE_APP_DOCKER_PORT=8080
+MY_APP_DOCKER_PORT=8080
 
 # true로 설정시 frontend 빌드하지 않고 backend만 활성화 됨
-BIGTREE_APP_DOCKER_BACKEND_ONLY=false
+MY_APP_DOCKER_BACKEND_ONLY=false
 
 # Backend/WebServer Timezone 설정
-BIGTREE_APP_TIMEZONE=Asia/Seoul
+MY_APP_TIMEZONE=Asia/Seoul
 ```
 
 
@@ -143,14 +157,14 @@ BIGTREE_APP_TIMEZONE=Asia/Seoul
 
 개발 문서 빌드시 외부 프로그램 설치가 필요함(문서 내 그래프 이미지 자동생성 관련)
 
-* [PlantUML](https://plantuml.com) - jar 다운받아서 환경변수(또는 bigtree_app_document/.env)에 PLANTUML로 경로 추가
+* [PlantUML](https://plantuml.com) - jar 다운받아서 환경변수 PLANTUML(또는 my_app_document/.env 에 PLANTUML) 경로 추가
 * [GraphViz](https://www.graphviz.org) - 설치 후 PATH에 추가
 
-아래 명령어를 실행하면 bigtree_app_document/build/ 폴더에 html 파일로 생성됨.
+아래 명령어를 실행하면 my_app_document/build/ 폴더에 html 파일로 생성됨.
 
 ```
 poetry shell
-cd bigtree_app_document
+cd my_app_document
 npm install
 npm run build
 ```
