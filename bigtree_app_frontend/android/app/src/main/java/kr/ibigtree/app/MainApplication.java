@@ -1,4 +1,4 @@
-package com.bigtree_app_frontend;
+package kr.ibigtree.app;
 
 import android.app.Application;
 import android.content.Context;

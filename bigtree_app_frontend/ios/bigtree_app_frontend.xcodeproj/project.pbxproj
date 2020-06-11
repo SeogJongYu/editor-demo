@@ -45,7 +45,7 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* bigtree_app_frontendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bigtree_app_frontendTests.m; sourceTree = "<group>"; };
 		12DA0055A46527AF55E79EAD /* Pods-bigtree_app_frontend-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend-tvOS.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend-tvOS/Pods-bigtree_app_frontend-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* bigtree_app_frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bigtree_app_frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* bigtree_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bigtree_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = bigtree_app_frontend/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = bigtree_app_frontend/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* bigtree_app_frontend.app */,
+				13B07F961A680F5B00A75B9A /* bigtree_app.app */,
 				00E356EE1AD99517003FC87E /* bigtree_app_frontendTests.xctest */,
 				2D02E47B1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS.app */,
 				2D02E4901E0B4A5D006451C7 /* bigtree_app_frontend-tvOSTests.xctest */,
@@ -194,7 +194,6 @@
 				DE85F120E1D2FE3A612749BD /* Pods-bigtree_app_frontend-tvOSTests.debug.xcconfig */,
 				81DA0F14227CFED2273E7698 /* Pods-bigtree_app_frontend-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -237,7 +236,7 @@
 			);
 			name = bigtree_app_frontend;
 			productName = bigtree_app_frontend;
-			productReference = 13B07F961A680F5B00A75B9A /* bigtree_app_frontend.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* bigtree_app.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2D02E47A1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS */ = {
@@ -642,8 +641,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = bigtree_app_frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.app;
+				PRODUCT_NAME = bigtree_app;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -664,8 +663,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = bigtree_app_frontend;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.app;
+				PRODUCT_NAME = bigtree_app;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

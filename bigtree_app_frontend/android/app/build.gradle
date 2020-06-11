@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.bigtree_app_frontend"
+        applicationId "kr.ibigtree.app"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
