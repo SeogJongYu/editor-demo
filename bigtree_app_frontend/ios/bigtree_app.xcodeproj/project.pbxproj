@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* bigtree_app_frontendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* bigtree_app_frontendTests.m */; };
+		00E356F31AD99517003FC87E /* bigtree_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* bigtree_appTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -15,11 +15,11 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* bigtree_app_frontendTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* bigtree_app_frontendTests.m */; };
-		777F0F0C430690F165BB7433 /* libPods-bigtree_app_frontend-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6221CA47D489D81DBE0EB9F2 /* libPods-bigtree_app_frontend-tvOSTests.a */; };
-		9E55905C8AA55C739265DE72 /* libPods-bigtree_app_frontend-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41845FB4A66FB4DB6184AF21 /* libPods-bigtree_app_frontend-tvOS.a */; };
-		D124331F24CD46784DF062D4 /* libPods-bigtree_app_frontend-bigtree_app_frontendTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F018933911E0AEA98CB791EC /* libPods-bigtree_app_frontend-bigtree_app_frontendTests.a */; };
-		EBA9A30AF4C6730F44492DD1 /* libPods-bigtree_app_frontend.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 674F0C71CE275574C54757F4 /* libPods-bigtree_app_frontend.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* bigtree_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* bigtree_appTests.m */; };
+		49317612CDC2A95B43DF336B /* libPods-bigtree_app-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C4EBA6852F7131DD6B44C31 /* libPods-bigtree_app-tvOSTests.a */; };
+		72C219EC6CA3BCA44D9F1F72 /* libPods-bigtree_app-bigtree_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4039D19DE2E057B481D451 /* libPods-bigtree_app-bigtree_appTests.a */; };
+		7B66C2B0298B731D433909E2 /* libPods-bigtree_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DC1E56A0AC5F29B52BEB07 /* libPods-bigtree_app.a */; };
+		F93F8719C14C0A14F79265B1 /* libPods-bigtree_app-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D28C7EBE6B3EF8534C6CA5 /* libPods-bigtree_app-tvOS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,45 +28,45 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = bigtree_app_frontend;
+			remoteInfo = bigtree_app;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "bigtree_app_frontend-tvOS";
+			remoteInfo = "bigtree_app-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* bigtree_app_frontendTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bigtree_app_frontendTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* bigtree_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bigtree_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* bigtree_app_frontendTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bigtree_app_frontendTests.m; sourceTree = "<group>"; };
-		12DA0055A46527AF55E79EAD /* Pods-bigtree_app_frontend-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend-tvOS.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend-tvOS/Pods-bigtree_app_frontend-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* bigtree_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = bigtree_appTests.m; sourceTree = "<group>"; };
+		0ABE2468CB24647B99B9A721 /* Pods-bigtree_app-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app-tvOSTests/Pods-bigtree_app-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0B9C9F1313F54069CF5C498C /* Pods-bigtree_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app/Pods-bigtree_app.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* bigtree_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bigtree_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = bigtree_app_frontend/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = bigtree_app_frontend/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = bigtree_app/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = bigtree_app/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = bigtree_app_frontend/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = bigtree_app_frontend/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = bigtree_app_frontend/main.m; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bigtree_app_frontend-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* bigtree_app_frontend-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bigtree_app_frontend-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		41845FB4A66FB4DB6184AF21 /* libPods-bigtree_app_frontend-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app_frontend-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		448A0E88295BD839A3582731 /* Pods-bigtree_app_frontend-bigtree_app_frontendTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend-bigtree_app_frontendTests.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend-bigtree_app_frontendTests/Pods-bigtree_app_frontend-bigtree_app_frontendTests.debug.xcconfig"; sourceTree = "<group>"; };
-		6221CA47D489D81DBE0EB9F2 /* libPods-bigtree_app_frontend-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app_frontend-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		674F0C71CE275574C54757F4 /* libPods-bigtree_app_frontend.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app_frontend.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81DA0F14227CFED2273E7698 /* Pods-bigtree_app_frontend-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend-tvOSTests/Pods-bigtree_app_frontend-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		88676ADD2F86FBD477D6FABC /* Pods-bigtree_app_frontend-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend-tvOS/Pods-bigtree_app_frontend-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		DCEB28CFEF473A55216A558C /* Pods-bigtree_app_frontend-bigtree_app_frontendTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend-bigtree_app_frontendTests.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend-bigtree_app_frontendTests/Pods-bigtree_app_frontend-bigtree_app_frontendTests.release.xcconfig"; sourceTree = "<group>"; };
-		DD38D14B2842C74E668641BB /* Pods-bigtree_app_frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend/Pods-bigtree_app_frontend.release.xcconfig"; sourceTree = "<group>"; };
-		DE85F120E1D2FE3A612749BD /* Pods-bigtree_app_frontend-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend-tvOSTests/Pods-bigtree_app_frontend-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E2AB0A2F8A43339A0E60EE3E /* Pods-bigtree_app_frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app_frontend.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app_frontend/Pods-bigtree_app_frontend.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = bigtree_app/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = bigtree_app/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = bigtree_app/main.m; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* bigtree_app-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bigtree_app-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* bigtree_app-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bigtree_app-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48DC1E56A0AC5F29B52BEB07 /* libPods-bigtree_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E4A5AD9F4A7B1B1225E647 /* Pods-bigtree_app-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app-tvOSTests/Pods-bigtree_app-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		6B4D96C3168100487FBEB123 /* Pods-bigtree_app-bigtree_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app-bigtree_appTests.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app-bigtree_appTests/Pods-bigtree_app-bigtree_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		6D4039D19DE2E057B481D451 /* libPods-bigtree_app-bigtree_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app-bigtree_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DBC1C7D40AB5395DA50F74A /* Pods-bigtree_app-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app-tvOS.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app-tvOS/Pods-bigtree_app-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		83D28C7EBE6B3EF8534C6CA5 /* libPods-bigtree_app-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B757F34E862D87A29D30B66 /* Pods-bigtree_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app/Pods-bigtree_app.release.xcconfig"; sourceTree = "<group>"; };
+		8C4EBA6852F7131DD6B44C31 /* libPods-bigtree_app-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADB410E0E5E81913CC169D1D /* Pods-bigtree_app-bigtree_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app-bigtree_appTests.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app-bigtree_appTests/Pods-bigtree_app-bigtree_appTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D40A02D05CAC951EF3AE7338 /* Pods-bigtree_app-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-bigtree_app-tvOS/Pods-bigtree_app-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F018933911E0AEA98CB791EC /* libPods-bigtree_app_frontend-bigtree_app_frontendTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app_frontend-bigtree_app_frontendTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D124331F24CD46784DF062D4 /* libPods-bigtree_app_frontend-bigtree_app_frontendTests.a in Frameworks */,
+				72C219EC6CA3BCA44D9F1F72 /* libPods-bigtree_app-bigtree_appTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBA9A30AF4C6730F44492DD1 /* libPods-bigtree_app_frontend.a in Frameworks */,
+				7B66C2B0298B731D433909E2 /* libPods-bigtree_app.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E55905C8AA55C739265DE72 /* libPods-bigtree_app_frontend-tvOS.a in Frameworks */,
+				F93F8719C14C0A14F79265B1 /* libPods-bigtree_app-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,20 +98,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				777F0F0C430690F165BB7433 /* libPods-bigtree_app_frontend-tvOSTests.a in Frameworks */,
+				49317612CDC2A95B43DF336B /* libPods-bigtree_app-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* bigtree_app_frontendTests */ = {
+		00E356EF1AD99517003FC87E /* bigtree_appTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* bigtree_app_frontendTests.m */,
+				00E356F21AD99517003FC87E /* bigtree_appTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = bigtree_app_frontendTests;
+			path = bigtree_appTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -122,7 +122,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* bigtree_app_frontend */ = {
+		1229EAC0849C6D3549948099 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B9C9F1313F54069CF5C498C /* Pods-bigtree_app.debug.xcconfig */,
+				8B757F34E862D87A29D30B66 /* Pods-bigtree_app.release.xcconfig */,
+				ADB410E0E5E81913CC169D1D /* Pods-bigtree_app-bigtree_appTests.debug.xcconfig */,
+				6B4D96C3168100487FBEB123 /* Pods-bigtree_app-bigtree_appTests.release.xcconfig */,
+				D40A02D05CAC951EF3AE7338 /* Pods-bigtree_app-tvOS.debug.xcconfig */,
+				7DBC1C7D40AB5395DA50F74A /* Pods-bigtree_app-tvOS.release.xcconfig */,
+				0ABE2468CB24647B99B9A721 /* Pods-bigtree_app-tvOSTests.debug.xcconfig */,
+				52E4A5AD9F4A7B1B1225E647 /* Pods-bigtree_app-tvOSTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* bigtree_app */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -133,7 +148,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = bigtree_app_frontend;
+			name = bigtree_app;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -141,10 +156,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				674F0C71CE275574C54757F4 /* libPods-bigtree_app_frontend.a */,
-				F018933911E0AEA98CB791EC /* libPods-bigtree_app_frontend-bigtree_app_frontendTests.a */,
-				41845FB4A66FB4DB6184AF21 /* libPods-bigtree_app_frontend-tvOS.a */,
-				6221CA47D489D81DBE0EB9F2 /* libPods-bigtree_app_frontend-tvOSTests.a */,
+				48DC1E56A0AC5F29B52BEB07 /* libPods-bigtree_app.a */,
+				6D4039D19DE2E057B481D451 /* libPods-bigtree_app-bigtree_appTests.a */,
+				83D28C7EBE6B3EF8534C6CA5 /* libPods-bigtree_app-tvOS.a */,
+				8C4EBA6852F7131DD6B44C31 /* libPods-bigtree_app-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,12 +174,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* bigtree_app_frontend */,
+				13B07FAE1A68108700A75B9A /* bigtree_app */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* bigtree_app_frontendTests */,
+				00E356EF1AD99517003FC87E /* bigtree_appTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				BA06E2B396A70F53A45D9599 /* Pods */,
+				1229EAC0849C6D3549948099 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -175,36 +190,21 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* bigtree_app.app */,
-				00E356EE1AD99517003FC87E /* bigtree_app_frontendTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* bigtree_app_frontend-tvOSTests.xctest */,
+				00E356EE1AD99517003FC87E /* bigtree_appTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* bigtree_app-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* bigtree_app-tvOSTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BA06E2B396A70F53A45D9599 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E2AB0A2F8A43339A0E60EE3E /* Pods-bigtree_app_frontend.debug.xcconfig */,
-				DD38D14B2842C74E668641BB /* Pods-bigtree_app_frontend.release.xcconfig */,
-				448A0E88295BD839A3582731 /* Pods-bigtree_app_frontend-bigtree_app_frontendTests.debug.xcconfig */,
-				DCEB28CFEF473A55216A558C /* Pods-bigtree_app_frontend-bigtree_app_frontendTests.release.xcconfig */,
-				88676ADD2F86FBD477D6FABC /* Pods-bigtree_app_frontend-tvOS.debug.xcconfig */,
-				12DA0055A46527AF55E79EAD /* Pods-bigtree_app_frontend-tvOS.release.xcconfig */,
-				DE85F120E1D2FE3A612749BD /* Pods-bigtree_app_frontend-tvOSTests.debug.xcconfig */,
-				81DA0F14227CFED2273E7698 /* Pods-bigtree_app_frontend-tvOSTests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* bigtree_app_frontendTests */ = {
+		00E356ED1AD99517003FC87E /* bigtree_appTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "bigtree_app_frontendTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "bigtree_appTests" */;
 			buildPhases = (
-				E090061498CAC7F2BD322FE5 /* [CP] Check Pods Manifest.lock */,
+				3A5DCF082A037DB75AEB9C77 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -214,16 +214,16 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = bigtree_app_frontendTests;
-			productName = bigtree_app_frontendTests;
-			productReference = 00E356EE1AD99517003FC87E /* bigtree_app_frontendTests.xctest */;
+			name = bigtree_appTests;
+			productName = bigtree_appTests;
+			productReference = 00E356EE1AD99517003FC87E /* bigtree_appTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* bigtree_app_frontend */ = {
+		13B07F861A680F5B00A75B9A /* bigtree_app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "bigtree_app_frontend" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "bigtree_app" */;
 			buildPhases = (
-				AA7A881611D9D4B85472A5C6 /* [CP] Check Pods Manifest.lock */,
+				5C32C205F6AB6BC6A2FF6212 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -234,16 +234,16 @@
 			);
 			dependencies = (
 			);
-			name = bigtree_app_frontend;
-			productName = bigtree_app_frontend;
+			name = bigtree_app;
+			productName = bigtree_app;
 			productReference = 13B07F961A680F5B00A75B9A /* bigtree_app.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* bigtree_app-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app_frontend-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app-tvOS" */;
 			buildPhases = (
-				AF11626D7A79B4E89E1F4C77 /* [CP] Check Pods Manifest.lock */,
+				A137125F8738067A708275EC /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
 				2D02E4771E0B4A5D006451C7 /* Sources */,
 				2D02E4781E0B4A5D006451C7 /* Frameworks */,
@@ -254,16 +254,16 @@
 			);
 			dependencies = (
 			);
-			name = "bigtree_app_frontend-tvOS";
-			productName = "bigtree_app_frontend-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS.app */;
+			name = "bigtree_app-tvOS";
+			productName = "bigtree_app-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* bigtree_app-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* bigtree_app_frontend-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* bigtree_app-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app_frontend-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app-tvOSTests" */;
 			buildPhases = (
-				8AAD85C2181AF52108114A42 /* [CP] Check Pods Manifest.lock */,
+				A02F377F7C302E1912ECD55D /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
 				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
 				2D02E48E1E0B4A5D006451C7 /* Resources */,
@@ -273,9 +273,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "bigtree_app_frontend-tvOSTests";
-			productName = "bigtree_app_frontend-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* bigtree_app_frontend-tvOSTests.xctest */;
+			name = "bigtree_app-tvOSTests";
+			productName = "bigtree_app-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* bigtree_app-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -304,7 +304,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "bigtree_app_frontend" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "bigtree_app" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -317,10 +317,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* bigtree_app_frontend */,
-				00E356ED1AD99517003FC87E /* bigtree_app_frontendTests */,
-				2D02E47A1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* bigtree_app_frontend-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* bigtree_app */,
+				00E356ED1AD99517003FC87E /* bigtree_appTests */,
+				2D02E47A1E0B4A5D006451C7 /* bigtree_app-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* bigtree_app-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -388,7 +388,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		8AAD85C2181AF52108114A42 /* [CP] Check Pods Manifest.lock */ = {
+		3A5DCF082A037DB75AEB9C77 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,14 +403,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bigtree_app_frontend-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-bigtree_app-bigtree_appTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AA7A881611D9D4B85472A5C6 /* [CP] Check Pods Manifest.lock */ = {
+		5C32C205F6AB6BC6A2FF6212 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -425,14 +425,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bigtree_app_frontend-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-bigtree_app-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AF11626D7A79B4E89E1F4C77 /* [CP] Check Pods Manifest.lock */ = {
+		A02F377F7C302E1912ECD55D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -447,14 +447,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bigtree_app_frontend-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-bigtree_app-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E090061498CAC7F2BD322FE5 /* [CP] Check Pods Manifest.lock */ = {
+		A137125F8738067A708275EC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -469,7 +469,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-bigtree_app_frontend-bigtree_app_frontendTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-bigtree_app-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -521,7 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* bigtree_app_frontendTests.m in Sources */,
+				00E356F31AD99517003FC87E /* bigtree_appTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,7 +547,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* bigtree_app_frontendTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* bigtree_appTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,12 +556,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* bigtree_app_frontend */;
+			target = 13B07F861A680F5B00A75B9A /* bigtree_app */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* bigtree_app_frontend-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* bigtree_app-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -573,7 +573,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = bigtree_app_frontend;
+			path = bigtree_app;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -581,14 +581,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 448A0E88295BD839A3582731 /* Pods-bigtree_app_frontend-bigtree_app_frontendTests.debug.xcconfig */;
+			baseConfigurationReference = ADB410E0E5E81913CC169D1D /* Pods-bigtree_app-bigtree_appTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = bigtree_app_frontendTests/Info.plist;
+				INFOPLIST_FILE = bigtree_appTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -598,17 +598,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app_frontend.app/bigtree_app_frontend";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app.app/bigtree_app";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCEB28CFEF473A55216A558C /* Pods-bigtree_app_frontend-bigtree_app_frontendTests.release.xcconfig */;
+			baseConfigurationReference = 6B4D96C3168100487FBEB123 /* Pods-bigtree_app-bigtree_appTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = bigtree_app_frontendTests/Info.plist;
+				INFOPLIST_FILE = bigtree_appTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -618,13 +618,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app_frontend.app/bigtree_app_frontend";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app.app/bigtree_app";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E2AB0A2F8A43339A0E60EE3E /* Pods-bigtree_app_frontend.debug.xcconfig */;
+			baseConfigurationReference = 0B9C9F1313F54069CF5C498C /* Pods-bigtree_app.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -634,14 +634,14 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = bigtree_app_frontend/Info.plist;
+				INFOPLIST_FILE = bigtree_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.app;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.zpp;
 				PRODUCT_NAME = bigtree_app;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -651,19 +651,19 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD38D14B2842C74E668641BB /* Pods-bigtree_app_frontend.release.xcconfig */;
+			baseConfigurationReference = 8B757F34E862D87A29D30B66 /* Pods-bigtree_app.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				INFOPLIST_FILE = bigtree_app_frontend/Info.plist;
+				INFOPLIST_FILE = bigtree_app/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.app;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.zpp;
 				PRODUCT_NAME = bigtree_app;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -672,7 +672,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88676ADD2F86FBD477D6FABC /* Pods-bigtree_app_frontend-tvOS.debug.xcconfig */;
+			baseConfigurationReference = D40A02D05CAC951EF3AE7338 /* Pods-bigtree_app-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -683,14 +683,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "bigtree_app_frontend-tvOS/Info.plist";
+				INFOPLIST_FILE = "bigtree_app-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app_frontend-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -700,7 +700,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12DA0055A46527AF55E79EAD /* Pods-bigtree_app_frontend-tvOS.release.xcconfig */;
+			baseConfigurationReference = 7DBC1C7D40AB5395DA50F74A /* Pods-bigtree_app-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -711,14 +711,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "bigtree_app_frontend-tvOS/Info.plist";
+				INFOPLIST_FILE = "bigtree_app-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app_frontend-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -728,7 +728,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DE85F120E1D2FE3A612749BD /* Pods-bigtree_app_frontend-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 0ABE2468CB24647B99B9A721 /* Pods-bigtree_app-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -738,24 +738,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "bigtree_app_frontend-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "bigtree_app-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app_frontend-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app_frontend-tvOS.app/bigtree_app_frontend-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app-tvOS.app/bigtree_app-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81DA0F14227CFED2273E7698 /* Pods-bigtree_app_frontend-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = 52E4A5AD9F4A7B1B1225E647 /* Pods-bigtree_app-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -765,17 +765,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "bigtree_app_frontend-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "bigtree_app-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app_frontend-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.bigtree_app-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app_frontend-tvOS.app/bigtree_app_frontend-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bigtree_app-tvOS.app/bigtree_app-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -896,7 +896,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "bigtree_app_frontendTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "bigtree_appTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -905,7 +905,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "bigtree_app_frontend" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "bigtree_app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -914,7 +914,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app_frontend-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -923,7 +923,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app_frontend-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "bigtree_app-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -932,7 +932,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "bigtree_app_frontend" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "bigtree_app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

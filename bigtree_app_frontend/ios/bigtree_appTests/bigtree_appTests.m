@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface bigtree_app_frontendTests : XCTestCase
+@interface bigtree_appTests : XCTestCase
 
 @end
 
-@implementation bigtree_app_frontendTests
+@implementation bigtree_appTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

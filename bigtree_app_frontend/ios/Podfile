@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'bigtree_app_frontend' do
-  # Pods for bigtree_app_frontend
+target 'bigtree_app' do
+  # Pods for bigtree_app
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'bigtree_app_frontend' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'bigtree_app_frontendTests' do
+  target 'bigtree_appTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'bigtree_app_frontend' do
   end
 end
 
-target 'bigtree_app_frontend-tvOS' do
-  # Pods for bigtree_app_frontend-tvOS
+target 'bigtree_app-tvOS' do
+  # Pods for bigtree_app-tvOS
 
-  target 'bigtree_app_frontend-tvOSTests' do
+  target 'bigtree_app-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
