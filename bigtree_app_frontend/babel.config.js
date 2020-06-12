@@ -20,8 +20,8 @@ const config = {
       '@babel/preset-env',
       {
         corejs: '3.6.5',
-        useBuiltIns: 'entry'
-      }
+        useBuiltIns: 'entry',
+      },
     ],
     'module:react-native-dotenv',
     '@babel/preset-react',
@@ -45,9 +45,7 @@ const native_config = {
     'module:metro-react-native-babel-preset',
     'module:react-native-dotenv',
   ],
-  plugins: [
-    ...COMMON_PLUGINS,
-  ],
+  plugins: [...COMMON_PLUGINS],
 };
 
 module.exports = (api) => {
