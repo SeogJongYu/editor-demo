@@ -47,6 +47,10 @@ python init.py
 # App Name(example: bigtree_app): my_app
 # Package Name(example: kr.ibigtree.app): kr.ibigtree.my_app
 
+# Git 저장소 초기화
+rm -rf .git
+git init
+
 # poetry 없을 경우 먼저 설치
 pip install poetry
 
