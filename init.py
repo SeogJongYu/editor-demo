@@ -114,6 +114,7 @@ os.rename(
     'bigtree_app_frontend/android/app/src/main/java/' + APP_NATIVE_PACKAGE_NAME.replace(".", "/") + '/MainApplication.java',
 )
 
+os.rename('bigtree_app_template.png', APP_NAME + '.png')
 
 remove_dirs = [
     'bigtree_app_frontend/android/app/src/debug/java/kr/ibigtree/app/',
