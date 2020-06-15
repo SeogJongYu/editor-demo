@@ -25,7 +25,7 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 * NodeJS v13
 * React 16.13.1
-* React Native 0.62.0
+* React Native 0.62.2
 * [Optional Chaining](https://github.com/tc39/proposal-optional-chaining)
 * [Nullish Coalescing](https://github.com/tc39/proposal-nullish-coalescing)
 
@@ -38,7 +38,7 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 * [Poetry 설치](https://python-poetry.org/docs/#installation) 후 진행
 
 ```
-git clone git@bitbucket.org:bigtree-developers/bigtree_app_template.git my_app
+git clone git@github.com:ibigtree/bigtree_app_template.git my_app
 
 cd my_app
 
