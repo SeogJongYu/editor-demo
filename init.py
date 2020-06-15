@@ -34,12 +34,12 @@ TARGET_FILENAME = [
 ]
 
 SEARCH_AND_REPLACE = OrderedDict([
+    ('bigtree_app_template', APP_NAME),
     ('kr.ibigtree.app', APP_NATIVE_PACKAGE_NAME),
     ('bigtree_app', APP_NAME),
     ('BIGTREE_APP_', APP_NAME.upper() + '_'),
     ('BIGTREE_APP', APP_NAME.upper()),
     ('BigtreeApp', APP_NAME_CAMEL_CASE),
-    ('bigtree_app_template', APP_NAME),
 ])
 
 
