@@ -5,6 +5,7 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const CssUrlRelativePlugin = require('css-url-relative-plugin');
 
 module.exports = (env, argv) => ({
   entry: ['react-hot-loader/patch', './index.js'],
@@ -69,6 +70,7 @@ module.exports = (env, argv) => ({
       template: './public/index.ejs',
       filename: 'index.html',
     }),
+    new CssUrlRelativePlugin(),
   ],
   optimization: {
     minimize: argv.mode === 'production',
