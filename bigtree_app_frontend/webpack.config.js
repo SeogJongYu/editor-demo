@@ -6,15 +6,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-
 module.exports = (env, argv) => ({
-  entry: [
-    'react-hot-loader/patch',
-    './index.js',
-  ],
+  entry: ['react-hot-loader/patch', './index.js'],
   output: {
-    filename: argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
-    chunkFilename: argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
+    filename:
+      argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
+    chunkFilename:
+      argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
     path: path.join(__dirname, '/build'),
   },
   devtool: argv.mode === 'development' ? 'eval-cheap-module-source-map' : false,
@@ -35,10 +33,7 @@ module.exports = (env, argv) => ({
       {
         test: /\.css$/i,
         exclude: /node_modules/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/i,
@@ -59,16 +54,17 @@ module.exports = (env, argv) => ({
       filename: 'css/[name]-[hash].css',
       chunkFilename: 'css/[id].css',
     }),
-    new CopyPlugin([
+    new CopyPlugin(
+      [
+        {
+          from: 'public/*',
+          to: '[name].[ext]',
+        },
+      ],
       {
-        from: 'public/*',
-        to: '[name].[ext]',
+        ignore: ['public/index.ejs'],
       },
-    ], {
-      ignore: [
-        'public/index.ejs'
-      ]
-    }),
+    ),
     new HtmlWebpackPlugin({
       template: './public/index.ejs',
       filename: 'index.html',
@@ -76,9 +72,7 @@ module.exports = (env, argv) => ({
   ],
   optimization: {
     minimize: argv.mode === 'production',
-    minimizer: [
-      new TerserPlugin(),
-    ],
+    minimizer: [new TerserPlugin()],
     splitChunks: {
       chunks: 'all',
     },
