@@ -11,7 +11,8 @@
 		},
 		"[javascript]": {
 			"editor.rulers": [100],
-			"editor.tabSize": 2
+			"editor.tabSize": 2,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
 		"python.linting.enabled": true,
 		"python.linting.flake8Enabled": true,
