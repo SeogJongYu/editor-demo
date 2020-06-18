@@ -19,6 +19,7 @@ module.exports = {
       },
     ],
     'import/order': ['warn'],
+    'import/newline-after-import': ['warn'],
   },
   settings: {
     'import/resolver': {
