@@ -180,6 +180,16 @@ Visual Studio Code
 * Firefox 디버그 시 브라우저 설정 변경 필요함(https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) 참조
 
 
+
+Troubleshooting
+-------------------
+
+### React Native에서 .env 변경 내용이 반영되지 않음
+```
+npm run native -- --reset-cache
+```
+
+
 변경사항
 ----------
 
