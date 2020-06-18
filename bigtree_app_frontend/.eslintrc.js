@@ -28,5 +28,6 @@ module.exports = {
         rootPathSuffix: './app',
       },
     },
+    'import/ignore': ['react-native'],
   },
 };
