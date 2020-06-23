@@ -25,6 +25,7 @@ const config = {
     ],
     'module:react-native-dotenv',
     '@babel/preset-react',
+    '@babel/preset-flow',
   ],
   plugins: [
     [
