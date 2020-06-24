@@ -15,6 +15,7 @@ module.exports = (env, argv) => ({
     chunkFilename:
       argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
     path: path.join(__dirname, '/build'),
+    publicPath: '/',
   },
   devtool: argv.mode === 'development' ? 'eval-cheap-module-source-map' : false,
   resolve: {
