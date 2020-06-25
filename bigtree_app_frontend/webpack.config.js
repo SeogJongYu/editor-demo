@@ -35,7 +35,12 @@ module.exports = (env, argv) => ({
       {
         test: /\.css$/i,
         exclude: /node_modules/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          argv.mode === 'development'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader',
+        ],
       },
       {
         test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/i,
@@ -52,10 +57,14 @@ module.exports = (env, argv) => ({
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name]-[hash].css',
-      chunkFilename: 'css/[id].css',
-    }),
+    ...(argv.mode === 'development'
+      ? []
+      : [
+          new MiniCssExtractPlugin({
+            filename: 'css/[name]-[hash].css',
+            chunkFilename: 'css/[id].css',
+          }),
+        ]),
     new CopyPlugin(
       [
         {
