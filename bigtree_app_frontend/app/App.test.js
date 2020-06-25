@@ -10,7 +10,6 @@ it('Renders App without errors', async () => {
   });
 });
 
-
 it('Renders Native App without errors', async () => {
   await act(async () => {
     render(<NativeApp />);

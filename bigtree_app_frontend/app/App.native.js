@@ -4,13 +4,13 @@ import {Animated, Easing, StatusBar} from 'react-native';
 
 import styled from 'styled-components/native';
 
+import PlatformComponent from './components/PlatformComponent';
+import CommonComponent from './components/CommonComponent';
+
 import Config from '~/config';
 import useSampleAPI from '~/hooks/useSampleAPI';
 
 import logo from '~/assets/logo.png';
-
-import PlatformComponent from './components/PlatformComponent';
-import CommonComponent from './components/CommonComponent';
 
 const Container = styled.SafeAreaView`
   flex: 1;
