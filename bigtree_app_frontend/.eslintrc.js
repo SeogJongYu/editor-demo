@@ -27,6 +27,9 @@ module.exports = {
         rootPathPrefix: '~/',
         rootPathSuffix: './app',
       },
+      node: {
+        extensions: ['.android.js', '.ios.js', '.native.js', '.web.js', '.js'],
+      },
     },
     'import/ignore': ['react-native'],
   },
