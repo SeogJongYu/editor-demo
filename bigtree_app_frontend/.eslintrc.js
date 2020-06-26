@@ -18,6 +18,10 @@ module.exports = {
         ignoreTemplateLiterals: true,
       },
     ],
+    'no-unused-vars': [
+      'warn',
+      {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
+    ],
     'import/order': ['warn'],
     'import/newline-after-import': ['warn'],
   },
