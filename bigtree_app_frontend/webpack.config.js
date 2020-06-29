@@ -53,6 +53,7 @@ module.exports = (env, argv) => ({
             argv.mode === 'development'
               ? '[path][name].[ext]'
               : '[name]-[hash].[ext]',
+          esModule: false,
           outputPath: 'assets/',
         },
       },
