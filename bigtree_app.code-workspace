@@ -21,7 +21,8 @@
 		],
 		"flow.pathToFlow": "${workspaceFolder}/bigtree_app_frontend/node_modules/.bin/flow",
 		"javascript.validate.enable": false,
-		"files.encoding": "utf8"
+		"files.encoding": "utf8",
+		"react-native-tools.projectRoot": "./bigtree_app_frontend"
 	},
 	"tasks": {
 		// See https://go.microsoft.com/fwlink/?LinkId=733558
@@ -76,31 +77,21 @@
 				]
 			},
 			{
-				"type": "node",
+				"type": "reactnative",
 				"request": "launch",
 				"name": "Frontend - iOS",
-				"runtimeExecutable": "npm",
+				"platform": "ios",
 				"cwd": "${workspaceFolder}/bigtree_app_frontend",
-				"runtimeArgs": [
-					"run-script",
-					"ios"
-				],
-				"noDebug": true,
 				"skipFiles": [
 					"<node_internals>/**"
 				]
 			},
 			{
-				"type": "node",
+				"type": "reactnative",
 				"request": "launch",
 				"name": "Frontend - Android",
-				"runtimeExecutable": "npm",
+				"platform": "android",
 				"cwd": "${workspaceFolder}/bigtree_app_frontend",
-				"runtimeArgs": [
-					"run-script",
-					"android"
-				],
-				"noDebug": true,
 				"skipFiles": [
 					"<node_internals>/**"
 				]
@@ -140,6 +131,7 @@
 			"dbaeumer.vscode-eslint",
 			"flowtype.flow-for-vscode",
 			"jpoissonnier.vscode-styled-components",
+			"msjsdiag.vscode-react-native"
 		]
 	}
 }
