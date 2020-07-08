@@ -126,9 +126,9 @@ MY_APP_TIMEZONE=Asia/Seoul
 개발/프로덕션 및 OS별로 다르게 지정할 수 있음.
 
 ```
-API_SERVER_WEB=/api/v1/
-API_SERVER_IOS=http://127.0.0.1:8000/api/v1/
-API_SERVER_ANDROID=http://127.0.0.1:8000/api/v1/
+API_SERVER_WEB=/api/v1
+API_SERVER_IOS=http://127.0.0.1:8000/api/v1
+API_SERVER_ANDROID=http://127.0.0.1:8000/api/v1
 ```
 
 TIP: Android에서 API 서버 접속시 다음 명령어 활용:
