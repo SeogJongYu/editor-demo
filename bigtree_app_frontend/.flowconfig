@@ -32,10 +32,20 @@ esproposal.nullish_coalescing=enable
 
 module.file_ext=.js
 module.file_ext=.json
+module.file_ext=.web.js
 module.file_ext=.ios.js
 module.file_ext=.android.js
 module.file_ext=.native.js
-
+module.file_ext=.ts
+module.file_ext=.tsx
+module.file_ext=.ios.ts
+module.file_ext=.ios.tsx
+module.file_ext=.android.ts
+module.file_ext=.android.tsx
+module.file_ext=.native.ts
+module.file_ext=.native.tsx
+module.file_ext=.web.ts
+module.file_ext=.web.tsx
 munge_underscores=true
 
 module.name_mapper='^@?[./a-zA-Z0-9$_-]+\.\(bmp\|gif\|jpg\|jpeg\|png\|psd\|svg\|webp\|m4v\|mov\|mp4\|mpeg\|mpg\|webm\|aac\|aiff\|caf\|m4a\|mp3\|wav\|html\|pdf\)$' -> '<PROJECT_ROOT>/node_modules/react-native/Libraries/Image/RelativeImageStub'
