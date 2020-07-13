@@ -1,13 +1,6 @@
 const process = require('process');
 
 const COMMON_PLUGINS = [
-  [
-    'babel-plugin-root-import',
-    {
-      rootPathPrefix: '~/',
-      rootPathSuffix: './app',
-    },
-  ],
   'babel-plugin-styled-components',
   '@babel/plugin-syntax-dynamic-import',
   '@babel/plugin-proposal-nullish-coalescing-operator',
@@ -34,6 +27,7 @@ const config = {
       {
         alias: {
           '^react-native$': 'react-native-web',
+          '~': './app',
         },
       },
     ],
@@ -47,7 +41,17 @@ const native_config = {
     'module:metro-react-native-babel-preset',
     'module:react-native-dotenv',
   ],
-  plugins: [...COMMON_PLUGINS],
+  plugins: [
+    [
+      'module-resolver',
+      {
+        alias: {
+          '~': './app',
+        },
+      },
+    ],
+    ...COMMON_PLUGINS,
+  ],
 };
 
 module.exports = (api) => {

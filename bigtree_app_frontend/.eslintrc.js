@@ -31,10 +31,7 @@ module.exports = {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
-      'babel-plugin-root-import': {
-        rootPathPrefix: '~/',
-        rootPathSuffix: './app',
-      },
+      'babel-module': {},
       typescript: {
         alwaysTryTypes: true,
       },
