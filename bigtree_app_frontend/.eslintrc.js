@@ -27,13 +27,35 @@ module.exports = {
     'react/jsx-no-undef': ['error', {allowGlobals: true}],
   },
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
       'babel-plugin-root-import': {
         rootPathPrefix: '~/',
         rootPathSuffix: './app',
       },
+      typescript: {
+        alwaysTryTypes: true,
+      },
       node: {
-        extensions: ['.android.js', '.ios.js', '.native.js', '.web.js', '.js'],
+        extensions: [
+          '.android.js',
+          '.ios.js',
+          '.native.js',
+          '.web.js',
+          '.js',
+          '.android.ts',
+          '.android.tsx',
+          '.ios.ts',
+          '.ios.tsx',
+          '.native.ts',
+          '.native.tsx',
+          '.web.ts',
+          '.web.tsx',
+          '.ts',
+          '.tsx',
+        ],
       },
     },
     'import/ignore': ['react-native'],

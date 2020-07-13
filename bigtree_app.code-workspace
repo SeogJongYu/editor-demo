@@ -14,14 +14,26 @@
 			"editor.tabSize": 2,
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
+		"[typescript]": {
+			"editor.rulers": [100],
+			"editor.tabSize": 2,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescriptreact]": {
+			"editor.rulers": [100],
+			"editor.tabSize": 2,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
 		"python.linting.enabled": true,
 		"python.linting.flake8Enabled": true,
 		"eslint.workingDirectories": [
 			"./bigtree_app_frontend"
 		],
 		"flow.pathToFlow": "${workspaceFolder}/bigtree_app_frontend/node_modules/.bin/flow",
-		"javascript.validate.enable": false,
 		"files.encoding": "utf8",
+		"files.exclude": {
+			"**/node_modules": true,
+		},
 		"react-native-tools.projectRoot": "./bigtree_app_frontend"
 	},
 	"tasks": {

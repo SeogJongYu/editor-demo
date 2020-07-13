@@ -25,7 +25,7 @@ module.exports = (env, argv) => ({
       'react-native$': 'react-native-web',
       'react-dom': '@hot-loader/react-dom',
     },
-    extensions: ['.web.js', '.js'],
+    extensions: ['.web.js', '.js', '.web.tsx', '.tsx', '.web.ts', '.ts'],
   },
   module: {
     rules: [
@@ -33,6 +33,11 @@ module.exports = (env, argv) => ({
         test: /\.js$/i,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.ts?x$/i,
+        exclude: /node_modules/,
+        use: ['babel-loader', 'ts-loader'],
       },
       {
         test: /\.css$/i,

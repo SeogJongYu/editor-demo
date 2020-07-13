@@ -12,5 +12,6 @@
   },
   "author": "Daehan Kim <daehankim@ibigtree.kr>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/bigtree-developers/bigtree_app_template#readme"
+  "homepage": "https://bitbucket.org/bigtree-developers/bigtree_app_template#readme",
+  "devDependencies": {}
 }

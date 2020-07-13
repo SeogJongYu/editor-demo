@@ -1,7 +1,8 @@
 import React from 'react';
+import TypedComponent from './TypedComponent.tsx';
 
 function CommonComponent() {
-  return <>Hello Bigtree!</>;
+  return <TypedComponent someNumber={24}>Hello Bigtree!</TypedComponent>;
 }
 
 export default CommonComponent;

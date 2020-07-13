@@ -1,4 +1,3 @@
-// @flow
 import React, {useEffect, useRef} from 'react';
 import {Animated, Easing, StatusBar} from 'react-native';
 

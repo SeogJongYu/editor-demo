@@ -1,4 +1,3 @@
-// @flow
 import React from 'react';
 
 import styled, {keyframes} from 'styled-components';
@@ -71,8 +70,8 @@ function App() {
           <br />
           API Response: {sampleAPIData.message}
           <br />
-          <CommonComponent />
         </p>
+        <CommonComponent />
       </Header>
     </Container>
   );
