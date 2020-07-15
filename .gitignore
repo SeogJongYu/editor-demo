@@ -253,4 +253,5 @@ dmypy.json
 .idea/
 
 /db.sqlite3
-/public
+/media
+/static
