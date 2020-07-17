@@ -24,6 +24,11 @@
 			"editor.tabSize": 2,
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		},
+		"python.linting.ignorePatterns": [
+			".vscode/*.py",
+			"**/site-packages/**/*.py",
+			"**/migrations/*.py"
+		],
 		"python.linting.enabled": true,
 		"python.linting.flake8Enabled": true,
 		"eslint.workingDirectories": [
@@ -31,7 +36,13 @@
 		],
 		"flow.pathToFlow": "${workspaceFolder}/bigtree_app_frontend/node_modules/.bin/flow",
 		"files.encoding": "utf8",
-		"react-native-tools.projectRoot": "./bigtree_app_frontend"
+		"react-native-tools.projectRoot": "./bigtree_app_frontend",
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/bower_components": true,
+			"**/*.code-search": true,
+			"**/migrations/*.py": true
+		},
 	},
 	"tasks": {
 		// See https://go.microsoft.com/fwlink/?LinkId=733558
