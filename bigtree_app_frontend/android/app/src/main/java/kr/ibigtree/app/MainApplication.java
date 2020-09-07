@@ -2,6 +2,7 @@ package kr.ibigtree.app;
 
 import android.app.Application;
 import android.content.Context;
+import android.webkit.WebView;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
@@ -43,7 +44,13 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+
     SoLoader.init(this, /* native exopackage */ false);
+
+    if (BuildConfig.DEBUG) {
+      WebView.setWebContentsDebuggingEnabled(true);
+    }
+
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
   }
 
