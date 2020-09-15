@@ -22,7 +22,7 @@
     "react-hot-loader": "^4.12.21",
     "react-native": "^0.63.2",
     "react-native-web": "^0.12.2",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

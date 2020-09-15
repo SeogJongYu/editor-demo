@@ -10,7 +10,12 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
 
 module.exports = (env, argv) => ({
-  entry: ['react-hot-loader/patch', './index.js'],
+  entry: [
+    'core-js/stable',
+    'regenerator-runtime/runtime',
+    'react-hot-loader/patch',
+    './index.js',
+  ],
   output: {
     filename:
       argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
