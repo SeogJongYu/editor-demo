@@ -4,7 +4,9 @@ module.exports = {
     '@react-native-community',
     'plugin:import/errors',
     'plugin:import/warnings',
+    'plugin:jsx-control-statements/recommended',
   ],
+  plugins: ['jsx-control-statements'],
   rules: {
     'max-len': [
       'error',
