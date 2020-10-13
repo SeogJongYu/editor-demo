@@ -4,7 +4,7 @@ import {
   API_SERVER_WEB,
   API_SERVER_IOS,
   API_SERVER_ANDROID,
-} from 'react-native-dotenv';
+} from '@env';
 
 export default {
   API_SERVER: Platform.select({

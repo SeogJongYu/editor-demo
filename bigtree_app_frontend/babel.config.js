@@ -5,6 +5,7 @@ const COMMON_PLUGINS = [
   '@babel/plugin-syntax-dynamic-import',
   '@babel/plugin-proposal-nullish-coalescing-operator',
   '@babel/plugin-proposal-optional-chaining',
+  'module:react-native-dotenv',
 ];
 
 const config = {
@@ -16,7 +17,6 @@ const config = {
         useBuiltIns: 'entry',
       },
     ],
-    'module:react-native-dotenv',
     '@babel/preset-react',
     '@babel/preset-flow',
   ],
@@ -36,10 +36,7 @@ const config = {
 };
 
 const native_config = {
-  presets: [
-    'module:metro-react-native-babel-preset',
-    'module:react-native-dotenv',
-  ],
+  presets: ['module:metro-react-native-babel-preset'],
   plugins: [
     [
       'module-resolver',

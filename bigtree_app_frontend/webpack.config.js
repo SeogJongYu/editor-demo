@@ -81,17 +81,17 @@ module.exports = (env, argv) => ({
             chunkFilename: 'css/[id].css',
           }),
         ]),
-    new CopyPlugin(
-      [
+    new CopyPlugin({
+      patterns: [
         {
           from: 'public/*',
           to: '[name].[ext]',
+          globOptions: {
+            ignore: ['public/index.ejs'],
+          },
         },
       ],
-      {
-        ignore: ['public/index.ejs'],
-      },
-    ),
+    }),
     new HtmlWebpackPlugin({
       template: './public/index.ejs',
       filename: 'index.html',
