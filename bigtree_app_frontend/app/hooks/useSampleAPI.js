@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 
-import Config from '~/config';
+import Config from '~/Config';
 
 /**
  * 샘플 API 연동 훅

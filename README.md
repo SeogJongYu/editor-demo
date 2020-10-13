@@ -201,9 +201,10 @@ Troubleshooting
 -------------------
 
 ### React Native에서 .env 변경 내용이 반영되지 않음
-```
-npm run native -- --reset-cache
-```
+
+Metro Bundler가 이미 실행중인 경우 반영이 안 될 수 있습니다.
+
+실행중인 Metro Bundler를 종료하고 다시 실행합니다.
 
 
 변경사항

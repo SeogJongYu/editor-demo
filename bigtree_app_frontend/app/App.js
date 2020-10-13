@@ -5,7 +5,7 @@ import styled, {keyframes} from 'styled-components';
 import PlatformComponent from './components/PlatformComponent';
 import CommonComponent from './components/CommonComponent';
 import useSampleAPI from '~/hooks/useSampleAPI';
-import Config from '~/config';
+import Config from '~/Config';
 
 import logo from '~/assets/logo.png';
 

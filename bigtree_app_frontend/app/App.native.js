@@ -6,7 +6,7 @@ import styled from 'styled-components/native';
 import PlatformComponent from './components/PlatformComponent';
 import CommonComponent from './components/CommonComponent';
 
-import Config from '~/config';
+import Config from '~/Config';
 import useSampleAPI from '~/hooks/useSampleAPI';
 
 import logo from '~/assets/logo.png';
