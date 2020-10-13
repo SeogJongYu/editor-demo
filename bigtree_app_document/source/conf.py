@@ -21,10 +21,6 @@ sys.path.insert(0, os.path.abspath('../../'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'bigtree_app.settings'
 django.setup()
 
-# -- JSDoc Setup
-js_source_path = os.path.abspath('../../fleetmanager_webapp/src/')
-jsdoc_config_path = os.path.abspath('../jsdoc_conf.json')
-
 
 # -- plantuml
 plantuml_path = os.environ.get('PLANTUML', "")
@@ -36,10 +32,6 @@ if plantuml_path == "":
 else:
     plantuml = f"java -jar \"{os.environ['PLANTUML']}\""
 
-
-# -- JSDoc Setup
-js_source_path = os.path.abspath('../../bigtree_app_frontend/src/')
-jsdoc_config_path = os.path.abspath('../jsdoc_conf.json')
 
 # -- Project information -----------------------------------------------------
 
