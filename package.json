@@ -1,6 +1,6 @@
 {
   "name": "bigtree_app_template",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Bigtree App Template",
   "main": "index.js",
   "scripts": {
@@ -8,10 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/bigtree-developers/bigtree_app_template.git"
+    "url": "https://github.com/ibigtree/bigtree_app_template"
   },
   "author": "Daehan Kim <daehankim@ibigtree.kr>",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/bigtree-developers/bigtree_app_template#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/ibigtree/bigtree_app_template"
 }
