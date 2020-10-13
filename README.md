@@ -212,7 +212,7 @@ npm run native -- --reset-cache
 ### v3.1.0
 
 * JSDoc을 Frontend 쪽으로 분리. 더이상 Frontend 문서를 같이 빌드하지 않음.
-* [jsx-control-statements](https://www.npmjs.com/package/jsx-control-statements) 삭제. 자동완성이 안되는 등 문제가 있엇 삭제함.
+* [babel-plugin-jsx-control-statements](https://www.npmjs.com/package/babel-plugin-jsx-control-statements) 삭제. 자동완성이 안되는 등 문제가 있엇 삭제함.
 
 
 ### v3
