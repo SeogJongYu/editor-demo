@@ -37,6 +37,8 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 * [Poetry 설치](https://python-poetry.org/docs/#installation) 후 진행
 
+Backend가 필요 없는 프로젝트의 경우 init 후 frontend 부분만 사용하면 됩니다.
+
 ```
 git clone git@github.com:ibigtree/bigtree_app_template.git my_app
 
@@ -63,7 +65,6 @@ npm install
 
 ### 실행
 
-
 #### Backend
 ```
 poetry run python manage.py runserver
@@ -74,12 +75,12 @@ python manage.py runserver
 
 #### Frontend
 
-* Android: my_app_frontend/android 를 Android Studio로 한번 열어줘야 정상 실행 됨
-* iOS: cd my_app_frotnend/ios && pod install 한번 실행한 이후 실행 가능
+* Android: bigtree_app_frontend/android 를 Android Studio로 한번 열어줘야 정상 실행 됨
+* iOS: cd bigtree_app_frontend/ios && pod install 한번 실행한 이후 실행 가능
 
 
 ```
-cd my_app_frontend
+cd bigtree_app_frontend
 
 # 웹 화면 실행
 npm run web
@@ -106,22 +107,22 @@ docker-compose up -d --build
 
 ```
 # Django Secret Key
-MY_APP_SECRET_KEY=changeme
+BIGTREE_APP_SECRET_KEY=changeme
 
 # Django Debug Flag
-MY_APP_DEBUG=true
+BIGTREE_APP_DEBUG=true
 
 # 접속 허용 호스트 지정
-MY_APP_HOSTS=myapp.bigbot.kr
+BIGTREE_APP_HOSTS=myapp.bigbot.kr
 
 # Django Timezone 설정
-MY_APP_TIMEZONE=Asia/Seoul
+BIGTREE_APP_TIMEZONE=Asia/Seoul
 ```
 
 #### Frontend
 
-* my_app_frontend/.env.development
-* my_app_frontend/.env.production
+* bigtree_app_frontend/.env.development
+* bigtree_app_frontend/.env.production
 
 개발/프로덕션 및 OS별로 다르게 지정할 수 있음.
 
@@ -143,34 +144,49 @@ adb reverse tcp:8000 tcp:8000
 
 ```
 # docker-compose 프로젝트 이름
-COMPOSE_PROJECT_NAME=my_app
+COMPOSE_PROJECT_NAME=bigtree_app
 
 # 노출될 웹서버 포트
-MY_APP_DOCKER_PORT=8080
+BIGTREE_APP_DOCKER_PORT=8080
 
 # true로 설정시 frontend 빌드하지 않고 backend만 활성화 됨
-MY_APP_DOCKER_BACKEND_ONLY=false
+BIGTREE_APP_DOCKER_BACKEND_ONLY=false
 
 # Backend/WebServer Timezone 설정
-MY_APP_TIMEZONE=Asia/Seoul
+BIGTREE_APP_TIMEZONE=Asia/Seoul
 ```
+
 
 
 개발 문서
 -------------
 
+### Backend
+
 개발 문서 빌드시 외부 프로그램 설치가 필요함(문서 내 그래프 이미지 자동생성 관련)
 
-* [PlantUML](https://plantuml.com) - jar 다운받아서 환경변수 PLANTUML(또는 my_app_document/.env 에 PLANTUML) 경로 추가
+* [PlantUML](https://plantuml.com) - jar 다운받아서 환경변수 PLANTUML(또는 bigtree_app_document/.env 에 PLANTUML) 경로 추가
 * [GraphViz](https://www.graphviz.org) - 설치 후 PATH에 추가
 
-아래 명령어를 실행하면 my_app_document/build/ 폴더에 html 파일로 생성됨.
+아래 명령어를 실행하면 bigtree_app_document/build/ 폴더에 html 파일로 생성됨.
 
 ```
 poetry shell
-cd my_app_document
+cd bigtree_app_document
 npm install
 npm run build
+```
+
+
+### Frontend
+
+Frontend 개발 문서는 JSDoc을 사용해 빌드함.
+
+아래 명령어를 실행하면 bigtree_app_frontend/build_docs/ 에 html 파일로 생성됨.
+
+```
+cd bigtree_app_frontend
+npm run jsdoc
 ```
 
 Visual Studio Code
@@ -192,6 +208,12 @@ npm run native -- --reset-cache
 
 변경사항
 ----------
+
+### v3.1.0
+
+* JSDoc을 Frontend 쪽으로 분리. 더이상 Frontend 문서를 같이 빌드하지 않음.
+* [jsx-control-statements](https://www.npmjs.com/package/jsx-control-statements) 삭제. 자동완성이 안되는 등 문제가 있엇 삭제함.
+
 
 ### v3
 
