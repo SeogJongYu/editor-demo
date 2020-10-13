@@ -52,7 +52,7 @@ const AppLogo = styled.img`
 /**
  * Example Component
  * 로고 출력 및 샘플 API 연동
- * @returns JSX.Element
+ * @category App
  */
 function App() {
   const sampleAPIData = useSampleAPI();

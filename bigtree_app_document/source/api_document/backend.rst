@@ -1,4 +1,4 @@
-Backend (Python)
+Backend
 ========================
 
 Python 기반 Backend API 문서

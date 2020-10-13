@@ -5,13 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "make html && jsdoc -c source/conf.json",
+    "build": "make html",
     "clean": "make clean && python clean.py"
   },
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "docdash": "^1.2.0",
-    "jsdoc": "^3.6.3"
-  }
+  "license": "ISC"
 }
