@@ -5,7 +5,6 @@ const COMMON_PLUGINS = [
   '@babel/plugin-syntax-dynamic-import',
   '@babel/plugin-proposal-nullish-coalescing-operator',
   '@babel/plugin-proposal-optional-chaining',
-  'jsx-control-statements',
 ];
 
 const config = {
