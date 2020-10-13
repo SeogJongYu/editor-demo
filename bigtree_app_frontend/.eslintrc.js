@@ -25,6 +25,12 @@ module.exports = {
     'import/order': ['warn'],
     'import/newline-after-import': ['warn'],
     'react/jsx-no-undef': ['error', {allowGlobals: true}],
+    'import/no-unresolved': [
+      'error',
+      {
+        ignore: ['@env'],
+      },
+    ],
   },
   settings: {
     'import/parsers': {
