@@ -22,6 +22,10 @@ module.exports = {
       'warn',
       {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
     ],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
+    ],
     'import/order': ['warn'],
     'import/newline-after-import': ['warn'],
     'react/jsx-no-undef': ['error', {allowGlobals: true}],
