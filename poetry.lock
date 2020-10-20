@@ -439,17 +439,6 @@ test = ["pytest", "flake8", "mypy"]
 
 [[package]]
 category = "dev"
-description = "Sphinx \"plantuml\" extension"
-name = "sphinxcontrib-plantuml"
-optional = false
-python-versions = "*"
-version = "0.18"
-
-[package.dependencies]
-Sphinx = ">=1.1"
-
-[[package]]
-category = "dev"
 description = "sphinxcontrib-qthelp is a sphinx extension which outputs QtHelp document."
 name = "sphinxcontrib-qthelp"
 optional = false
@@ -502,7 +491,7 @@ python-versions = "*"
 version = "0.1.8"
 
 [metadata]
-content-hash = "7aacbfc2ffc678b898a48def36201fe5dee8a8dfdd5d996d64c0561b112a90ed"
+content-hash = "106217a29703e10470c5ac6fd4e2bf5d792decfee567ffce2a9036611726c883"
 lock-version = "1.0"
 python-versions = ">=3.8,<3.9"
 
@@ -696,9 +685,6 @@ sphinxcontrib-htmlhelp = [
 sphinxcontrib-jsmath = [
     {file = "sphinxcontrib-jsmath-1.0.1.tar.gz", hash = "sha256:a9925e4a4587247ed2191a22df5f6970656cb8ca2bd6284309578f2153e0c4b8"},
     {file = "sphinxcontrib_jsmath-1.0.1-py2.py3-none-any.whl", hash = "sha256:2ec2eaebfb78f3f2078e73666b1415417a116cc848b72e5172e596c871103178"},
-]
-sphinxcontrib-plantuml = [
-    {file = "sphinxcontrib-plantuml-0.18.tar.gz", hash = "sha256:accc8c57f953cc74e87d043e5599b46eb5e5e9c4e3291e8c7822dcdd6c2ba520"},
 ]
 sphinxcontrib-qthelp = [
     {file = "sphinxcontrib-qthelp-1.0.3.tar.gz", hash = "sha256:4c33767ee058b70dba89a6fc5c1892c0d57a54be67ddd3e7875a18d14cba5a72"},

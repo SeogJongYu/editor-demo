@@ -31,7 +31,7 @@ const CenterText = styled.Text`
   text-align: center;
 `;
 
-function AnimatedLogo() {
+const AnimatedLogo: React.FC = () => {
   const width = useRef(new Animated.Value(100)).current;
 
   useEffect(() => {
@@ -53,14 +53,9 @@ function AnimatedLogo() {
   }, [width]);
 
   return <LogoImage as={Animated.Image} source={logo} style={{width}} />;
-}
+};
 
-/**
- * Example Component
- * 로고 출력 및 샘플 API 연동
- * @returns JSX.Element
- */
-function App() {
+const NativeApp: React.FC = () => {
   const sampleAPIData = useSampleAPI();
 
   return (
@@ -82,6 +77,6 @@ function App() {
       </Container>
     </>
   );
-}
+};
 
-export default App;
+export default NativeApp;

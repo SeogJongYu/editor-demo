@@ -149,7 +149,6 @@
 			"editorconfig.editorconfig",
 			"ms-python.python",
 			"dbaeumer.vscode-eslint",
-			"flowtype.flow-for-vscode",
 			"jpoissonnier.vscode-styled-components",
 			"msjsdiag.vscode-react-native"
 		]

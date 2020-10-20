@@ -1,7 +1,5 @@
 import React from 'react';
 
-function PlatformComponent() {
-  return <>Web!</>;
-}
+const PlatformComponent: React.FC = () => <>iOS!</>;
 
 export default PlatformComponent;

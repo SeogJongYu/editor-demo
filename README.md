@@ -17,17 +17,23 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 ### Backend
 
 * Python 3.8
-* Django 3.0.2
-* Django REST Framework 3.11.0
+* Django
+* Django REST Framework
+* Docker (nginx, gunicorn)
+* sphinx(문서화)
 
 
 ### Frontend
 
-* NodeJS v13
-* React 16.13.1
-* React Native 0.62.2
+* NodeJS v14
+* React
+* React Native
 * [Optional Chaining](https://github.com/tc39/proposal-optional-chaining)
 * [Nullish Coalescing](https://github.com/tc39/proposal-nullish-coalescing)
+* TypeScript
+* styled-components
+* SASS
+* TypeDoc(문서화)
 
 
 개발환경 구축
@@ -180,13 +186,11 @@ npm run build
 
 ### Frontend
 
-Frontend 개발 문서는 JSDoc을 사용해 빌드함.
-
 아래 명령어를 실행하면 bigtree_app_frontend/build_docs/ 에 html 파일로 생성됨.
 
 ```
 cd bigtree_app_frontend
-npm run jsdoc
+npm run build-docs
 ```
 
 Visual Studio Code
@@ -209,6 +213,12 @@ Metro Bundler가 이미 실행중인 경우 반영이 안 될 수 있습니다.
 
 변경사항
 ----------
+
+### v4
+* TypeScript 기반으로 변경
+* sass-loader 기본 탑재
+* TypeDoc을 사용한 문서화
+
 
 ### v3.1.0
 

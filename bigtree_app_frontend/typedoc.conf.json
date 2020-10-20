@@ -1,0 +1,5 @@
+{
+    "inputFiles": ["./app"],
+    "mode": "modules",
+    "out": "build_docs/"
+}

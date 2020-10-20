@@ -32,22 +32,22 @@ module.exports = (env, argv) => ({
       'react-native$': 'react-native-web',
       'react-dom': '@hot-loader/react-dom',
     },
-    extensions: ['.web.js', '.js', '.web.tsx', '.tsx', '.web.ts', '.ts'],
+    extensions: ['.web.ts', '.ts', '.web.tsx', '.tsx', '.web.js', '.js'],
   },
   module: {
     rules: [
       {
-        test: /\.js$/i,
+        test: /\.jsx?$/i,
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
       {
-        test: /\.ts?x$/i,
+        test: /\.tsx?$/i,
         exclude: /node_modules/,
         use: ['babel-loader', 'ts-loader'],
       },
       {
-        test: /\.css$/i,
+        test: /\.s?css$/i,
         exclude: /node_modules/,
         use: [
           argv.mode === 'development'
@@ -55,7 +55,15 @@ module.exports = (env, argv) => ({
             : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
-            options: {sourceMap: argv.mode === 'development'},
+            options: {
+              sourceMap: argv.mode === 'development',
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: argv.mode === 'development',
+            },
           },
         ],
       },

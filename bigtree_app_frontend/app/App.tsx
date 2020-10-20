@@ -51,10 +51,10 @@ const AppLogo = styled.img`
 
 /**
  * Example Component
+ *
  * 로고 출력 및 샘플 API 연동
- * @category App
  */
-function App() {
+const App: React.FC = () => {
   const sampleAPIData = useSampleAPI();
 
   return (
@@ -75,6 +75,6 @@ function App() {
       </Header>
     </Container>
   );
-}
+};
 
 export default App;

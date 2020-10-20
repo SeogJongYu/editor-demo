@@ -2,10 +2,6 @@ import {useState, useEffect} from 'react';
 
 import Config from '~/Config';
 
-/**
- * 샘플 API 연동 훅
- * @category Hooks
- */
 function useSampleAPI() {
   const [responseData, setResponseData] = useState({message: ''});
 

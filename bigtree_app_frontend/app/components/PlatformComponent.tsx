@@ -1,7 +1,5 @@
 import React from 'react';
 
-function PlatformComponent() {
-  return <>Android!</>;
-}
+const PlatformComponent: React.FC = () => <>Web!</>;
 
 export default PlatformComponent;

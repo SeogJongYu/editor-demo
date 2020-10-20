@@ -22,17 +22,6 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'bigtree_app.settings'
 django.setup()
 
 
-# -- plantuml
-plantuml_path = os.environ.get('PLANTUML', "")
-
-if plantuml_path == "":
-    plantuml = ""
-    logging.warning("PLANTUML JAR 경로가 지정되지 않았습니다. "
-                    "UML 다이얼로그 렌더시 에러가 발생할 수 있습니다.")
-else:
-    plantuml = f"java -jar \"{os.environ['PLANTUML']}\""
-
-
 # -- Project information -----------------------------------------------------
 
 project = 'bigtree_app'
@@ -48,7 +37,6 @@ author = 'Bigtree'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.apidoc',
-    'sphinxcontrib.plantuml',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
