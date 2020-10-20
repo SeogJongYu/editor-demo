@@ -14,7 +14,6 @@ import os
 import sys
 import dotenv
 import django
-import logging
 dotenv.load_dotenv()
 
 sys.path.insert(0, os.path.abspath('../../'))
