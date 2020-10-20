@@ -29,6 +29,7 @@ module.exports = {
     'import/order': [
       'warn',
       {
+        'newlines-between': 'always',
         pathGroups: [
           {
             pattern: '~/**',
