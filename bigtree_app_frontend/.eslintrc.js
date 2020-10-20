@@ -26,7 +26,17 @@ module.exports = {
       'warn',
       {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
     ],
-    'import/order': ['warn'],
+    'import/order': [
+      'warn',
+      {
+        pathGroups: [
+          {
+            pattern: '~/**',
+            group: 'external',
+          },
+        ],
+      },
+    ],
     'import/newline-after-import': ['warn'],
     'react/jsx-no-undef': ['error', {allowGlobals: true}],
     'import/no-unresolved': [
