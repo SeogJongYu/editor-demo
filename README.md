@@ -130,19 +130,13 @@ BIGTREE_APP_TIMEZONE=Asia/Seoul
 * bigtree_app_frontend/.env.development
 * bigtree_app_frontend/.env.production
 
-개발/프로덕션 및 OS별로 다르게 지정할 수 있음.
+개발/프로덕션별로 다르게 지정할 수 있음.
 
 ```
-API_SERVER_WEB=/api/v1
-API_SERVER_IOS=http://127.0.0.1:8000/api/v1
-API_SERVER_ANDROID=http://127.0.0.1:8000/api/v1
+API_SERVER=http://172.30.1.100:8000/api/v1
 ```
 
-TIP: Android에서 API 서버 접속시 다음 명령어 활용:
-
-```
-adb reverse tcp:8000 tcp:8000
-```
+팁: localhost(127.0.0.1)가 아닌 LAN IP 사용하면 iOS/Android 기기에서 접속하기 좋습니다.
 
 #### Docker
 
