@@ -150,7 +150,8 @@
 			"ms-python.python",
 			"dbaeumer.vscode-eslint",
 			"jpoissonnier.vscode-styled-components",
-			"msjsdiag.vscode-react-native"
+			"msjsdiag.vscode-react-native",
+			"esbenp.prettier-vscode"
 		]
 	}
 }
