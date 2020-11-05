@@ -48,7 +48,6 @@ module.exports = (env, argv) => ({
       },
       {
         test: /\.s?css$/i,
-        exclude: /node_modules/,
         use: [
           argv.mode === 'development'
             ? 'style-loader'
