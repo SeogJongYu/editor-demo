@@ -47,6 +47,7 @@ module.exports = {
         ignore: ['@env'],
       },
     ],
+    'react-native/no-inline-styles': 'off',
   },
   settings: {
     'import/parsers': {
