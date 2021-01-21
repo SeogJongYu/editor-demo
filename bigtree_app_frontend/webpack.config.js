@@ -7,6 +7,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
+  .default;
+
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 const indexSourceFilePath = path.resolve('./public/index.ejs');
 
@@ -43,7 +47,17 @@ module.exports = (env, argv) => ({
       {
         test: /\.tsx?$/i,
         exclude: /node_modules/,
-        use: ['babel-loader', 'ts-loader'],
+        use: [
+          'babel-loader',
+          {
+            loader: 'ts-loader',
+            options: {
+              getCustomTransformers: () => ({
+                before: [styledComponentsTransformer],
+              }),
+            },
+          },
+        ],
       },
       {
         test: /\.s?css$/i,
