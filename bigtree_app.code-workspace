@@ -91,7 +91,6 @@
 					"run-script",
 					"web"
 				],
-				"noDebug": true,
 				"skipFiles": [
 					"<node_internals>/**"
 				]
