@@ -1,0 +1,3 @@
+{
+  "include": ["./bigtree_app_frontend/tsconfig.json"]
+}
