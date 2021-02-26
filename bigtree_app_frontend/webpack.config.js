@@ -42,12 +42,13 @@ module.exports = (env, argv) => ({
       {
         test: /\.jsx?$/i,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        use: ['cache-loader', 'babel-loader'],
       },
       {
         test: /\.tsx?$/i,
         exclude: /node_modules/,
         use: [
+          'cache-loader',
           'babel-loader',
           {
             loader: 'ts-loader',
