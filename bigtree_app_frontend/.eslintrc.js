@@ -1,3 +1,22 @@
+const extensions = [
+  '.android.js',
+  '.ios.js',
+  '.native.js',
+  '.web.js',
+  '.js',
+  '.android.ts',
+  '.android.tsx',
+  '.ios.ts',
+  '.ios.tsx',
+  '.native.ts',
+  '.native.tsx',
+  '.web.ts',
+  '.web.tsx',
+  '.d.ts',
+  '.ts',
+  '.tsx',
+];
+
 module.exports = {
   root: true,
   extends: [
@@ -53,28 +72,14 @@ module.exports = {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
     'import/resolver': {
-      'babel-module': {},
+      'babel-module': {
+        extensions,
+      },
       typescript: {
         alwaysTryTypes: true,
       },
       node: {
-        extensions: [
-          '.android.js',
-          '.ios.js',
-          '.native.js',
-          '.web.js',
-          '.js',
-          '.android.ts',
-          '.android.tsx',
-          '.ios.ts',
-          '.ios.tsx',
-          '.native.ts',
-          '.native.tsx',
-          '.web.ts',
-          '.web.tsx',
-          '.ts',
-          '.tsx',
-        ],
+        extensions,
       },
     },
     'import/ignore': ['react-native'],
