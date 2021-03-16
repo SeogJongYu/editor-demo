@@ -15,6 +15,7 @@ const styledComponentsTransformer = createStyledComponentsTransformer();
 const indexSourceFilePath = path.resolve('./public/index.ejs');
 
 module.exports = (env, argv) => ({
+  target: 'web',
   entry: [
     'core-js/stable',
     'regenerator-runtime/runtime',
