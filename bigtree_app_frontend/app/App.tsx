@@ -12,6 +12,7 @@ const animation = keyframes`
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-100px);
     width: calc(836.2px / 2);
