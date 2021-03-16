@@ -109,7 +109,7 @@ module.exports = (env, argv) => ({
         {
           from: 'public/**/*',
           to: '[path][name].[ext]',
-          filter: async (resourcePath) => {
+          filter: async resourcePath => {
             // index.ejs 파일은 복사하지 않음
             if (resourcePath === indexSourceFilePath) {
               return false;
@@ -117,7 +117,7 @@ module.exports = (env, argv) => ({
 
             return true;
           },
-          transformPath: (filePath) => {
+          transformPath: filePath => {
             // path에서 public/ 부분 제거
             const newPathSep = filePath.split(path.sep).slice(1);
             return path.join(...newPathSep);
