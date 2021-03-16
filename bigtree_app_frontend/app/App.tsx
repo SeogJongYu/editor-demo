@@ -1,13 +1,12 @@
 import React from 'react';
-
 import styled, {keyframes} from 'styled-components';
+
+import Config from '~/Config';
+import useSampleAPI from '~/hooks/useSampleAPI';
+import logo from '~/assets/logo.png';
 
 import PlatformComponent from './components/PlatformComponent';
 import CommonComponent from './components/CommonComponent';
-import useSampleAPI from '~/hooks/useSampleAPI';
-import Config from '~/Config';
-
-import logo from '~/assets/logo.png';
 
 const animation = keyframes`
   0%,
