@@ -8,5 +8,5 @@ import appConfig from './app.json';
 if (Platform.OS === 'web') {
   ReactDOM.render(<Root />, document.getElementById('root'));
 } else {
-  AppRegistry.registerComponent(appConfig.appName, () => Root);
+  AppRegistry.registerComponent(appConfig.name, () => Root);
 }
