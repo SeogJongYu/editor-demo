@@ -1,6 +1,7 @@
 const process = require('process');
 
 const COMMON_PLUGINS = [
+  ['react-native-web', {commonjs: true}],
   'babel-plugin-styled-components',
   '@babel/plugin-syntax-dynamic-import',
   '@babel/plugin-proposal-nullish-coalescing-operator',
@@ -50,7 +51,7 @@ const native_config = {
   ],
 };
 
-module.exports = (api) => {
+module.exports = api => {
   api.cache(false);
 
   if (process.env.PLATFORM === 'web') {
