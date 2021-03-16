@@ -24,6 +24,11 @@ const cacheVersion = ENV_FILES.map(getHash).join();
 
 module.exports = {
   cacheVersion,
+  resolver: {
+    extraNodeModules: {
+      '~': `${__dirname}/src`,
+    },
+  },
   transformer: {
     getTransformOptions: async () => ({
       transform: {
