@@ -91,12 +91,9 @@ if __name__ == '__main__':
     os.rename('bigtree_app_document', APP_NAME + '_document')
 
     os.rename('bigtree_app_frontend/ios/bigtree_app.xcodeproj/xcshareddata/xcschemes/bigtree_app.xcscheme', 'bigtree_app_frontend/ios/bigtree_app.xcodeproj/xcshareddata/xcschemes/' + APP_NAME + '.xcscheme')
-    os.rename('bigtree_app_frontend/ios/bigtree_app.xcodeproj/xcshareddata/xcschemes/bigtree_app-tvOS.xcscheme', 'bigtree_app_frontend/ios/bigtree_app.xcodeproj/xcshareddata/xcschemes/' + APP_NAME + '-tvOS.xcscheme')
     os.rename('bigtree_app_frontend/ios/bigtree_app.xcodeproj', 'bigtree_app_frontend/ios/' + APP_NAME + '.xcodeproj')
 
     os.rename('bigtree_app_frontend/ios/bigtree_app.xcworkspace', 'bigtree_app_frontend/ios/' + APP_NAME + '.xcworkspace')
-    os.rename('bigtree_app_frontend/ios/bigtree_app-tvOS', 'bigtree_app_frontend/ios/' + APP_NAME + '-tvOS')
-    os.rename('bigtree_app_frontend/ios/bigtree_app-tvOSTests', 'bigtree_app_frontend/ios/' + APP_NAME + '-tvOSTests')
     os.rename('bigtree_app_frontend/ios/bigtree_appTests/bigtree_appTests.m', 'bigtree_app_frontend/ios/bigtree_appTests/' + APP_NAME + 'Tests.m')
     os.rename('bigtree_app_frontend/ios/bigtree_appTests', 'bigtree_app_frontend/ios/' + APP_NAME + 'Tests')
     os.rename('bigtree_app_frontend/ios/bigtree_app', 'bigtree_app_frontend/ios/' + APP_NAME)
