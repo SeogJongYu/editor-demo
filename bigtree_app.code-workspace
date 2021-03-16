@@ -43,6 +43,10 @@
 			"**/*.code-search": true,
 			"**/migrations/*.py": true
 		},
+		"css.validate": false,
+		"less.validate": false,
+		"scss.validate": false,
+		"stylelint.enable": true
 	},
 	"tasks": {
 		// See https://go.microsoft.com/fwlink/?LinkId=733558
@@ -154,7 +158,8 @@
 			"dbaeumer.vscode-eslint",
 			"jpoissonnier.vscode-styled-components",
 			"msjsdiag.vscode-react-native",
-			"esbenp.prettier-vscode"
+			"esbenp.prettier-vscode",
+			"stylelint.vscode-stylelint"
 		]
 	}
 }
