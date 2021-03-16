@@ -3,7 +3,6 @@ import styled, {keyframes} from 'styled-components';
 
 import Config from '~/Config';
 import useSampleAPI from '~/hooks/useSampleAPI';
-import logo from '~/assets/logo.png';
 
 import PlatformComponent from './components/PlatformComponent';
 import CommonComponent from './components/CommonComponent';
@@ -60,7 +59,7 @@ const App: React.FC = () => {
     <Container>
       <Header>
         <AppLogoWrapper>
-          <AppLogo src={logo} alt="logo" />
+          <AppLogo src={require('~/assets/logo.png')} alt="logo" />
         </AppLogoWrapper>
         <p>
           Platform: <PlatformComponent />

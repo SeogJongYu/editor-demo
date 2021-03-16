@@ -4,7 +4,6 @@ import styled from 'styled-components/native';
 
 import Config from '~/Config';
 import useSampleAPI from '~/hooks/useSampleAPI';
-import logo from '~/assets/logo.png';
 
 import PlatformComponent from './components/PlatformComponent';
 import CommonComponent from './components/CommonComponent';
@@ -50,7 +49,13 @@ const AnimatedLogo: React.FC = () => {
     ).start();
   }, [width]);
 
-  return <LogoImage as={Animated.Image} source={logo} style={{width}} />;
+  return (
+    <LogoImage
+      as={Animated.Image}
+      source={require('~/assets/logo.png')}
+      style={{width}}
+    />
+  );
 };
 
 const NativeApp: React.FC = () => {
