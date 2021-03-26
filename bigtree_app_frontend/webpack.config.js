@@ -82,7 +82,7 @@ module.exports = (env, argv) => ({
         ],
       },
       {
-        test: /\.(ico|png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/i,
+        test: /\.(ico|png|jpg|jpeg|gif|woff|woff2|ttf|eot)$/i,
         loader: 'file-loader',
         options: {
           name:
@@ -92,6 +92,23 @@ module.exports = (env, argv) => ({
           esModule: false,
           outputPath: 'assets/',
         },
+      },
+      {
+        test: /\.svg$/i,
+        use: [
+          '@svgr/webpack',
+          {
+            loader: 'file-loader',
+            options: {
+              name:
+                argv.mode === 'development'
+                  ? '[path][name].[ext]'
+                  : '[name]-[hash].[ext]',
+              esModule: false,
+              outputPath: 'assets/',
+            },
+          },
+        ],
       },
     ],
   },
