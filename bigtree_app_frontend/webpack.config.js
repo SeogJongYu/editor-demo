@@ -44,13 +44,12 @@ module.exports = (env, argv) => ({
       {
         test: /\.jsx?$/i,
         exclude: /node_modules/,
-        use: ['cache-loader', 'babel-loader'],
+        use: ['babel-loader'],
       },
       {
         test: /\.tsx?$/i,
         exclude: /node_modules/,
         use: [
-          'cache-loader',
           'babel-loader',
           {
             loader: 'ts-loader',
@@ -163,6 +162,9 @@ module.exports = (env, argv) => ({
       chunks: 'all',
     },
   },
+  // App 용량이 커질 시 캐시 사용 고려
+  // https://webpack.js.org/configuration/other-options/#cache
+  // cache: true,
   devServer: {
     host: '0.0.0.0',
     historyApiFallback: true,
