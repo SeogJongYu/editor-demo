@@ -9,6 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default;
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const styledComponentsTransformer = createStyledComponentsTransformer();
 
@@ -54,6 +55,8 @@ module.exports = (env, argv) => ({
           {
             loader: 'ts-loader',
             options: {
+              // disable type checker - we will use it in fork plugin
+              transpileOnly: true,
               getCustomTransformers: () => ({
                 before: [styledComponentsTransformer],
               }),
@@ -151,6 +154,7 @@ module.exports = (env, argv) => ({
     new webpack.DefinePlugin({
       __DEV__: argv.mode === 'development',
     }),
+    new ForkTsCheckerWebpackPlugin(),
   ],
   optimization: {
     minimize: argv.mode === 'production',
