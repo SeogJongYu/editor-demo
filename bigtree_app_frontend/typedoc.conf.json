@@ -1,5 +1,5 @@
 {
-    "inputFiles": ["./app"],
-    "mode": "modules",
-    "out": "build_docs/"
+    "entryPoints": ["./app/"],
+    "entryPointStrategy": "expand",
+    "out": "../bigtree_app_document/build/html/typedoc/"
 }

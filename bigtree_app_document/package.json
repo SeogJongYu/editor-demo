@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "make html",
+    "build": "npm run build-sphinx && npm run build-typedoc",
+    "build-sphinx": "make html",
+    "build-typedoc": "cd ../bigtree_app_frontend && npm run build-docs",
     "clean": "make clean && python clean.py"
   },
   "author": "",

@@ -70,7 +70,9 @@ html_static_path = ['_static']
 # -- sphinxcontrib-apidoc settings ------------------------------------------
 apidoc_module_dir = '../../'
 apidoc_output_dir = 'api_document/backend'
-apidoc_excluded_paths = []
+apidoc_excluded_paths = [
+    'bigtree_app_backend/migrations/'
+]
 apidoc_separate_modules = True
 
 
