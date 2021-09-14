@@ -14,6 +14,10 @@ import os
 import sys
 import dotenv
 import django
+DOCUMENT_ROOT = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), '../',)
+)
+
 dotenv.load_dotenv()
 
 sys.path.insert(0, os.path.abspath('../../'))
@@ -36,6 +40,7 @@ author = 'Bigtree'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.apidoc',
+    'sphinxcontrib.plantuml',
     'myst_parser',
 ]
 
@@ -76,6 +81,7 @@ apidoc_excluded_paths = [
 ]
 apidoc_separate_modules = True
 
+plantuml = f"java -jar {os.path.join(DOCUMENT_ROOT, 'bin/plantuml.jar')}"
 
 def setup(app):
     app.add_css_file("style.css")
