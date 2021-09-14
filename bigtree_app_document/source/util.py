@@ -31,14 +31,15 @@ def process_django_model_docstring(app, what, name, obj, options, lines):
             # any help text
             verbose_name = force_text(field.verbose_name).capitalize()
 
-            if verbose_name:
-                # Add the model field to the end of the docstring as a param
-                # using the verbose name as the description
-                lines.append(u':param %s: %s' % (field.name, verbose_name))
-            else:
+            if help_text:
                 # Add the model field to the end of the docstring as a param
                 # using the help text as the description
                 lines.append(u':param %s: %s' % (field.name, help_text))
+            else:
+                # Add the model field to the end of the docstring as a param
+                # using the verbose name as the description
+                lines.append(u':param %s: %s' % (field.name, verbose_name))
+
 
             # Add the field's type to the docstring
             lines.append(u':type %s: %s' % (field.name, type(field).__name__))
