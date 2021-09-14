@@ -3,11 +3,10 @@
 
 빅트리 앱
 
-```{eval-rst}
-.. uml::
+```{uml}
 
-   Alice -> Bob: Hi!
-   Alice <- Bob: How are you?
+Alice -> Bob: Hi!
+Alice <- Bob: How are you?
 
 ```
 
