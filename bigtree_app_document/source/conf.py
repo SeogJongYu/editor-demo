@@ -24,7 +24,7 @@ django.setup()
 # -- Project information -----------------------------------------------------
 
 project = 'bigtree_app'
-copyright = '2020, Bigtree'
+copyright = '2021, Bigtree'
 author = 'Bigtree'
 
 
@@ -36,6 +36,7 @@ author = 'Bigtree'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinxcontrib.apidoc',
+    'myst_parser',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -77,4 +78,4 @@ apidoc_separate_modules = True
 
 
 def setup(app):
-    app.add_stylesheet("style.css")
+    app.add_css_file("style.css")
