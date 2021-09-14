@@ -84,4 +84,8 @@ apidoc_separate_modules = True
 plantuml = f"java -jar {os.path.join(DOCUMENT_ROOT, 'bin/plantuml.jar')}"
 
 def setup(app):
+    from util import process_django_model_docstring
+
+    app.connect('autodoc-process-docstring', process_django_model_docstring)
+
     app.add_css_file("style.css")
