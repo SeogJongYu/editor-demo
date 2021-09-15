@@ -11,9 +11,11 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+import os.path
 import sys
 import dotenv
 import django
+
 DOCUMENT_ROOT = os.path.abspath(
     os.path.join(os.path.dirname(__file__), '../',)
 )
@@ -21,6 +23,7 @@ DOCUMENT_ROOT = os.path.abspath(
 dotenv.load_dotenv()
 
 sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('./'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'bigtree_app.settings'
 django.setup()
 
