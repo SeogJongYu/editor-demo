@@ -15,6 +15,7 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* bigtree_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* bigtree_appTests.m */; };
+		44A5A85C26FDA9EE009AA0D8 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A5A85B26FDA9EE009AA0D8 /* File.swift */; };
 		44FB91BF24B700BE00C32468 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44FB91BE24B700BE00C32468 /* LaunchScreen.storyboard */; };
 		72C219EC6CA3BCA44D9F1F72 /* libPods-bigtree_app-bigtree_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4039D19DE2E057B481D451 /* libPods-bigtree_app-bigtree_appTests.a */; };
 		7B66C2B0298B731D433909E2 /* libPods-bigtree_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 48DC1E56A0AC5F29B52BEB07 /* libPods-bigtree_app.a */; };
@@ -51,6 +52,8 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = bigtree_app/main.m; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* bigtree_app-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bigtree_app-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* bigtree_app-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "bigtree_app-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		44A5A85826FDA8EB009AA0D8 /* bigtree_app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bigtree_app-Bridging-Header.h"; sourceTree = "<group>"; };
+		44A5A85B26FDA9EE009AA0D8 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		44FB91BE24B700BE00C32468 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48DC1E56A0AC5F29B52BEB07 /* libPods-bigtree_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-bigtree_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4D96C3168100487FBEB123 /* Pods-bigtree_app-bigtree_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bigtree_app-bigtree_appTests.release.xcconfig"; path = "Target Support Files/Pods-bigtree_app-bigtree_appTests/Pods-bigtree_app-bigtree_appTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				44FB91BE24B700BE00C32468 /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				44A5A85826FDA8EB009AA0D8 /* bigtree_app-Bridging-Header.h */,
 			);
 			name = bigtree_app;
 			sourceTree = "<group>";
@@ -158,6 +162,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				44A5A85B26FDA9EE009AA0D8 /* File.swift */,
 				13B07FAE1A68108700A75B9A /* bigtree_app */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* bigtree_appTests */,
@@ -278,7 +283,7 @@
 					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = F4J6BE37CP;
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1300;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
@@ -550,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				44A5A85C26FDA9EE009AA0D8 /* File.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,6 +597,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ADB410E0E5E81913CC169D1D /* Pods-bigtree_app-bigtree_appTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -614,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6B4D96C3168100487FBEB123 /* Pods-bigtree_app-bigtree_appTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = bigtree_appTests/Info.plist;
@@ -655,6 +663,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.app;
 				PRODUCT_NAME = bigtree_app;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "bigtree_app-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -681,6 +690,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.ibigtree.app;
 				PRODUCT_NAME = bigtree_app;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "bigtree_app-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
