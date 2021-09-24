@@ -19,7 +19,7 @@ const config = {
     [
       '@babel/preset-env',
       {
-        corejs: '3.9.1',
+        corejs: '3.18.0',
         useBuiltIns: 'entry',
       },
     ],
