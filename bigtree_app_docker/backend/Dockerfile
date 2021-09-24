@@ -1,7 +1,7 @@
-FROM python:3.8
+FROM python:3.9
 ARG BIGTREE_APP_TIMEZONE=Asia/Seoul
 RUN ln -sf /usr/share/zoneinfo/${BIGTREE_APP_TIMEZONE} /etc/localtime
-RUN pip install poetry==1.0.5
+RUN pip install poetry
 WORKDIR /app
 COPY pyproject.toml /app/pyproject.toml
 COPY poetry.lock /app/poetry.lock
