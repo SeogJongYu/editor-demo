@@ -1,7 +1,7 @@
-import {FC} from 'react';
-
 import App from './App';
 
-const Root: FC = () => <App />;
+function Root() {
+  return <App />;
+}
 
 export default Root;

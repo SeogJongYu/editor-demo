@@ -1,7 +1,7 @@
-import React from 'react';
-
 import NativeApp from './NativeApp';
 
-const Root: React.FC = () => <NativeApp />;
+function Root() {
+  return <NativeApp />;
+}
 
 export default Root;
