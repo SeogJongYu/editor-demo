@@ -1,6 +1,6 @@
-import React, {useEffect, useRef} from 'react';
+import {FC, useEffect, useRef} from 'react';
 import {Animated, Easing, StatusBar} from 'react-native';
-import styled from 'styled-components/native';
+import styled from '@emotion/native';
 
 import Config from '~/Config';
 import useSampleAPI from '~/hooks/useSampleAPI';
@@ -18,7 +18,7 @@ const LogoWrapper = styled.View`
   padding: 20px;
 `;
 
-const LogoImage = styled.Image`
+const LogoImage = styled(Animated.Image)`
   flex: 1;
   align-self: center;
   resize-mode: contain;
@@ -28,7 +28,7 @@ const CenterText = styled.Text`
   text-align: center;
 `;
 
-const AnimatedLogo: React.FC = () => {
+const AnimatedLogo: FC = () => {
   const width = useRef(new Animated.Value(100)).current;
 
   useEffect(() => {
@@ -58,7 +58,7 @@ const AnimatedLogo: React.FC = () => {
   );
 };
 
-const NativeApp: React.FC = () => {
+const NativeApp: FC = () => {
   const sampleAPIData = useSampleAPI();
 
   return (

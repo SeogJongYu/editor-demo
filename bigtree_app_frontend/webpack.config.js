@@ -7,22 +7,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
-  .default;
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-
-const styledComponentsTransformer = createStyledComponentsTransformer();
+const ReactRefreshTypeScript = require('react-refresh-typescript');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const indexSourceFilePath = path.resolve('./public/index.ejs');
 
 module.exports = (env, argv) => ({
   target: 'web',
-  entry: [
-    'core-js/stable',
-    'regenerator-runtime/runtime',
-    'react-hot-loader/patch',
-    './index.js',
-  ],
+  entry: ['core-js/stable', 'regenerator-runtime/runtime', './index.js'],
   output: {
     filename:
       argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
@@ -35,7 +28,6 @@ module.exports = (env, argv) => ({
   resolve: {
     alias: {
       'react-native$': 'react-native-web',
-      'react-dom': '@hot-loader/react-dom',
     },
     extensions: ['.web.ts', '.ts', '.web.tsx', '.tsx', '.web.js', '.js'],
   },
@@ -57,7 +49,9 @@ module.exports = (env, argv) => ({
               // disable type checker - we will use it in fork plugin
               transpileOnly: true,
               getCustomTransformers: () => ({
-                before: [styledComponentsTransformer],
+                before: [
+                  argv.mode === 'development' && ReactRefreshTypeScript(),
+                ].filter(Boolean),
               }),
             },
           },
@@ -154,7 +148,8 @@ module.exports = (env, argv) => ({
       __DEV__: argv.mode === 'development',
     }),
     new ForkTsCheckerWebpackPlugin(),
-  ],
+    argv.mode === 'development' && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
   optimization: {
     minimize: argv.mode === 'production',
     minimizer: [new TerserPlugin()],
@@ -174,5 +169,6 @@ module.exports = (env, argv) => ({
         changeOrigin: true,
       },
     },
+    hot: true,
   },
 });

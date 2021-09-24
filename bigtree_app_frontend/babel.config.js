@@ -1,11 +1,17 @@
 const process = require('process');
 
 const COMMON_PLUGINS = [
-  'babel-plugin-styled-components',
+  '@emotion',
   '@babel/plugin-syntax-dynamic-import',
   '@babel/plugin-proposal-nullish-coalescing-operator',
   '@babel/plugin-proposal-optional-chaining',
   'module:react-native-dotenv',
+  [
+    '@babel/plugin-transform-react-jsx',
+    {
+      runtime: 'automatic',
+    },
+  ],
 ];
 
 const config = {
@@ -31,7 +37,6 @@ const config = {
         },
       },
     ],
-    'react-hot-loader/babel',
     ...COMMON_PLUGINS,
   ],
 };

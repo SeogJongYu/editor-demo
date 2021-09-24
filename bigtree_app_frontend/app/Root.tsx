@@ -1,8 +1,7 @@
-import React from 'react';
-import {hot} from 'react-hot-loader/root';
+import {FC} from 'react';
 
 import App from './App';
 
-const Root: React.FC = () => <App />;
+const Root: FC = () => <App />;
 
-export default hot(Root);
+export default Root;
