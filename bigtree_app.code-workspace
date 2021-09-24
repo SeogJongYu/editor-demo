@@ -6,7 +6,7 @@
   ],
   "settings": {
     "[python]": {
-      "editor.rulers": [79],
+      "editor.rulers": [100],
       "editor.tabSize": 4
     },
     "[javascript]": {
