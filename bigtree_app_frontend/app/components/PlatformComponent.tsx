@@ -1,5 +1,5 @@
-import React from 'react';
-
-const PlatformComponent: React.FC = () => <>Web!</>;
+function PlatformComponent() {
+  return <>Web!</>;
+}
 
 export default PlatformComponent;

@@ -1,5 +1,5 @@
-import React from 'react';
-
-const CommonComponent: React.FC = () => <>Hello Bigtree!</>;
+function CommonComponent() {
+  return <>Hello Bigtree!</>;
+}
 
 export default CommonComponent;

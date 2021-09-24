@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled from '@emotion/styled';
+import {keyframes} from '@emotion/react';
 
 import Config from '~/Config';
 import useSampleAPI from '~/hooks/useSampleAPI';
@@ -53,7 +53,7 @@ const AppLogo = styled.img`
  *
  * 로고 출력 및 샘플 API 연동
  */
-const App: React.FC = () => {
+function App() {
   const sampleAPIData = useSampleAPI();
 
   return (
@@ -74,6 +74,6 @@ const App: React.FC = () => {
       </Header>
     </Container>
   );
-};
+}
 
 export default App;

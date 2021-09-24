@@ -1,5 +1,5 @@
-import React from 'react';
-
-const PlatformComponent: React.FC = () => <>Android!</>;
+function PlatformComponent() {
+  return <>Android!</>;
+}
 
 export default PlatformComponent;

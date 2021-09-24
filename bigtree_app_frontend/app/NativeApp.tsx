@@ -1,4 +1,4 @@
-import {FC, useEffect, useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import {Animated, Easing, StatusBar} from 'react-native';
 import styled from '@emotion/native';
 
@@ -28,7 +28,7 @@ const CenterText = styled.Text`
   text-align: center;
 `;
 
-const AnimatedLogo: FC = () => {
+function AnimatedLogo() {
   const width = useRef(new Animated.Value(100)).current;
 
   useEffect(() => {
@@ -56,9 +56,9 @@ const AnimatedLogo: FC = () => {
       style={{width}}
     />
   );
-};
+}
 
-const NativeApp: FC = () => {
+function NativeApp() {
   const sampleAPIData = useSampleAPI();
 
   return (
@@ -80,6 +80,6 @@ const NativeApp: FC = () => {
       </Container>
     </>
   );
-};
+}
 
 export default NativeApp;
