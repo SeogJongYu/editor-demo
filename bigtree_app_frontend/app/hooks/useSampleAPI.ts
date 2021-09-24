@@ -7,8 +7,8 @@ function useSampleAPI() {
 
   useEffect(() => {
     fetch(`${Config.API_SERVER}/samples/`)
-      .then((response) => response.json())
-      .then((json) => setResponseData(json))
+      .then(response => response.json())
+      .then(json => setResponseData(json))
       .catch(() => {
         setResponseData({message: 'Unable to connect to Sample API'});
       });
