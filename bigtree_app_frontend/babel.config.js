@@ -1,7 +1,6 @@
 const process = require('process');
 
 const COMMON_PLUGINS = [
-  ['react-native-web', {commonjs: true}],
   'babel-plugin-styled-components',
   '@babel/plugin-syntax-dynamic-import',
   '@babel/plugin-proposal-nullish-coalescing-operator',
@@ -22,6 +21,7 @@ const config = {
     '@babel/preset-flow',
   ],
   plugins: [
+    ['react-native-web', {commonjs: true}],
     [
       'module-resolver',
       {
