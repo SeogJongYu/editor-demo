@@ -37,10 +37,6 @@ module.exports = {
         ignoreTemplateLiterals: true,
       },
     ],
-    'no-unused-vars': [
-      'warn',
-      {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
-    ],
     '@typescript-eslint/no-unused-vars': [
       'warn',
       {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
@@ -66,6 +62,7 @@ module.exports = {
         ignore: ['@env'],
       },
     ],
+    'no-shadow': 'off',
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
   },
