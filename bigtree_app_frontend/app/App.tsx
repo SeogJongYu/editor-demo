@@ -1,52 +1,10 @@
-import styled from '@emotion/styled';
-import {keyframes} from '@emotion/react';
+import {css} from 'twin.macro';
 
 import Config from '~/Config';
 import useSampleAPI from '~/hooks/useSampleAPI';
 
 import PlatformComponent from './components/PlatformComponent';
 import CommonComponent from './components/CommonComponent';
-
-const animation = keyframes`
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-100px);
-    width: calc(836.2px / 2);
-  }
-`;
-
-const Container = styled.div`
-  text-align: center;
-`;
-
-const Header = styled.header`
-  background-color: #eeee;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
-`;
-
-const AppLogoWrapper = styled.div`
-  @media (prefers-reduced-motion: no-preference) {
-    animation: ${animation} infinite 1s;
-  }
-
-  width: 836.2px;
-  height: 502.4px;
-`;
-
-const AppLogo = styled.img`
-  width: 100%;
-  height: 100%;
-`;
 
 /**
  * Example Component
@@ -57,11 +15,41 @@ function App() {
   const sampleAPIData = useSampleAPI();
 
   return (
-    <Container>
-      <Header>
-        <AppLogoWrapper>
-          <AppLogo src={require('~/assets/logo.png')} alt="logo" />
-        </AppLogoWrapper>
+    <div
+      tw="text-center flex flex-col items-center content-center h-screen text-xl bg-gray-100"
+      css={{label: 'container'}}>
+      <header>
+        <div
+          tw="text-center"
+          css={css`
+            @keyframes logo-bounce {
+              0%,
+              100% {
+                transform: translateY(0);
+              }
+
+              50% {
+                transform: translateY(-100px);
+                width: calc(836.2px / 2);
+              }
+            }
+
+            @media (prefers-reduced-motion: no-preference) {
+              animation: logo-bounce infinite 1s;
+            }
+
+            width: 836.2px;
+            height: 502.4px;
+            margin-top: 150px;
+            label: logo-container;
+          `}>
+          <img
+            tw="h-full w-full"
+            css={{label: 'logo-image'}}
+            src={require('~/assets/logo.png')}
+            alt="logo"
+          />
+        </div>
         <p>
           Platform: <PlatformComponent />
           <br />
@@ -71,8 +59,8 @@ function App() {
           <br />
         </p>
         <CommonComponent />
-      </Header>
-    </Container>
+      </header>
+    </div>
   );
 }
 

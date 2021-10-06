@@ -1,6 +1,13 @@
 import {useEffect, useRef} from 'react';
-import {Animated, Easing, StatusBar} from 'react-native';
-import styled from '@emotion/native';
+import {
+  Text,
+  Animated,
+  Easing,
+  SafeAreaView,
+  StatusBar,
+  View,
+} from 'react-native';
+import styled, {css} from '@emotion/native';
 
 import Config from '~/Config';
 import useSampleAPI from '~/hooks/useSampleAPI';
@@ -8,24 +15,10 @@ import useSampleAPI from '~/hooks/useSampleAPI';
 import PlatformComponent from './components/PlatformComponent';
 import CommonComponent from './components/CommonComponent';
 
-const Container = styled.SafeAreaView`
-  flex: 1;
-  justify-content: center;
-`;
-
-const LogoWrapper = styled.View`
-  height: 200px;
-  padding: 20px;
-`;
-
 const LogoImage = styled(Animated.Image)`
   flex: 1;
   align-self: center;
   resize-mode: contain;
-`;
-
-const CenterText = styled.Text`
-  text-align: center;
 `;
 
 function AnimatedLogo() {
@@ -49,13 +42,7 @@ function AnimatedLogo() {
     ).start();
   }, [width]);
 
-  return (
-    <LogoImage
-      as={Animated.Image}
-      source={require('~/assets/logo.png')}
-      style={{width}}
-    />
-  );
+  return <LogoImage source={require('~/assets/logo.png')} style={{width}} />;
 }
 
 function NativeApp() {
@@ -64,11 +51,22 @@ function NativeApp() {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <Container>
-        <LogoWrapper>
+      <SafeAreaView
+        style={css`
+          flex: 1;
+          justify-content: center;
+        `}>
+        <View
+          style={css`
+            height: 200px;
+            padding: 20px;
+          `}>
           <AnimatedLogo />
-        </LogoWrapper>
-        <CenterText>
+        </View>
+        <Text
+          style={css`
+            text-align: center;
+          `}>
           Platform: <PlatformComponent />
           {'\n'}
           API Server: {Config.API_SERVER}
@@ -76,8 +74,8 @@ function NativeApp() {
           API Response: {sampleAPIData.message}
           {'\n'}
           <CommonComponent />
-        </CenterText>
-      </Container>
+        </Text>
+      </SafeAreaView>
     </>
   );
 }

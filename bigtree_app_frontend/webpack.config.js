@@ -7,8 +7,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const ReactRefreshTypeScript = require('react-refresh-typescript');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const indexSourceFilePath = path.resolve('./public/index.ejs');
@@ -41,21 +39,7 @@ module.exports = (env, argv) => ({
       {
         test: /\.tsx?$/i,
         exclude: /node_modules/,
-        use: [
-          'babel-loader',
-          {
-            loader: 'ts-loader',
-            options: {
-              // disable type checker - we will use it in fork plugin
-              transpileOnly: true,
-              getCustomTransformers: () => ({
-                before: [
-                  argv.mode === 'development' && ReactRefreshTypeScript(),
-                ].filter(Boolean),
-              }),
-            },
-          },
-        ],
+        use: ['babel-loader'],
       },
       {
         test: /\.s?css$/i,
@@ -147,7 +131,6 @@ module.exports = (env, argv) => ({
     new webpack.DefinePlugin({
       __DEV__: argv.mode === 'development',
     }),
-    new ForkTsCheckerWebpackPlugin(),
     argv.mode === 'development' && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
   optimization: {

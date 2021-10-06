@@ -16,7 +16,7 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 ### Backend
 
-* Python 3.8
+* Python 3.9
 * Django
 * Django REST Framework
 * Docker (nginx, gunicorn)
@@ -31,9 +31,12 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 * [Optional Chaining](https://github.com/tc39/proposal-optional-chaining)
 * [Nullish Coalescing](https://github.com/tc39/proposal-nullish-coalescing)
 * TypeScript
-* styled-components
-* SASS
 * TypeDoc(문서화)
+* [Emotion](https://emotion.sh/)
+* [Tailwind CSS](https://tailwindcss.com/)
+* [twin.macro](https://github.com/ben-rogerson/twin.macro)
+* SASS
+
 
 
 개발환경 구축
@@ -207,6 +210,10 @@ Metro Bundler가 이미 실행중인 경우 반영이 안 될 수 있습니다.
 
 변경사항
 ----------
+
+### v5
+* styled-components 대신 Emotion 사용
+* Tailwind CSS 추가
 
 ### v4
 * TypeScript 기반으로 변경
