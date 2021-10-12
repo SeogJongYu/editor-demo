@@ -1,7 +1,7 @@
-import env from './env';
+import {API_SERVER} from '@env';
 
 const Config = {
-  API_SERVER: env.API_SERVER,
+  API_SERVER: API_SERVER || '/api/v1',
 };
 
 export default Config;

@@ -1,9 +1,4 @@
 const extensions = [
-  '.android.js',
-  '.ios.js',
-  '.native.js',
-  '.web.js',
-  '.js',
   '.android.ts',
   '.android.tsx',
   '.ios.ts',
@@ -15,57 +10,104 @@ const extensions = [
   '.d.ts',
   '.ts',
   '.tsx',
+  '.android.js',
+  '.ios.js',
+  '.native.js',
+  '.web.js',
+  '.js',
 ];
+
+const COMMON_EXTENDS = [
+  'eslint:recommended',
+  'plugin:import/recommended',
+  'plugin:react/recommended',
+  'plugin:react/jsx-runtime',
+  'plugin:prettier/recommended',
+];
+
+const COMMON_RULES = {
+  'max-len': [
+    'error',
+    100,
+    2,
+    {
+      ignoreUrls: true,
+      ignoreComments: true,
+      ignoreRegExpLiterals: true,
+      ignoreStrings: true,
+      ignoreTemplateLiterals: true,
+    },
+  ],
+  'import/order': [
+    'warn',
+    {
+      'newlines-between': 'always',
+      pathGroups: [
+        {
+          pattern: '~/**',
+          group: 'parent',
+          position: 'before',
+        },
+      ],
+    },
+  ],
+  'import/no-unresolved': [
+    'error',
+    {
+      ignore: ['@env'],
+    },
+  ],
+  'react-native/no-inline-styles': 'off',
+  'react/jsx-uses-react': 'off',
+  'react/react-in-jsx-scope': 'off',
+};
 
 module.exports = {
   root: true,
-  extends: [
-    '@react-native-community',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-  ],
-  rules: {
-    'max-len': [
-      'error',
-      100,
-      2,
-      {
-        ignoreUrls: true,
-        ignoreComments: false,
-        ignoreRegExpLiterals: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true,
+  env: {
+    browser: true,
+  },
+  overrides: [
+    {
+      files: '**/*.+(ts|tsx)',
+      parser: '@typescript-eslint/parser',
+      plugins: ['@typescript-eslint', 'react-native'],
+      extends: [
+        ...COMMON_EXTENDS,
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+      ],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-unused-vars': [
+          'warn',
+          {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
+        ],
+        ...COMMON_RULES,
       },
-    ],
-    '@typescript-eslint/no-unused-vars': [
-      'warn',
-      {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
-    ],
-    'import/order': [
-      'warn',
-      {
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            pattern: '~/**',
-            group: 'parent',
-            position: 'before',
-          },
+    },
+    {
+      files: '**/*.+(js|jsx)',
+      env: {
+        commonjs: true,
+        es6: true,
+        node: true,
+      },
+      parser: 'babel-eslint',
+      parserOptions: {
+        ecmaVersion: 2018,
+      },
+      extends: [...COMMON_EXTENDS],
+      rules: {
+        ...COMMON_RULES,
+        'no-unused-vars': [
+          'warn',
+          {varsIgnorePattern: '^_', argsIgnorePattern: '^_'},
         ],
       },
-    ],
-    'import/newline-after-import': ['warn'],
-    'react/jsx-no-undef': ['error', {allowGlobals: true}],
-    'import/no-unresolved': [
-      'error',
-      {
-        ignore: ['@env'],
-      },
-    ],
-    'no-shadow': 'off',
-    'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
-  },
+    },
+  ],
   settings: {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],

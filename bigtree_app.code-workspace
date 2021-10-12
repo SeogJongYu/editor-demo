@@ -12,17 +12,17 @@
     "[javascript]": {
       "editor.rulers": [100],
       "editor.tabSize": 2,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[typescript]": {
       "editor.rulers": [100],
       "editor.tabSize": 2,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "[typescriptreact]": {
       "editor.rulers": [100],
       "editor.tabSize": 2,
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
     "python.linting.ignorePatterns": [
       ".vscode/*.py",
@@ -145,8 +145,8 @@
       "dbaeumer.vscode-eslint",
       "jpoissonnier.vscode-styled-components",
       "msjsdiag.vscode-react-native",
-      "esbenp.prettier-vscode",
-      "stylelint.vscode-stylelint"
+      "stylelint.vscode-stylelint",
+      "bradlc.vscode-tailwindcss"
     ]
   }
 }

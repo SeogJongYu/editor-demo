@@ -28,8 +28,6 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 * NodeJS v14
 * React
 * React Native
-* [Optional Chaining](https://github.com/tc39/proposal-optional-chaining)
-* [Nullish Coalescing](https://github.com/tc39/proposal-nullish-coalescing)
 * TypeScript
 * TypeDoc(문서화)
 * [Emotion](https://emotion.sh/)
@@ -44,7 +42,7 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 ### 설치
 
-* [Poetry 설치](https://python-poetry.org/docs/#installation) 후 진행
+* [Poetry 설치](https://python-poetry.org/docs/#installation), [Yarn](https://yarnpkg.com) 설치
 
 Backend가 필요 없는 프로젝트의 경우 init 후 frontend 부분만 사용하면 됩니다.
 
@@ -68,8 +66,11 @@ pip install poetry
 # Backend 의존성 설치
 poetry install
 
+# Yarn 없을 경우 머저 설치
+npm install -g yarn
+
 # Frontend 의존성 설치
-npm install
+yarn
 ```
 
 ### 실행
@@ -92,13 +93,13 @@ python manage.py runserver
 cd bigtree_app_frontend
 
 # 웹 화면 실행
-npm run web
+npm run start:web
 
 # iOS 앱 실행
-npm run ios
+npm run start:ios
 
 # 안드로이드 앱 실행
-npm run android
+npm run start:android
 ```
 
 ### Docker
@@ -129,11 +130,6 @@ BIGTREE_APP_TIMEZONE=Asia/Seoul
 ```
 
 #### Frontend
-
-* bigtree_app_frontend/.env.development
-* bigtree_app_frontend/.env.production
-
-개발/프로덕션별로 다르게 지정할 수 있음.
 
 ```
 API_SERVER=http://172.30.1.100:8000/api/v1
@@ -176,19 +172,9 @@ BIGTREE_APP_TIMEZONE=Asia/Seoul
 ```
 poetry shell
 cd bigtree_app_document
-npm install
-npm run build
+yarn build
 ```
 
-
-### Frontend
-
-아래 명령어를 실행하면 bigtree_app_frontend/build_docs/ 에 html 파일로 생성됨.
-
-```
-cd bigtree_app_frontend
-npm run build-docs
-```
 
 Visual Studio Code
 ------------------
@@ -210,6 +196,10 @@ Metro Bundler가 이미 실행중인 경우 반영이 안 될 수 있습니다.
 
 변경사항
 ----------
+
+### v6
+* 전반적으로 설정파일 정리
+* .env 파일 통합 및 캐시 문제 해결
 
 ### v5
 * styled-components 대신 Emotion 사용

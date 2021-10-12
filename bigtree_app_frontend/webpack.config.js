@@ -5,24 +5,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
-const CssUrlRelativePlugin = require('css-url-relative-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-const indexSourceFilePath = path.resolve('./public/index.ejs');
+const {cacheVersion} = require('./common.config');
 
-module.exports = (env, argv) => ({
-  target: 'web',
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
+module.exports = {
+  mode: isDevelopment ? 'development' : 'production',
+  cache: {
+    type: 'filesystem',
+    version: cacheVersion,
+    buildDependencies: {
+      config: [__filename],
+    },
+  },
   entry: ['core-js/stable', 'regenerator-runtime/runtime', './index.js'],
   output: {
-    filename:
-      argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
-    chunkFilename:
-      argv.mode === 'development' ? 'js/[name].js' : 'js/[name].[hash].js',
+    filename: 'js/[name].[contenthash].js',
+    assetModuleFilename: 'asset/[name].[contenthash][ext]',
     path: path.join(__dirname, '/build'),
     publicPath: '/',
   },
-  devtool: argv.mode === 'development' ? 'eval-cheap-module-source-map' : false,
+  devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
   resolve: {
     alias: {
       'react-native$': 'react-native-web',
@@ -44,34 +49,33 @@ module.exports = (env, argv) => ({
       {
         test: /\.s?css$/i,
         use: [
-          argv.mode === 'development'
-            ? 'style-loader'
-            : MiniCssExtractPlugin.loader,
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
-              sourceMap: argv.mode === 'development',
+              sourceMap: isDevelopment,
             },
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: argv.mode === 'development',
+              sourceMap: isDevelopment,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              postcssOptions: {
+                config: './postcss.config.js',
+                sourceMap: isDevelopment,
+              },
             },
           },
         ],
       },
       {
         test: /\.(ico|png|jpg|jpeg|gif|woff|woff2|ttf|eot)$/i,
-        loader: 'file-loader',
-        options: {
-          name:
-            argv.mode === 'development'
-              ? '[path][name].[ext]'
-              : '[name]-[hash].[ext]',
-          esModule: false,
-          outputPath: 'assets/',
-        },
+        type: 'asset/resource',
       },
       {
         test: /\.svg$/i,
@@ -80,10 +84,7 @@ module.exports = (env, argv) => ({
           {
             loader: 'file-loader',
             options: {
-              name:
-                argv.mode === 'development'
-                  ? '[path][name].[ext]'
-                  : '[name]-[hash].[ext]',
+              name: '[name].[contenthash][ext]',
               esModule: false,
               outputPath: 'assets/',
             },
@@ -94,31 +95,19 @@ module.exports = (env, argv) => ({
   },
   plugins: [
     new CleanWebpackPlugin(),
-    ...(argv.mode === 'development'
-      ? []
-      : [
-          new MiniCssExtractPlugin({
-            filename: 'css/[name]-[hash].css',
-            chunkFilename: 'css/[id].css',
-          }),
-        ]),
+    !isDevelopment &&
+      new MiniCssExtractPlugin({
+        filename: 'css/[name]-[contenthash].css',
+        chunkFilename: 'css/[id].css',
+      }),
     new CopyPlugin({
       patterns: [
         {
-          from: 'public/**/*',
-          to: '[path][name].[ext]',
-          filter: async resourcePath => {
-            // index.ejs 파일은 복사하지 않음
-            if (resourcePath === indexSourceFilePath) {
-              return false;
-            }
-
-            return true;
-          },
-          transformPath: filePath => {
-            // path에서 public/ 부분 제거
-            const newPathSep = filePath.split(path.sep).slice(1);
-            return path.join(...newPathSep);
+          from: '**/*',
+          to: '[path][name][ext]',
+          context: 'public/',
+          globOptions: {
+            ignore: [path.resolve('./public/index.ejs')],
           },
         },
       ],
@@ -127,31 +116,24 @@ module.exports = (env, argv) => ({
       template: './public/index.ejs',
       filename: 'index.html',
     }),
-    new CssUrlRelativePlugin(),
     new webpack.DefinePlugin({
-      __DEV__: argv.mode === 'development',
+      __DEV__: isDevelopment,
     }),
-    argv.mode === 'development' && new ReactRefreshWebpackPlugin(),
+    isDevelopment && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
   optimization: {
-    minimize: argv.mode === 'production',
-    minimizer: [new TerserPlugin()],
-    splitChunks: {
-      chunks: 'all',
-    },
+    minimize: !isDevelopment,
   },
-  // App 용량이 커질 시 캐시 사용 고려
-  // https://webpack.js.org/configuration/other-options/#cache
-  // cache: true,
   devServer: {
     host: '0.0.0.0',
     historyApiFallback: true,
-    proxy: {
-      '/api/': {
-        target: 'http://127.0.0.1:8000',
+    proxy: [
+      {
+        context: ['/api', '/ws', '/media', '/static', '/admin', '/views'],
+        target: 'http://localhost:8000',
         changeOrigin: true,
       },
-    },
+    ],
     hot: true,
   },
-});
+};
