@@ -10,10 +10,9 @@ import {
 import styled, {css} from '@emotion/native';
 
 import Config from '~/Config';
-import useSampleAPI from '~/hooks/useSampleAPI';
-
-import PlatformComponent from './components/PlatformComponent';
-import CommonComponent from './components/CommonComponent';
+import useSampleAPI from '~/common/hooks/useSampleAPI';
+import PlatformComponent from '~/common/components/PlatformComponent';
+import CommonComponent from '~/common/components/CommonComponent';
 
 const LogoImage = styled(Animated.Image)`
   flex: 1;

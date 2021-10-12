@@ -1,4 +1,4 @@
-import NativeApp from './NativeApp';
+import NativeApp from './native/NativeApp';
 
 function Root() {
   return <NativeApp />;

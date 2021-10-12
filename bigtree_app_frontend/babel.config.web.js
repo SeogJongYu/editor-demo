@@ -22,8 +22,8 @@ module.exports = {
         },
       },
     ],
-    'babel-plugin-react-native-web',
-    isDevelopment && ['react-refresh/babel'],
+    ['react-native-web', {commonjs: true}],
+    isDevelopment && 'react-refresh/babel',
     [
       'module:react-native-dotenv',
       {

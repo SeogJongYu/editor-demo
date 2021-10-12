@@ -1,9 +1,7 @@
-import './Root.scss';
-
-import App from './App';
+import WebApp from './web/WebApp';
 
 function Root() {
-  return <App />;
+  return <WebApp />;
 }
 
 export default Root;

@@ -1,17 +1,18 @@
 import {css} from 'twin.macro';
 
 import Config from '~/Config';
-import useSampleAPI from '~/hooks/useSampleAPI';
+import useSampleAPI from '~/common/hooks/useSampleAPI';
+import PlatformComponent from '~/common/components/PlatformComponent';
+import CommonComponent from '~/common/components/CommonComponent';
 
-import PlatformComponent from './components/PlatformComponent';
-import CommonComponent from './components/CommonComponent';
+import './WebApp.scss';
 
 /**
  * Example Component
  *
  * 로고 출력 및 샘플 API 연동
  */
-function App() {
+function WebApp() {
   const sampleAPIData = useSampleAPI();
 
   return (
@@ -46,7 +47,7 @@ function App() {
           <img
             tw="h-full w-full"
             css={{label: 'logo-image'}}
-            src={require('~/assets/logo.png')}
+            src={require('~/common/assets/logo.png')}
             alt="logo"
           />
         </div>
@@ -64,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default WebApp;
