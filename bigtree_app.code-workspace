@@ -54,8 +54,8 @@
       {
         "label": "Build Web",
         "type": "process",
-        "command": "npm",
-        "args": ["run", "build-web"],
+        "command": "yarn",
+        "args": ["run", "build:web"],
         "options": {
           "cwd": "${workspaceRoot}/bigtree_app_frontend"
         }
@@ -85,9 +85,9 @@
         "type": "node",
         "request": "launch",
         "name": "Frontend - Web",
-        "runtimeExecutable": "npm",
+        "runtimeExecutable": "yarn",
         "cwd": "${workspaceRoot}/bigtree_app_frontend",
-        "runtimeArgs": ["run-script", "web"],
+        "runtimeArgs": ["start:web"],
         "skipFiles": ["<node_internals>/**"],
         "resolveSourceMapLocations": [
           "${workspaceRoot}/**",
@@ -114,6 +114,13 @@
         "type": "chrome",
         "request": "launch",
         "name": "Frotend - Launch Chrome",
+        "url": "http://127.0.0.1:8080",
+        "webRoot": "${workspaceRoot}/bigtree_app_frontend/"
+      },
+      {
+        "type": "edge",
+        "request": "launch",
+        "name": "Frotend - Launch Edge",
         "url": "http://127.0.0.1:8080",
         "webRoot": "${workspaceRoot}/bigtree_app_frontend/"
       },
