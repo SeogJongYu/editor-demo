@@ -26,6 +26,7 @@ if __name__ == '__main__':
         '.java',
         '.xml',
         'Podfile',
+        '.h',
         '.m',
         '.xib',
         '.pbxproj',
