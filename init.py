@@ -26,7 +26,6 @@ if __name__ == '__main__':
         '.java',
         '.xml',
         'Podfile',
-        '.h',
         '.m',
         '.xib',
         '.pbxproj',
@@ -98,6 +97,7 @@ API_SERVER_ANDROID=http://127.0.0.1:8000/api/v1''')
     os.rename('bigtree_app_frontend/ios/bigtree_appTests/bigtree_appTests.m', 'bigtree_app_frontend/ios/bigtree_appTests/' + APP_NAME + 'Tests.m')
     os.rename('bigtree_app_frontend/ios/bigtree_appTests', 'bigtree_app_frontend/ios/' + APP_NAME + 'Tests')
     os.rename('bigtree_app_frontend/ios/bigtree_app', 'bigtree_app_frontend/ios/' + APP_NAME)
+    os.rename('bigtree_app_frontend/ios/bigtree_app-Bridging-Header.h', 'bigtree_app_frontend/ios/' + APP_NAME + '-Bridging-Header.h')
 
     os.makedirs('bigtree_app_frontend/android/app/src/debug/java/' + APP_NATIVE_PACKAGE_NAME.replace(".", "/"), exist_ok=True)
 
