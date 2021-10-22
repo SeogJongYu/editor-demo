@@ -41,7 +41,9 @@ function AnimatedLogo() {
     ).start();
   }, [width]);
 
-  return <LogoImage source={require('~/assets/logo.png')} style={{width}} />;
+  return (
+    <LogoImage source={require('~/common/assets/logo.png')} style={{width}} />
+  );
 }
 
 function NativeApp() {
