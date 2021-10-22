@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn start:web",
-    "build": "yarn build:web",
+    "web": "yarn start:web",
+    "android": "yarn start:android",
+    "ios": "yarn start:ios",
     "build:web": "cross-env PLATFORM=web NODE_ENV=production webpack",
     "build:docs": "cross-env PLATFORM=web typedoc --options typedoc.conf.json",
     "start:web": "cross-env PLATFORM=web NODE_ENV=development webpack serve",
