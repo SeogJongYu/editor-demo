@@ -79,10 +79,8 @@ if __name__ == '__main__':
         if path.is_file() and is_target_file(absolute_path):
             process_file(absolute_path)
 
-    with open('bigtree_app_frontend/.env.development', 'w', encoding='utf-8') as f:
-        f.write('''API_SERVER_WEB=/api/v1
-API_SERVER_IOS=http://127.0.0.1:8000/api/v1
-API_SERVER_ANDROID=http://127.0.0.1:8000/api/v1''')
+    with open('bigtree_app_frontend/.env', 'w', encoding='utf-8') as f:
+        f.write('''API_SERVER=http://127.0.0.1:8080/api/v1''')
 
 
     os.rename('bigtree_app', APP_NAME)
