@@ -6,6 +6,7 @@
     "web": "yarn start:web",
     "android": "yarn start:android",
     "ios": "yarn start:ios",
+    "native": "yarn start:native",
     "build:web": "cross-env PLATFORM=web NODE_ENV=production webpack",
     "build:docs": "cross-env PLATFORM=web typedoc --options typedoc.conf.json",
     "start:web": "cross-env PLATFORM=web NODE_ENV=development webpack serve",
