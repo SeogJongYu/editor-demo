@@ -127,6 +127,7 @@ module.exports = {
   devServer: {
     host: '0.0.0.0',
     historyApiFallback: true,
+    allowedHosts: 'all',
     proxy: [
       {
         context: ['/api', '/ws', '/media', '/static', '/admin', '/views'],
