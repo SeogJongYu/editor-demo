@@ -24,11 +24,6 @@ module.exports = {
     ],
     ['react-native-web', {commonjs: true}],
     isDevelopment && 'react-refresh/babel',
-    [
-      'module:react-native-dotenv',
-      {
-        path: '../.env',
-      },
-    ],
+    'module:react-native-dotenv',
   ].filter(Boolean),
 };

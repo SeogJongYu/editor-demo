@@ -2,9 +2,9 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 const ENV_FILES = [
-  '../.env',
-  '../.env.development',
-  '../.env.production',
+  '.env',
+  '.env.development',
+  '.env.production',
   './app/Config.ts',
 ];
 
