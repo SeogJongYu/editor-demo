@@ -99,7 +99,7 @@
         "request": "launch",
         "name": "Frontend - iOS",
         "platform": "ios",
-        "cwd": "${workspaceRoot}/bigtree_app_frontend",
+        "cwd": "${workspaceRoot}",
         "skipFiles": ["<node_internals>/**"]
       },
       {
@@ -107,7 +107,7 @@
         "request": "launch",
         "name": "Frontend - Android",
         "platform": "android",
-        "cwd": "${workspaceRoot}/bigtree_app_frontend",
+        "cwd": "${workspaceRoot}",
         "skipFiles": ["<node_internals>/**"]
       },
       {
