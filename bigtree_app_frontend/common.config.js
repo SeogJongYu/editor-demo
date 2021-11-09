@@ -5,6 +5,10 @@ const ENV_FILES = [
   '.env',
   '.env.development',
   '.env.production',
+  '.browserslistrc',
+  'babel.config.js',
+  'babel.config.native.js',
+  'babel.config.web.js',
   './app/Config.ts',
   'common.config.js',
 ];
