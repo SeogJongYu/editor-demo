@@ -6,6 +6,7 @@ const ENV_FILES = [
   '.env.development',
   '.env.production',
   './app/Config.ts',
+  'common.config.js',
 ];
 
 function getHash(fileName) {
