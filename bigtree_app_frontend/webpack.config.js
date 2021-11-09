@@ -53,7 +53,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
+              sourceMap: isDevelopment,
             },
           },
           {
@@ -73,7 +73,7 @@ module.exports = {
             options: {
               postcssOptions: {
                 config: './postcss.config.js',
-                sourceMap: isDevelopment,
+                sourceMap: true,
               },
             },
           },
