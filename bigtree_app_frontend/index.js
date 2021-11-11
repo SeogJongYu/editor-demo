@@ -1,5 +1,6 @@
-import ReactDOM from 'react-dom';
+import {AppRegistry} from 'react-native';
 
 import Root from './app/Root';
+import appConfig from './app.json';
 
-ReactDOM.render(<Root />, document.getElementById('root'));
+AppRegistry.registerComponent(appConfig.name, () => Root);

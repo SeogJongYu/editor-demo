@@ -20,7 +20,7 @@ module.exports = {
       config: [__filename],
     },
   },
-  entry: ['core-js/stable', 'regenerator-runtime/runtime', './index.js'],
+  entry: ['core-js/stable', 'regenerator-runtime/runtime', './index.web.js'],
   output: {
     filename: 'js/[name].[contenthash].js',
     assetModuleFilename: 'asset/[name].[contenthash][ext]',
