@@ -12,3 +12,4 @@ bigtree_app_frontend/ios/
 bigtree_app_frontend/android/
 bigtree_app_frontend/.cache/
 bigtree_app_document/
+.venv/
