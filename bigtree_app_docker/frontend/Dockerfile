@@ -1,7 +1,6 @@
-FROM node:14.2
+FROM node:14
 ARG BIGTREE_APP_TIMEZONE=Asia/Seoul
 RUN ln -sf /usr/share/zoneinfo/${BIGTREE_APP_TIMEZONE} /etc/localtime
-RUN npm install -g yarn
 COPY bigtree_app_frontend/package.json /app/package.json
 COPY bigtree_app_frontend/yarn.lock /app/yarn.lock
 WORKDIR /app
