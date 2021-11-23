@@ -7,9 +7,6 @@ db.sqlite3
 media/
 static/
 bigtree_app_document/
-bigtree_app_frontend/build/
-bigtree_app_frontend/ios/
-bigtree_app_frontend/android/
-bigtree_app_frontend/.cache/
-bigtree_app_document/
+bigtree_app_frontend/
 .venv/
+.env.development

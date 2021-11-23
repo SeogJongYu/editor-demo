@@ -10,28 +10,28 @@ http {
     include       /etc/nginx/mime.types;
     default_type  application/octet-stream;
 
-    upstream backend_wsgi {
-        server backend_wsgi:8080;
+    upstream wsgi {
+        server ${WSGI_HOST}:8080;
     }
 
     server {
         listen 80;
-        root /usr/share/nginx/html/frontend_static;
+        root /usr/share/nginx/html/static/frontend;
 
         location /views {
-            proxy_pass http://backend_wsgi/views;
+            proxy_pass http://wsgi/views;
             proxy_set_header Host $host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
 
         location /api {
-            proxy_pass http://backend_wsgi/api;
+            proxy_pass http://wsgi/api;
             proxy_set_header Host $host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
 
         location /admin {
-            proxy_pass http://backend_wsgi/admin;
+            proxy_pass http://wsgi/admin;
             proxy_set_header Host $host;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
@@ -41,7 +41,7 @@ http {
         }
 
         location /static {
-            alias /usr/share/nginx/html/backend_static;
+            alias /usr/share/nginx/html/static/backend;
             try_files $uri $uri/ /index.html;
         }
 

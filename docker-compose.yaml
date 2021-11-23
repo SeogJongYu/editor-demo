@@ -1,0 +1,69 @@
+version: "3.7"
+
+services:
+  backend:
+    build:
+      context: .
+      args:
+        BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
+    image: ${COMPOSE_PROJECT_NAME:-bigtree_app_template}_backend_base
+    command: /bin/bash -c "rm -rf /static/backend/*; cp -r /app/static/. /static/backend"
+    volumes:
+      - type: volume
+        source: static
+        target: /static
+
+  frontend:
+    build:
+      context: ./bigtree_app_frontend/
+      args:
+        BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
+        BIGTREE_APP_DOCKER_BACKEND_ONLY: ${BIGTREE_APP_DOCKER_BACKEND_ONLY:-false}
+    command: /bin/bash -c "rm -rf /static/frontend/*; cp -r /app/build/. /static/frontend"
+    volumes:
+      - type: volume
+        source: static
+        target: /static
+
+  wsgi:
+    image: ${COMPOSE_PROJECT_NAME:-bigtree_app_template}_backend_base
+    command: [
+      "poetry", "run",
+      "gunicorn",
+      "--workers=${WSGI_WORKERS:-2}",
+      "--threads=${WSGI_THREADS:-4}",
+      "--bind=0.0.0.0:8080",
+      "bigtree_app.wsgi:application"
+    ]
+    volumes:
+      - ./db.sqlite3:/app/db.sqlite3
+      - type: volume
+        source: media
+        target: /app/media/
+    restart: always
+
+  nginx:
+    build:
+      context: ./bigtree_app_nginx/
+      args:
+        BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
+    environment:
+      - WSGI_HOST=wsgi
+    ports:
+        - "${BIGTREE_APP_DOCKER_PORT:-8080}:80"
+    depends_on:
+      - backend
+      - frontend
+      - wsgi
+    volumes:
+      - type: volume
+        source: static
+        target: /usr/share/nginx/html/static
+      - type: volume
+        source: media
+        target: /usr/share/nginx/html/media
+    restart: always
+
+volumes:
+  static:
+  media:

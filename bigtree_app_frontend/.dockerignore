@@ -1,0 +1,7 @@
+**/node_modules/
+build/
+build_docs/
+ios/Pods
+tmp/
+android/app/build/
+.cache
