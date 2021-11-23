@@ -1,3 +1,5 @@
+const COMMON_CONFIG = require('./babel.config.common');
+
 module.exports = {
   presets: ['module:metro-react-native-babel-preset'],
   plugins: [
@@ -15,6 +17,6 @@ module.exports = {
         },
       },
     ],
-    'module:react-native-dotenv',
+    ...COMMON_CONFIG.plugins,
   ],
 };

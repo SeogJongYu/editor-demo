@@ -1,5 +1,7 @@
 const isDevelopment = process.env.NODE_ENV === 'development';
 
+const COMMON_CONFIG = require('./babel.config.common');
+
 module.exports = {
   presets: [
     '@babel/preset-typescript',
@@ -24,6 +26,6 @@ module.exports = {
     ],
     ['react-native-web', {commonjs: true}],
     isDevelopment && 'react-refresh/babel',
-    'module:react-native-dotenv',
+    ...COMMON_CONFIG.plugins,
   ].filter(Boolean),
 };
