@@ -8,7 +8,7 @@
     "ios": "yarn start:ios",
     "native": "yarn start:native",
     "build:web": "cross-env PLATFORM=web NODE_ENV=production webpack",
-    "build:docs": "cross-env PLATFORM=web typedoc --options typedoc.conf.json",
+    "build:typedoc": "cross-env PLATFORM=web typedoc --options typedoc.conf.json",
     "start:web": "cross-env PLATFORM=web NODE_ENV=development webpack serve",
     "start:android": "react-native run-android",
     "start:android:release": "react-native run-android --variant release",

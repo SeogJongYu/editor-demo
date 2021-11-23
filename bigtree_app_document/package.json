@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build-sphinx && npm run build-typedoc",
+    "build": "yarn build:sphinx && yarn build:typedoc",
     "build:sphinx": "make html",
-    "build:typedoc": "cd ../bigtree_app_frontend && npm run build-docs",
+    "build:typedoc": "cd ../bigtree_app_frontend && yarn build:typedoc",
     "clean": "make clean && python clean.py"
   },
   "author": "",
