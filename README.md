@@ -42,13 +42,20 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 ### 설치
 
-* [Poetry 설치](https://python-poetry.org/docs/#installation), [Yarn](https://yarnpkg.com) 설치
+* [Poetry](https://python-poetry.org/docs/#installation), [Yarn](https://yarnpkg.com) 설치
 
-Backend가 필요 없는 프로젝트의 경우 init 후 frontend 부분만 사용하면 됩니다.
 
-```
+### 템플릿 복제
+
+명령어를 통해 git clone 하거나 [템플릿 생성](https://github.com/ibigtree/bigtree_app_template/generate) 기능 사용
+
+```bash
 git clone git@github.com:ibigtree/bigtree_app_template.git my_app
+```
 
+### 초기화
+
+```bash
 cd my_app
 
 python init.py
@@ -56,9 +63,12 @@ python init.py
 # App Name(example: bigtree_app): my_app
 # Package Name(example: kr.ibigtree.app): kr.ibigtree.my_app
 
-# Git 저장소 초기화
-rm -rf .git
+# Git 저장소 초기화 (GitHub Template 기능 사용해 복제한 경우 건너뜀)
+rm -rf .git  # Windows: rmdir .git /S
 git init
+
+# init.py 삭제
+rm init.py  # Windows: del init.py
 
 # poetry 없을 경우 먼저 설치
 pip install poetry
@@ -66,7 +76,7 @@ pip install poetry
 # Backend 의존성 설치
 poetry install
 
-# Yarn 없을 경우 머저 설치
+# Yarn 없을 경우 Yarn 먼저 설치
 npm install -g yarn
 
 # Frontend 의존성 설치
@@ -131,6 +141,8 @@ BIGTREE_APP_TIMEZONE=Asia/Seoul
 
 #### Frontend
 
+bigtree_app_frontend/.env 파일 생성
+
 ```
 API_SERVER=http://172.30.1.100:8000/api/v1
 ```
@@ -140,6 +152,8 @@ API_SERVER=http://172.30.1.100:8000/api/v1
 #### Docker
 
 .env 파일 생성
+
+docker-compose는 기본적으로 `.env` 파일만 인식하며 다른 파일명일 경우 `--env-file` 옵션을 사용한다.
 
 ```
 # docker-compose 프로젝트 이름
@@ -162,10 +176,7 @@ BIGTREE_APP_TIMEZONE=Asia/Seoul
 
 ### Backend
 
-개발 문서 빌드시 외부 프로그램 설치가 필요함(문서 내 그래프 이미지 자동생성 관련)
-
-* [PlantUML](https://plantuml.com) - jar 다운받아서 환경변수 PLANTUML(또는 bigtree_app_document/.env 에 PLANTUML) 경로 추가
-* [GraphViz](https://www.graphviz.org) - 설치 후 PATH에 추가
+Windows 이외 운영체제의 경우 graphviz 설치가 필요할 수 있음(참조: https://plantuml.com/ko/graphviz-dot)
 
 아래 명령어를 실행하면 bigtree_app_document/build/ 폴더에 html 파일로 생성됨.
 
@@ -183,19 +194,13 @@ Visual Studio Code
 * Firefox 디버그 시 브라우저 설정 변경 필요함(https://marketplace.visualstudio.com/items?itemName=firefox-devtools.vscode-firefox-debug) 참조
 
 
-
-Troubleshooting
--------------------
-
-### React Native에서 .env 변경 내용이 반영되지 않음
-
-Metro Bundler가 이미 실행중인 경우 반영이 안 될 수 있습니다.
-
-실행중인 Metro Bundler를 종료하고 다시 실행합니다.
-
-
 변경사항
 ----------
+
+### v7
+
+Docker 구조 정리
+
 
 ### v6
 * 전반적으로 설정파일 정리
