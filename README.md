@@ -83,20 +83,23 @@ npm install -g yarn
 yarn
 ```
 
-### 실행
+실행
+-----------
 
-#### Backend
+### Backend
 ```
+# 바로 실행
 poetry run python manage.py runserver
-# or
+
+# virtualenv 활성화 후 실행
 poetry shell
 python manage.py runserver
 ```
 
-#### Frontend
+### Frontend
 
 * Android: bigtree_app_frontend/android 를 Android Studio로 한번 열어줘야 정상 실행 됨
-* iOS: cd bigtree_app_frontend/ios && pod install 한번 실행한 이후 실행 가능
+* iOS: cd bigtree_app_frontend/ios && pod install 로 Naitve 의존성 설치 먼저 진행해야 함
 
 
 ```
@@ -112,18 +115,19 @@ npm run start:ios
 npm run start:android
 ```
 
-### Docker
+환경설정
+------------
 
-```
-docker-compose up -d --build
-```
+### Backend
 
+환경 변수 및 dotenv를 사용할 수 있으며 다음과 같은 우선순위를 가짐
 
-### 환경설정
+1. 직접 정의된 환경 변수
+2. `.env.development`
+3. `.env.production`
+4. `.env`
 
-#### Backend
-
-.env 파일 생성
+Docker 빌드 시에는 `.env.production` 파일만 이미지 내에 복사된다. 이미지를 통해 정보가 누출될 수 있으니 고정될 필요가 있는 설정만 이 안에 넣는것을 권장한다.
 
 ```
 # Django Secret Key
@@ -139,21 +143,37 @@ BIGTREE_APP_HOSTS=myapp.bigbot.kr
 BIGTREE_APP_TIMEZONE=Asia/Seoul
 ```
 
-#### Frontend
+### Frontend
 
-bigtree_app_frontend/.env 파일 생성
+Frontend는 dotenv를 사용한다. 환경변수를 직접 사용하지는 않고 실행/빌드 시 [react-native-dotenv](https://www.npmjs.com/package/react-native-dotenv)를 사용해 `@env` 모듈에 주입된다. (app/Config.ts 파일 참조)
+
+설정값은 다음 우선순위를 따른다.
+
+1. `.env.development`: 디버그(start:web 등) 모드에서만 적용됨
+2. `.env.production`: 프로덕션 빌드(build:web) 모드에서만 적용됨
+3. `.env`
+
+Docker 이미지 빌드 시에는 `.env.production`만 이미지 내로 복사된다.
 
 ```
 API_SERVER=http://172.30.1.100:8000/api/v1
 ```
 
-팁: localhost(127.0.0.1)가 아닌 LAN IP 사용하면 iOS/Android 기기에서 접속하기 좋습니다.
+팁: localhost(127.0.0.1)가 아닌 LAN IP를 입력해야 다른 기기(iOS/Android) 에서 디버깅하기 편함
 
-#### Docker
+Docker
+------------
 
-.env 파일 생성
+### 실행
 
-docker-compose는 기본적으로 `.env` 파일만 인식하며 다른 파일명일 경우 `--env-file` 옵션을 사용한다.
+```
+docker-compose up -d --build
+```
+
+### 환경설정
+
+docker-compose는 기본적으로 `.env` 파일만 인식하며 다른 파일명을 사용할 경우 `--env-file` 옵션을 사용한다.
+
 
 ```
 # docker-compose 프로젝트 이름
@@ -170,11 +190,8 @@ BIGTREE_APP_TIMEZONE=Asia/Seoul
 ```
 
 
-
 개발 문서
 -------------
-
-### Backend
 
 Windows 이외 운영체제의 경우 graphviz 설치가 필요할 수 있음(참조: https://plantuml.com/ko/graphviz-dot)
 
