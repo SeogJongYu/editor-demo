@@ -11,3 +11,5 @@ bigtree_app_frontend/
 .venv/
 .env.development
 .env
+Dockerfile
+docker-compose.yaml
