@@ -10,3 +10,4 @@ bigtree_app_document/
 bigtree_app_frontend/
 .venv/
 .env.development
+.env

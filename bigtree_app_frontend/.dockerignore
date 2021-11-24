@@ -6,3 +6,4 @@ tmp/
 android/app/build/
 .cache
 .env.development
+.env
