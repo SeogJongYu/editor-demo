@@ -123,11 +123,9 @@ npm run start:android
 환경 변수 및 dotenv를 사용할 수 있으며 다음과 같은 우선순위를 가짐
 
 1. 직접 정의된 환경 변수
-2. `.env.development`
-3. `.env.production`
-4. `.env`
+2. `.env`
 
-Docker 빌드 시에는 `.env.production` 파일만 이미지 내에 복사된다. 이미지를 통해 정보가 누출될 수 있으니 고정될 필요가 있는 설정만 이 안에 넣는것을 권장한다.
+Docker 빌드 시에는 `.env` 이미지에 파일은 복사되지 않는다.
 
 ```
 # Django Secret Key

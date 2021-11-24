@@ -33,6 +33,7 @@ if __name__ == '__main__':
         '.xcworkspacedata',
         '.plist',
         '.rst',
+        '.env.production',
     ]
 
     SEARCH_AND_REPLACE = OrderedDict([
@@ -80,8 +81,10 @@ if __name__ == '__main__':
             process_file(absolute_path)
 
     with open('bigtree_app_frontend/.env', 'w', encoding='utf-8') as f:
-        f.write('''API_SERVER=http://127.0.0.1:8080/api/v1''')
+        f.write("API_SERVER=http://127.0.0.1:8080/api/v1")
 
+    with open('.env', 'w', encoding='utf-8') as f:
+        f.write("# 환경설정 파일\n# 이 파일은 Git 저장소 및 Docker 이미지에 포함되지 않음.\n")
 
     os.rename('bigtree_app', APP_NAME)
     os.rename('bigtree_app_backend', APP_NAME + '_backend')

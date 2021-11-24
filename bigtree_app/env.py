@@ -9,18 +9,14 @@ def load_dotenv():
 
     환경 변수 우선순위는 다음과 같다.
 
-    1. 시스템 환경 변수 (.env 파일이 환경변수를 덮어쓰지 않음)
-    2. `.env.development`
-    3. `.env.production`
-    4. `.env`
+    1. 시스템 환경 변수
+    2. `.env`
 
-    주의: Docker build 시 .env.production만 복사된다.
+    * Docker build시 .env 파일은 복사되지 않는다.
     """
     try:
         from dotenv import load_dotenv
 
-        load_dotenv(".env.development")
-        load_dotenv(".env.production")
         load_dotenv(".env")
 
     except ImportError:

@@ -255,5 +255,3 @@ dmypy.json
 /db.sqlite3
 /media
 /static
-
-.env.development

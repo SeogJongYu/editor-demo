@@ -13,7 +13,6 @@ services:
         source: static
         target: /static
     env_file:
-      - .env.production
       - .env
 
   frontend:
@@ -45,7 +44,6 @@ services:
         target: /app/media/
     restart: always
     env_file:
-      - .env.production
       - .env
 
   nginx:
