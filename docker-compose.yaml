@@ -1,5 +1,13 @@
 version: "3.7"
 
+x-common:
+  environment:
+    &common-environment
+    BIGTREE_APP_DEBUG: ${BIGTREE_APP_DEBUG:-true}
+    BIGTREE_APP_SECRET_KEY: ${BIGTREE_APP_SECRET_KEY:-changeme}
+    BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
+    BIGTREE_APP_HOSTS: ${BIGTREE_APP_HOSTS:-*}
+
 services:
   backend:
     build:
@@ -12,6 +20,8 @@ services:
       - type: volume
         source: static
         target: /static
+    environment:
+      <<: *common-environment
 
   frontend:
     build:
@@ -41,6 +51,8 @@ services:
         source: media
         target: /app/media/
     restart: always
+    environment:
+      <<: *common-environment
 
   nginx:
     build:
