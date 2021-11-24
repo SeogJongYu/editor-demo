@@ -2,10 +2,6 @@
 #
 .DS_Store
 
-/.env.development
-/.env.production
-
-
 # Xcode
 #
 build/
@@ -66,3 +62,4 @@ buck-out/
 build_docs/
 
 tmp/
+.env.development
