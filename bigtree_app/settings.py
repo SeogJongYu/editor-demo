@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-from bigtree_app.env import load_env
+from bigtree_app.env import load_dotenv
 
-load_env()
+load_dotenv()
 
 
 def get_external_settings(key, default_value):
