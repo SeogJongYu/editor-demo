@@ -12,6 +12,12 @@ fi
 
 poetry install --no-dev --extras wsgi
 
+RESULT=$?
+
+if [ $RESULT -ne 0 ]; then
+    exit $RESULT
+fi
+
 if [ "$GITHUB_PRIVATE_KEY" ]; then
     rm ~/.ssh/id_rsa
 elif [ "$GITHUB_CREDENTIAL" ]; then
