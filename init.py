@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
     os.rename('bigtree_app', APP_NAME)
     os.rename('bigtree_app_backend', APP_NAME + '_backend')
-    os.rename('bigtree_app_docker', APP_NAME + '_docker')
+    os.rename('bigtree_app_nginx', APP_NAME + '_nginx')
     os.rename('bigtree_app_document', APP_NAME + '_document')
 
     os.rename('bigtree_app_frontend/ios/bigtree_app.xcodeproj/xcshareddata/xcschemes/bigtree_app.xcscheme', 'bigtree_app_frontend/ios/bigtree_app.xcodeproj/xcshareddata/xcschemes/' + APP_NAME + '.xcscheme')
