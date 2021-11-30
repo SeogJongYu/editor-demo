@@ -255,3 +255,6 @@ dmypy.json
 /db.sqlite3
 /media
 /static
+
+.env.*
+!.env.template
