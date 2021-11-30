@@ -180,11 +180,21 @@ COMPOSE_PROJECT_NAME=bigtree_app
 # 노출될 웹서버 포트
 BIGTREE_APP_DOCKER_PORT=8080
 
-# true로 설정시 frontend 빌드하지 않고 backend만 활성화 됨
-BIGTREE_APP_DOCKER_BACKEND_ONLY=false
+# true로 설정시 frontend 빌드 건너뜀
+BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD=true
 
 # Backend/WebServer Timezone 설정
 BIGTREE_APP_TIMEZONE=Asia/Seoul
+```
+
+
+### Frontend 빌드
+
+Docker를 사용해 Frontend 빌드 가능
+
+```
+cd bigtree_app_frontend
+docker-compose up --build
 ```
 
 

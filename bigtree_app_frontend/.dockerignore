@@ -7,3 +7,5 @@ android/app/build/
 .cache
 .env.development
 .env
+docker-compose.yml
+Dockerfile

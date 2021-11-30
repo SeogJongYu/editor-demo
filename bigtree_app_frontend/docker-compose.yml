@@ -1,0 +1,7 @@
+services:
+  frontend:
+    build:
+      context: .
+    command: /bin/bash -c "rm -rf /static/frontend/*; cp -r /app/build/. /static/frontend && echo Done!"
+    volumes:
+      - './build/:/static/frontend/'
