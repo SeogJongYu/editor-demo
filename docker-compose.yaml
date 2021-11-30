@@ -11,7 +11,7 @@ services:
       context: .
       args:
         BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
-    command: /bin/bash -c "rm -rf /static/backend/*; cp -r /app/static/. /static/backend"
+    command: /bin/bash -c "rm -rf /static/backend/*; cp -r /app/static/. /static/backend; echo Copied backend static files to /static/frontend"
     volumes:
       - type: bind
         source: ./static
@@ -26,7 +26,7 @@ services:
       args:
         BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
         BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD: ${BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD:-}
-    command: /bin/bash -c "rm -rf /static/frontend/*; cp -r /app/build/. /static/frontend"
+    command: /bin/bash -c "rm -rf /static/frontend/*; cp -r /app/build/. /static/frontend; echo Copied frontend static files to /static/frontend"
     volumes:
       - type: bind
         source: ./static
