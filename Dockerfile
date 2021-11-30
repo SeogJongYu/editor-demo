@@ -1,5 +1,5 @@
 # Dockerfile for backend
-FROM python:3.10
+FROM python:3.9
 ARG BIGTREE_APP_TIMEZONE=Asia/Seoul
 RUN ln -sf /usr/share/zoneinfo/${BIGTREE_APP_TIMEZONE} /etc/localtime
 
