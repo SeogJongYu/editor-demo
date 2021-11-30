@@ -110,7 +110,7 @@ module.exports = {
       patterns: [
         {
           from: '**/*',
-          to: '[path][name][ext]',
+          to: '[path][name].[ext]',
           context: 'public/',
           globOptions: {
             ignore: [path.resolve('./public/index.ejs')],
