@@ -165,7 +165,12 @@ Docker
 ### 실행
 
 ```
-docker-compose up -d --build
+# docker 통해 실행시 media, static 경로 필요함
+mkdir media
+mkdir static
+
+docker-compose build
+docker-compose up -d
 ```
 
 ### 환경설정

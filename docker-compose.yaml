@@ -1,34 +1,39 @@
 version: "3.7"
 
+x-common:
+  backend:
+    &x-common-backend
+    image: ${COMPOSE_PROJECT_NAME:-bigtree_app_template}_backend
+
 services:
   backend:
     build:
       context: .
       args:
         BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
-    image: ${COMPOSE_PROJECT_NAME:-bigtree_app_template}_backend_base
     command: /bin/bash -c "rm -rf /static/backend/*; cp -r /app/static/. /static/backend"
     volumes:
-      - type: volume
-        source: static
+      - type: bind
+        source: ./static
         target: /static
     env_file:
       - .env
+    <<: *x-common-backend
 
   frontend:
     build:
       context: ./bigtree_app_frontend/
       args:
         BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
-        BIGTREE_APP_DOCKER_BACKEND_ONLY: ${BIGTREE_APP_DOCKER_BACKEND_ONLY:-false}
+        BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD: ${BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD:-}
     command: /bin/bash -c "rm -rf /static/frontend/*; cp -r /app/build/. /static/frontend"
     volumes:
-      - type: volume
-        source: static
+      - type: bind
+        source: ./static
         target: /static
 
   wsgi:
-    image: ${COMPOSE_PROJECT_NAME:-bigtree_app_template}_backend_base
+    <<: *x-common-backend
     command: [
       "poetry", "run",
       "gunicorn",
@@ -39,12 +44,14 @@ services:
     ]
     volumes:
       - ./db.sqlite3:/app/db.sqlite3
-      - type: volume
-        source: media
+      - type: bind
+        source: ./media
         target: /app/media/
     restart: always
     env_file:
       - .env
+    depends_on:
+      - backend
 
   nginx:
     build:
@@ -60,14 +67,10 @@ services:
       - frontend
       - wsgi
     volumes:
-      - type: volume
-        source: static
+      - type: bind
+        source: ./static
         target: /usr/share/nginx/html/static
-      - type: volume
-        source: media
+      - type: bind
+        source: ./media
         target: /usr/share/nginx/html/media
     restart: always
-
-volumes:
-  static:
-  media:
