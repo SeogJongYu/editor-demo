@@ -63,3 +63,4 @@ build_docs/
 
 tmp/
 .env.development
+.env.production
