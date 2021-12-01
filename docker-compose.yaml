@@ -3,7 +3,7 @@ version: "3.7"
 x-common:
   backend:
     &x-common-backend
-    image: ${COMPOSE_PROJECT_NAME:-bigtree_app_template}_backend
+    image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}backend
 
 services:
   backend:
@@ -21,6 +21,7 @@ services:
     <<: *x-common-backend
 
   frontend:
+    image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}frontend
     build:
       context: ./bigtree_app_frontend/
       args:
@@ -54,6 +55,7 @@ services:
       - backend
 
   nginx:
+    image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}nginx
     build:
       context: ./bigtree_app_nginx/
       args:
