@@ -659,8 +659,8 @@ wsgi = ["gunicorn"]
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.9"
-content-hash = "2e2721313c4e9cd3efa071abdec23aee45e687ed49b904566ea6b57066c45317"
+python-versions = "~3.9"
+content-hash = "9a40597f77557759c27f1448703025bfd5ee375eb40d4f7ef58e01fe86f3818a"
 
 [metadata.files]
 alabaster = [
