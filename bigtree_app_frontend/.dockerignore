@@ -1,4 +1,7 @@
-**/.DS_Store
+.dockerignore
+.DS_Store
+.git
+.gitignore
 **/node_modules/
 build/
 build_docs/
