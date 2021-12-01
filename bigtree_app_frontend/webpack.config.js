@@ -63,18 +63,18 @@ module.exports = {
             },
           },
           {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 config: './postcss.config.js',
                 sourceMap: true,
               },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
             },
           },
         ],
