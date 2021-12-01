@@ -10,7 +10,7 @@ elif [ "$GITHUB_CREDENTIAL" ]; then
     git config --global url."https://$GITHUB_CREDENTIAL@github.com/".insteadOf "git@github.com:"
 fi
 
-poetry install --no-dev --extras wsgi
+poetry install --without dev --extras wsgi
 
 RESULT=$?
 
