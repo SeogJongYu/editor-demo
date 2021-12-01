@@ -4,13 +4,13 @@ x-common:
   backend:
     &x-common-backend
     image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}backend
-
-services:
-  backend:
     build:
       context: .
       args:
         BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
+
+services:
+  backend:
     command: /bin/bash -c "rm -rf /static/backend/*; cp -r /app/static/. /static/backend; echo Copied backend static files to /static/frontend"
     volumes:
       - type: bind
