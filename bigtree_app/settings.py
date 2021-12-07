@@ -132,7 +132,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ko'
 
-TIME_ZONE = os.environ.get('BIGTREE_APP_TIMEZONE', 'Asia/Seoul')
+TIME_ZONE = os.environ.get('TZ', 'Asia/Seoul')
 
 USE_I18N = True
 

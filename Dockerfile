@@ -1,7 +1,7 @@
 # Dockerfile for backend
 FROM python:3.9
-ARG BIGTREE_APP_TIMEZONE=Asia/Seoul
-RUN ln -sf /usr/share/zoneinfo/${BIGTREE_APP_TIMEZONE} /etc/localtime
+ARG TZ=Asia/Seoul
+RUN ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime
 
 RUN pip install poetry==1.2.0a2
 

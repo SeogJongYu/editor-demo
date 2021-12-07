@@ -1,6 +1,6 @@
 FROM node:14
-ARG BIGTREE_APP_TIMEZONE=Asia/Seoul
-RUN ln -sf /usr/share/zoneinfo/${BIGTREE_APP_TIMEZONE} /etc/localtime
+ARG TZ=Asia/Seoul
+RUN ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime
 COPY ./package.json /app/package.json
 COPY ./yarn.lock /app/yarn.lock
 WORKDIR /app

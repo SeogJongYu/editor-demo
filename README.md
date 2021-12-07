@@ -139,8 +139,8 @@ BIGTREE_APP_DEBUG=true
 # 접속 허용 호스트 지정
 BIGTREE_APP_HOSTS=myapp.bigbot.kr
 
-# Django Timezone 설정
-BIGTREE_APP_TIMEZONE=Asia/Seoul
+# Timezone 설정
+TZ=Asia/Seoul
 ```
 
 ### Frontend
@@ -191,7 +191,7 @@ BIGTREE_APP_DOCKER_PORT=8080
 BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD=true
 
 # Backend/WebServer Timezone 설정
-BIGTREE_APP_TIMEZONE=Asia/Seoul
+TZ=Asia/Seoul
 ```
 
 

@@ -6,8 +6,8 @@ x-common:
     image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}backend
     build:
       context: .
-      args:
-        BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
+    env_file:
+      - .env
 
 services:
   backend:
@@ -16,8 +16,6 @@ services:
       - type: bind
         source: ./static
         target: /static
-    env_file:
-      - .env
     <<: *x-common-backend
 
   frontend:
@@ -25,7 +23,7 @@ services:
     build:
       context: ./bigtree_app_frontend/
       args:
-        BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
+        TZ: ${TZ:-Asia/Seoul}
         BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD: ${BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD:-}
     command: /bin/bash -c "rm -rf /static/frontend/*; cp -r /app/build/. /static/frontend; echo Copied frontend static files to /static/frontend"
     volumes:
@@ -58,8 +56,6 @@ services:
     image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}nginx
     build:
       context: ./bigtree_app_nginx/
-      args:
-        BIGTREE_APP_TIMEZONE: ${BIGTREE_APP_TIMEZONE:-Asia/Seoul}
     environment:
       - WSGI_HOST=wsgi
     ports:
