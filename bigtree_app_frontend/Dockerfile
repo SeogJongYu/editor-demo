@@ -6,11 +6,11 @@ COPY ./yarn.lock /app/yarn.lock
 WORKDIR /app
 RUN mkdir -p /app/build/
 RUN touch /app/build/index.html
-ARG BIGTREE_APP_DISABLE_FRONTEND_BUILD
-RUN if [ -z "$BIGTREE_APP_DISABLE_FRONTEND_BUILD" ]; then \
+ARG BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD
+RUN if [ -z "$BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD" ]; then \
         yarn; \
     fi
 COPY ./ /app
-RUN if [ -z "$BIGTREE_APP_DISABLE_FRONTEND_BUILD" ]; then \
+RUN if [ -z "$BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD" ]; then \
         yarn build:web; \
     fi
