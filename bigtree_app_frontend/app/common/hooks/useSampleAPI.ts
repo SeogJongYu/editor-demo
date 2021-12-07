@@ -6,7 +6,7 @@ function useSampleAPI() {
   const [responseData, setResponseData] = useState({message: ''});
 
   useEffect(() => {
-    fetch(`${Config.API_SERVER}/samples/`)
+    fetch(`${Config.API_SERVER}/sample_api/`)
       .then(response => response.json())
       .then(json => setResponseData(json))
       .catch(() => {

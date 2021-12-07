@@ -5,11 +5,10 @@ bigtree_app_template
 
 Django Backend / React Frontend 를 사용하는 앱 템플릿
 
-* Django, Django REST Framework 기반 Backend
-* Docker 기반 배포 지원
-* React 기반 Frontend
-* React Native 기반 iOS/Android App
-
+* Django Backend
+* React Frontend
+* React Native iOS/Android App
+* Docker 배포 지원
 
 구성
 -------
@@ -18,7 +17,6 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 * Python 3.9
 * Django
-* Django REST Framework
 * Docker (nginx, gunicorn)
 * sphinx(문서화)
 

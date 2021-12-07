@@ -6,7 +6,6 @@ authors = ["Daehan Kim <daehankim@ibigtree.kr>"]
 
 [tool.poetry.dependencies]
 python = "~3.9"
-djangorestframework = "^3.12.4"
 python-dotenv = "^0.19.0"
 Django = "^3.2.7"
 gunicorn = {version = "^20.1.0", optional = true}
