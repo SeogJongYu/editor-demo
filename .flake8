@@ -2,4 +2,5 @@
 max-line-length = 100
 # I101: The names in your from import are in the wrong order.
 # I100: Your import statements are in the wrong order.
-ignore = I100,I101
+# W503: Line breaks should occur after the binary operator to keep all variable names aligned.
+ignore = I100,I101,W503
