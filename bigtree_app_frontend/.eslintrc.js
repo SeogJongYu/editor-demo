@@ -39,6 +39,7 @@ const COMMON_RULES = {
       ignoreTemplateLiterals: true,
     },
   ],
+  curly: 'warn',
   'import/order': [
     'warn',
     {
