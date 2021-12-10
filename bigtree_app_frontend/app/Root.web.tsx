@@ -1,7 +1,9 @@
 import {QueryClient, QueryClientProvider} from 'react-query';
 
+import WebApp from './web/WebApp';
 import apiQuery from './common/api/apiQuery';
-import NativeApp from './native/NativeApp';
+
+import './Root.web.scss';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -14,7 +16,7 @@ const queryClient = new QueryClient({
 function Root() {
   return (
     <QueryClientProvider client={queryClient}>
-      <NativeApp />
+      <WebApp />
     </QueryClientProvider>
   );
 }

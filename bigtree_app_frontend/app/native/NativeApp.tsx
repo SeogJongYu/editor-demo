@@ -10,9 +10,9 @@ import {
 import styled, {css} from '@emotion/native';
 
 import Config from '~/Config';
-import useSampleAPI from '~/common/hooks/useSampleAPI';
 import PlatformComponent from '~/common/components/PlatformComponent';
 import CommonComponent from '~/common/components/CommonComponent';
+import {useSampleAPI} from '~/common/api/sample';
 
 const LogoImage = styled(Animated.Image)`
   flex: 1;
@@ -47,7 +47,7 @@ function AnimatedLogo() {
 }
 
 function NativeApp() {
-  const sampleAPIData = useSampleAPI();
+  const {data: sampleAPIData} = useSampleAPI();
 
   return (
     <>
@@ -72,7 +72,7 @@ function NativeApp() {
           {'\n'}
           API Server: {Config.API_SERVER}
           {'\n'}
-          API Response: {sampleAPIData.message}
+          API Response: {sampleAPIData?.message}
           {'\n'}
           <CommonComponent />
         </Text>

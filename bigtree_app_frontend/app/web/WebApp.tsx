@@ -1,11 +1,9 @@
 import {css} from 'twin.macro';
 
 import Config from '~/Config';
-import useSampleAPI from '~/common/hooks/useSampleAPI';
 import PlatformComponent from '~/common/components/PlatformComponent';
 import CommonComponent from '~/common/components/CommonComponent';
-
-import './WebApp.scss';
+import {useSampleAPI} from '~/common/api/sample';
 
 /**
  * Example Component
@@ -13,7 +11,7 @@ import './WebApp.scss';
  * 로고 출력 및 샘플 API 연동
  */
 function WebApp() {
-  const sampleAPIData = useSampleAPI();
+  const {data: sampleAPIData} = useSampleAPI();
 
   return (
     <div
@@ -56,7 +54,7 @@ function WebApp() {
           <br />
           API Server: {Config.API_SERVER}
           <br />
-          API Response: {sampleAPIData.message}
+          API Response: {sampleAPIData?.message}
           <br />
         </p>
         <CommonComponent />
