@@ -6,5 +6,5 @@ from . import api
 
 urlpatterns = [
     path('views/', views.index),
-    path('v1/sample_api/', api.sample),
+    path('api/v1/sample_api/', api.sample),
 ]
