@@ -1,65 +1,31 @@
-import {css} from 'twin.macro';
+import {ReactNode} from 'react';
+import {QueryClient, QueryClientProvider} from 'react-query';
 
-import Config from '~/Config';
-import PlatformComponent from '~/common/components/PlatformComponent';
-import CommonComponent from '~/common/components/CommonComponent';
-import {useSampleAPI} from '~/common/api/sample';
+import apiQuery from '~/common/api/apiQuery';
 
-/**
- * Example Component
- *
- * 로고 출력 및 샘플 API 연동
- */
+import './WebApp.scss';
+
+import MainPage from './pages/MainPage';
+
 function WebApp() {
-  const {data: sampleAPIData} = useSampleAPI();
-
   return (
-    <div
-      tw="text-center flex flex-col items-center content-center h-screen text-xl bg-gray-100"
-      css={{label: 'container'}}>
-      <header>
-        <div
-          tw="text-center"
-          css={css`
-            @keyframes logo-bounce {
-              0%,
-              100% {
-                transform: translateY(0);
-              }
+    <Providers>
+      <MainPage />
+    </Providers>
+  );
+}
 
-              50% {
-                transform: translateY(-100px);
-                width: calc(836.2px / 2);
-              }
-            }
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      queryFn: apiQuery,
+    },
+  },
+});
 
-            @media (prefers-reduced-motion: no-preference) {
-              animation: logo-bounce infinite 1s;
-            }
-
-            width: 836.2px;
-            height: 502.4px;
-            margin-top: 150px;
-            label: logo-container;
-          `}>
-          <img
-            tw="h-full w-full"
-            css={{label: 'logo-image'}}
-            src={require('~/common/assets/logo.png')}
-            alt="logo"
-          />
-        </div>
-        <p>
-          Platform: <PlatformComponent />
-          <br />
-          API Server: {Config.API_SERVER}
-          <br />
-          API Response: {sampleAPIData?.message}
-          <br />
-        </p>
-        <CommonComponent />
-      </header>
-    </div>
+function Providers({children}: {children: ReactNode}) {
+  return (
+    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
   );
 }
 
