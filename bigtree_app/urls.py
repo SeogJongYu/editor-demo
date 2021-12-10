@@ -20,8 +20,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('bigtree_app_backend.api_urls')),
-    path('views/', include('bigtree_app_backend.view_urls')),
+    path('', include('bigtree_app_backend.urls')),
 ]
 
 
