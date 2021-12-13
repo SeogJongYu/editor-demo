@@ -1,7 +1,13 @@
-from django.http.response import HttpResponse
+from django.middleware.csrf import get_token
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.http import JsonResponse, HttpResponse
 
-# Django View가 필요한 경우 여기에 추가
+
+@ensure_csrf_cookie
+def csrf_token(request):
+    token = get_token(request)
+    return JsonResponse({'csrftoken': token})
 
 
 def index(request):
-    return HttpResponse("._.")
+    return HttpResponse('._.')
