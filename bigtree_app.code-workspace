@@ -31,6 +31,7 @@
     ],
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
+    "eslint.format.enable": true,
     "eslint.workingDirectories": ["./bigtree_app_frontend"],
     "flow.enabled": false,
     "files.encoding": "utf8",
