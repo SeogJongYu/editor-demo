@@ -256,5 +256,6 @@ dmypy.json
 /media
 /static
 
+.env
 .env.*
 !.env.template

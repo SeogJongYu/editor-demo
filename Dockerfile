@@ -3,7 +3,7 @@ FROM python:3.9
 ARG TZ=Asia/Seoul
 RUN ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime
 
-RUN pip install poetry==1.2.0a2
+RUN pip install poetry==1.1.12
 
 WORKDIR /app
 COPY pyproject.toml poetry.lock poetry-install.sh /app/

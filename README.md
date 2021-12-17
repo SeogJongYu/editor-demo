@@ -42,10 +42,6 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 * [Poetry](https://python-poetry.org), [Yarn](https://yarnpkg.com) 설치
 
-__주의: Poetry 1.2.0a2(알파 버전) 이상 사용 권장.__
-
-__정식버전(1.1.12) 사용 시 Git 저장소에서 설치한 패키지의 업데이트가 정상적으로 동작하지 않음__
-
 
 ### 템플릿 복제
 
@@ -73,7 +69,7 @@ git init
 rm init.py  # Windows: del init.py
 
 # poetry 없을 경우 먼저 설치
-pip install poetry==1.2.0a2
+pip install poetry
 
 # Backend 의존성 설치
 poetry install
