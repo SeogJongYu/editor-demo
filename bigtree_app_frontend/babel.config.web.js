@@ -12,8 +12,6 @@ module.exports = {
     ],
   ],
   plugins: [
-    'twin',
-    'macros',
     '@emotion',
     [
       'module-resolver',

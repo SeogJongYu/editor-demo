@@ -30,7 +30,6 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 * TypeDoc(문서화)
 * [Emotion](https://emotion.sh/)
 * [Tailwind CSS](https://tailwindcss.com/)
-* [twin.macro](https://github.com/ben-rogerson/twin.macro)
 * SASS
 
 

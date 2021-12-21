@@ -1,4 +1,4 @@
-import {css} from 'twin.macro';
+import {css} from '@emotion/react';
 
 import Config from '~/Config';
 import PlatformComponent from '~/common/components/PlatformComponent';
@@ -15,11 +15,11 @@ function MainPage() {
 
   return (
     <div
-      tw="text-center flex flex-col items-center content-center h-screen text-xl bg-gray-100"
+      className="text-center flex flex-col items-center content-center h-screen text-xl bg-gray-100"
       css={{label: 'container'}}>
       <header>
         <div
-          tw="text-center"
+          className="text-center"
           css={css`
             @keyframes logo-bounce {
               0%,
@@ -43,7 +43,7 @@ function MainPage() {
             label: logo-container;
           `}>
           <img
-            tw="h-full w-full"
+            className="h-full w-full"
             css={{label: 'logo-image'}}
             src={require('~/common/assets/logo.png')}
             alt="logo"
