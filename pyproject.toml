@@ -26,5 +26,5 @@ flake8-mypy = "^17.8.0"
 wsgi = ["gunicorn"]
 
 [build-system]
-requires = ["poetry>=0.12"]
+requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.masonry.api"
