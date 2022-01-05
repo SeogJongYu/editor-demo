@@ -103,13 +103,13 @@ python manage.py runserver
 cd bigtree_app_frontend
 
 # 웹 화면 실행
-npm run start:web
+yarn start:web
 
 # iOS 앱 실행
-npm run start:ios
+yarn start:ios
 
 # 안드로이드 앱 실행
-npm run start:android
+yarn start:android
 ```
 
 환경설정
