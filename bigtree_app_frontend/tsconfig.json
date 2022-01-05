@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "jsxImportSource": "@emotion/react",
     "paths": {
       "~/*": ["./app/*"]
     },
