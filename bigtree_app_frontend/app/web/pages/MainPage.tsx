@@ -15,11 +15,11 @@ function MainPage() {
 
   return (
     <div
-      className="text-center flex flex-col items-center content-center h-screen text-xl bg-gray-100"
+      tw="text-center flex flex-col items-center content-center h-screen text-xl bg-gray-100"
       css={{label: 'container'}}>
       <header>
         <div
-          className="text-center"
+          tw="text-center"
           css={css`
             @keyframes logo-bounce {
               0%,
@@ -43,7 +43,7 @@ function MainPage() {
             label: logo-container;
           `}>
           <img
-            className="h-full w-full"
+            tw="h-full w-full"
             css={{label: 'logo-image'}}
             src={require('~/common/assets/logo.png')}
             alt="logo"

@@ -1,7 +1,9 @@
+// Tailwind를 Global하게 적용하고 싶은 경우 코멘트 해제
+/*
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*/
 body {
   margin: 0;
 }
