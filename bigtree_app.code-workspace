@@ -151,7 +151,7 @@
       "editorconfig.editorconfig",
       "ms-python.python",
       "dbaeumer.vscode-eslint",
-      "jpoissonnier.vscode-styled-components",
+      "styled-components.vscode-styled-components",
       "msjsdiag.vscode-react-native",
       "stylelint.vscode-stylelint",
       "bradlc.vscode-tailwindcss"
