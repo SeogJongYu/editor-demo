@@ -1,6 +1,5 @@
 module.exports = {
-  purge: ['./app/**/*.tsx', './public/index.ejs'],
-  darkMode: false, // or 'media' or 'class'
+  content: ['./app/**/*.tsx', './public/index.ejs'],
   theme: {
     extend: {},
   },
