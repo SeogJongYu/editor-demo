@@ -148,3 +148,8 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Proxy Settings
+
+USE_X_FORWARDED_HOST = True

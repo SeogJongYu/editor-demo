@@ -142,6 +142,9 @@ module.exports = {
         context: ['/api', '/ws', '/media', '/static', '/admin', '/views'],
         target: 'http://localhost:8000',
         changeOrigin: true,
+        onProxyReq: function (proxyReq, req, res) {
+          proxyReq.setHeader('X-Forwarded-Host', req.hostname);
+        },
       },
     ],
     hot: true,
