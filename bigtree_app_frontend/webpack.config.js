@@ -143,7 +143,7 @@ module.exports = {
         target: 'http://localhost:8000',
         changeOrigin: true,
         onProxyReq: function (proxyReq, req, res) {
-          proxyReq.setHeader('X-Forwarded-Host', req.hostname);
+          proxyReq.setHeader('X-Forwarded-Host', req.headers.host);
         },
       },
     ],
