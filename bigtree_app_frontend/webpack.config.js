@@ -28,7 +28,7 @@ module.exports = {
     path: path.join(__dirname, '/build'),
     publicPath: '/',
   },
-  devtool: isDevelopment ? 'eval-cheap-module-source-map' : false,
+  devtool: isDevelopment ? 'cheap-module-source-map' : false,
   resolve: {
     alias: {
       'react-native$': 'react-native-web',
