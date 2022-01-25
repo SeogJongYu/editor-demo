@@ -10,11 +10,11 @@ COPY ./package.json /app/package.json
 COPY ./yarn.lock /app/yarn.lock
 
 ARG BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD
-RUN if [ -z "$BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD" ]; then \
+RUN if [ -z "APOV_DOCKER_DISABLE_FRONTEND_BUILD" ]; then \
         yarn; \
     fi
 COPY ./ /app
-RUN if [ -z "$BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD" ]; then \
+RUN if [ -z "APOV_DOCKER_DISABLE_FRONTEND_BUILD" ]; then \
         yarn build:web; \
     fi
 
