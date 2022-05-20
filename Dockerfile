@@ -12,8 +12,8 @@ ARG GITHUB_CREDENTIAL
 ARG GITHUB_PRIVATE_KEY
 RUN /bin/bash /app/poetry-install.sh
 
-COPY bigtree_app/ /app/bigtree_app
-COPY bigtree_app_backend/ /app/bigtree_app_backend
+COPY editor-demo/ /app/editor-demo
+COPY editor-demo_backend/ /app/editor-demo_backend
 COPY manage.py /app/manage.py
 RUN poetry run python manage.py collectstatic
 COPY . /app

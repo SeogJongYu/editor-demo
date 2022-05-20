@@ -1,7 +1,7 @@
-bigtree_app_template
+editor-demo
 =======================
 
-![스크린샷](bigtree_app_template.png)
+![스크린샷](editor-demo.png)
 
 Django Backend / React Frontend 를 사용하는 앱 템플릿
 
@@ -44,10 +44,10 @@ Django Backend / React Frontend 를 사용하는 앱 템플릿
 
 ### 템플릿 복제
 
-명령어를 통해 git clone 하거나 [템플릿 생성](https://github.com/ibigtree/bigtree_app_template/generate) 기능 사용
+명령어를 통해 git clone 하거나 [템플릿 생성](https://github.com/ibigtree/editor-demo/generate) 기능 사용
 
 ```bash
-git clone git@github.com:ibigtree/bigtree_app_template.git my_app
+git clone git@github.com:ibigtree/editor-demo.git my_app
 ```
 
 ### 초기화
@@ -57,8 +57,8 @@ cd my_app
 
 python init.py
 # 대화상자에서 앱 및 패키지 이름 입력
-# App Name(example: bigtree_app): my_app
-# Package Name(example: kr.ibigtree.app): kr.ibigtree.my_app
+# App Name(example: editor-demo): my_app
+# Package Name(example: editor.app): kr.ibigtree.my_app
 
 # Git 저장소 초기화 (GitHub Template 기능 사용해 복제한 경우 건너뜀)
 rm -rf .git  # Windows: rmdir .git /S
@@ -95,12 +95,12 @@ python manage.py runserver
 
 ### Frontend
 
-* Android: bigtree_app_frontend/android 를 Android Studio로 한번 열어줘야 정상 실행 됨
-* iOS: cd bigtree_app_frontend/ios && pod install 로 Naitve 의존성 설치 먼저 진행해야 함
+* Android: editor-demo_frontend/android 를 Android Studio로 한번 열어줘야 정상 실행 됨
+* iOS: cd editor-demo_frontend/ios && pod install 로 Naitve 의존성 설치 먼저 진행해야 함
 
 
 ```
-cd bigtree_app_frontend
+cd editor-demo_frontend
 
 # 웹 화면 실행
 yarn start:web
@@ -126,13 +126,13 @@ Docker 빌드 시에는 `.env` 이미지에 파일은 복사되지 않는다.
 
 ```
 # Django Secret Key
-BIGTREE_APP_SECRET_KEY=changeme
+EDITOR-DEMO_SECRET_KEY=changeme
 
 # Django Debug Flag
-BIGTREE_APP_DEBUG=true
+EDITOR-DEMO_DEBUG=true
 
 # 접속 허용 호스트 지정
-BIGTREE_APP_HOSTS=myapp.bigbot.kr
+EDITOR-DEMO_HOSTS=myapp.bigbot.kr
 
 # Timezone 설정
 TZ=Asia/Seoul
@@ -177,13 +177,13 @@ docker-compose는 기본적으로 `.env` 파일만 인식하며 다른 파일명
 
 ```
 # docker-compose 프로젝트 이름
-COMPOSE_PROJECT_NAME=bigtree_app
+COMPOSE_PROJECT_NAME=editor-demo
 
 # 노출될 웹서버 포트
-BIGTREE_APP_DOCKER_PORT=8080
+EDITOR-DEMO_DOCKER_PORT=8080
 
 # true로 설정시 frontend 빌드 건너뜀
-BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD=true
+EDITOR-DEMO_DOCKER_DISABLE_FRONTEND_BUILD=true
 
 # Backend/WebServer Timezone 설정
 TZ=Asia/Seoul
@@ -195,7 +195,7 @@ TZ=Asia/Seoul
 Docker를 사용해 Frontend 빌드 가능
 
 ```
-cd bigtree_app_frontend
+cd editor-demo_frontend
 docker-compose up --build
 ```
 
@@ -205,11 +205,11 @@ docker-compose up --build
 
 Windows 이외 운영체제의 경우 graphviz 설치가 필요할 수 있음(참조: https://plantuml.com/ko/graphviz-dot)
 
-아래 명령어를 실행하면 bigtree_app_document/build/ 폴더에 html 파일로 생성됨.
+아래 명령어를 실행하면 editor-demo_document/build/ 폴더에 html 파일로 생성됨.
 
 ```
 poetry shell
-cd bigtree_app_document
+cd editor-demo_document
 yarn build
 ```
 

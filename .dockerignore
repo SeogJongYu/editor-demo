@@ -10,9 +10,9 @@ db.sqlite3
 **/node_modules/
 media/
 static/
-bigtree_app_document/
-bigtree_app_frontend/
-bigtree_app_nginx/
+editor-demo_document/
+editor-demo_frontend/
+editor-demo_nginx/
 .venv/
 .env.development
 .env

@@ -1,0 +1,5 @@
+{
+    "entryPoints": ["./app/"],
+    "entryPointStrategy": "expand",
+    "out": "../editor-demo_document/build/html/typedoc/"
+}

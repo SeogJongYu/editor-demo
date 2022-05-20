@@ -3,7 +3,7 @@ version: "3.7"
 x-common:
   backend:
     &x-common-backend
-    image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}backend
+    image: ${EDITOR-DEMO_DOCKER_REGISTRY:-editor-demo/}backend
     build:
       context: .
     env_file:
@@ -19,12 +19,12 @@ services:
     <<: *x-common-backend
 
   frontend:
-    image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}frontend
+    image: ${EDITOR-DEMO_DOCKER_REGISTRY:-editor-demo/}frontend
     build:
-      context: ./bigtree_app_frontend/
+      context: ./editor-demo_frontend/
       args:
         TZ: ${TZ:-Asia/Seoul}
-        BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD: ${BIGTREE_APP_DOCKER_DISABLE_FRONTEND_BUILD:-}
+        EDITOR-DEMO_DOCKER_DISABLE_FRONTEND_BUILD: ${EDITOR-DEMO_DOCKER_DISABLE_FRONTEND_BUILD:-}
     command: /bin/bash -c "rm -rf /static/frontend/*; cp -r /app/build/. /static/frontend; echo Copied frontend static files to /static/frontend"
     volumes:
       - type: bind
@@ -39,7 +39,7 @@ services:
       "--workers=${WSGI_WORKERS:-2}",
       "--threads=${WSGI_THREADS:-4}",
       "--bind=0.0.0.0:8080",
-      "bigtree_app.wsgi:application"
+      "editor-demo.wsgi:application"
     ]
     volumes:
       - ./db.sqlite3:/app/db.sqlite3
@@ -53,13 +53,13 @@ services:
       - backend
 
   nginx:
-    image: ${BIGTREE_APP_DOCKER_REGISTRY:-bigtree_app_template/}nginx
+    image: ${EDITOR-DEMO_DOCKER_REGISTRY:-editor-demo/}nginx
     build:
-      context: ./bigtree_app_nginx/
+      context: ./editor-demo_nginx/
     environment:
       - WSGI_HOST=wsgi
     ports:
-        - "${BIGTREE_APP_DOCKER_PORT:-8080}:80"
+        - "${EDITOR-DEMO_DOCKER_PORT:-8080}:80"
     depends_on:
       - backend
       - frontend
