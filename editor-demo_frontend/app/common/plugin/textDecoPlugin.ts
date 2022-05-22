@@ -17,24 +17,11 @@ import {PluginOptions} from '@toast-ui/editor-plugin-color-syntax';
 import {findParentByClassName} from '../utils/dom';
 import {addLangs} from '../i18n/langs';
 
-// import './css/plugin.css';
 import '../css/plugin.css';
-import {textDecoPopupBody} from '../components/toolbar/textDecoPopupBody';
+import {textDecoBody, textDecoPopupBody} from '../components/toolbar/textDecoPopupBody';
+import { useEffect } from 'react';
 
 const PREFIX = 'toastui-editor-';
-
-function createButton(type: 'strike' | 'underline') {
-  const button = document.createElement('button');
-
-  button.setAttribute('type', 'button');
-  if (type === 'strike') {
-    button.setAttribute('class', `strike ${PREFIX}toolbar-icons`);
-  } else if (type === 'underline') {
-    button.setAttribute('class', `underline ${PREFIX}toolbar-icons`);
-  }
-
-  return button;
-}
 
 function createToolbarItemOption(
   textDecoContainer: HTMLDivElement,
@@ -89,19 +76,63 @@ export default function textDecoPlugin(
   const {preset} = options;
   const container = document.createElement('div');
 
+  container.innerHTML = textDecoBody;
+
   addLangs(i18n);
 
-  const strikeButton = createButton('strike');
-  const underlineButton = createButton('underline');
+  const toolbarItem = createToolbarItemOption(container, i18n);
 
-  const toolbarItem = createToolbarItemOption(textDecoPopupBody(), i18n);
-
-  container.appendChild(strikeButton);
-  container.appendChild(underlineButton);
+  container.addEventListener('click', e => {
+    // console.log('click!', e)
+    if ((e.target as HTMLElement).classList.contains('underline')) {
+      eventEmitter.emit('command', 'underline')
+      eventEmitter.emit('closePopup');
+      console.log('underline');
+      
+    } else if ((e.target as HTMLElement).classList.contains('strike')) {
+      eventEmitter.emit('command', 'strike')
+      eventEmitter.emit('closePopup');
+      console.log('cancel line');
+      
+    }
+  })
 
   return {
     markdownCommands: {},
-    wysiwygCommands: {},
+    wysiwygCommands: {
+      underline: (item, state, dispatch) => {
+        const {tr, selection, schema} = state;
+        const {from, to} = selection;
+
+        const attrs = {
+          htmlAttrs: {style: 'text-decoration: underline'}
+        };
+
+        const mark = schema.marks.span.create(attrs);
+
+        tr.addMark(from, to, mark);
+
+        dispatch(tr);
+
+        return true;
+      },
+      strike: (item, state, dispatch) => {
+        const {tr, selection, schema} = state;
+        const {from, to} = selection;
+
+        const attrs = {
+          htmlAttrs: {style: 'text-decoration: line-through'}
+        };
+
+        const mark = schema.marks.span.create(attrs);
+
+        tr.addMark(from, to, mark);
+
+        dispatch(tr);
+
+        return true;
+      },
+    },
     toolbarItems: [
       {
         groupIndex: 0,

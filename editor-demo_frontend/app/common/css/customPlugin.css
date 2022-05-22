@@ -1,15 +1,24 @@
 // Text Background Color
 .toastui-editor-toolbar-icons.bg-color {
-    background: none;
+  background: none;
 }
+
+/* Text Decoration */
 .toastui-editor-toolbar-icons.underline {
-    background: none;
+  background: none;
 }
-.custom.button {
-    width: 32px;
-    height: 32px;
-    padding: 0;
-    border-radius: 3px;
-    margin: 7px 5px;
-    border: 1px solid #f7f9fc;
+
+.custom-button {
+  background: none;
+  width: 62px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.custom-button .strike.icon {
+  text-decoration: line-through;
+}
+
+.underline {
+  text-decoration: underline;
 }

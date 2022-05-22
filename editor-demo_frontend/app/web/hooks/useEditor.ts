@@ -34,7 +34,9 @@ const EDITOR_INIT_OPTIONS: EditorOptions = {
   plugins: [colorSyntax, backgroundColorPlugin, underlinePlugin],
   el: document.querySelector('#editor') as HTMLDivElement,
   // previewStyle: 'vertical',
-  height: '800px',
+  // height: '800px',
+  height: '500px',
+  // initialEditType: 'markdown',
   initialEditType: 'wysiwyg',
 };
 

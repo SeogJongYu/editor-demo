@@ -1,32 +1,25 @@
 import {parse} from 'node-html-parser';
+import html from '../../vdom/htm'
 
 const classConfig = {
-  strike: 'strike toastui-editor-toolbar-icons',
-  underline: 'underline toastui-editor-toolbar-icons',
+  strike: 'custom-button strike',
+  underline: 'custom-button underline',
 };
 
 export function textDecoPopupBody() {
-  // const container = document.createElement('div');
-  // container.innerHTML = 'dfdadaf';
+  const container = document.createElement('div');
 
-  // const textColorButton = document.createElement('button');
-  // textColorButton.setAttribute('class', 'custom button');
-  // textColorButton.innerHTML = 'A';
+  const underlineButton = `<div class="${classConfig.underline}"><span class="icon">As</span><span>밑줄</span></div>`;
+  const strikeButton = `<div class="${classConfig.strike}"><span class="icon">Aa</span><span>취소선</span></div>`;
 
-  const strikeButton = `<button type="button" class="${classConfig.strike}">S</button>`;
-  const underlineButton = `<button type="button" class="${classConfig.underline}">S</button>`;
+  container.innerHTML = `${strikeButton}${underlineButton}`
 
-  // container.appendChild(textColorButton);
-
-  const container = `<div>${strikeButton}${underlineButton}</div>`;
-
-  //@ts-ignore
-  const result = parse(container) as HTMLDivElement;
-
-  // console.log('root:', root);
-
-  return result;
+  return container;
 }
+const underlineButton = `<div class="${classConfig.underline}"><span class="icon">As</span><span>밑줄</span></div>`;
+const strikeButton = `<div class="${classConfig.strike}"><span class="icon">Aa</span><span>취소선</span></div>`;
+
+export const textDecoBody = `${strikeButton}${underlineButton}`;
 
 const PREFIX = 'toastui-editor-';
 

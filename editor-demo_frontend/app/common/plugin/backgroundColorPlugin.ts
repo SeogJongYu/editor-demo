@@ -151,6 +151,11 @@ export default function colorSyntaxPlugin(
           const closeTag = `</span>`;
           const colored = `${openTag}${textContent}${closeTag}`;
 
+          console.log('schema', schema);
+          console.log('@@@:', schema.text(colored));
+          
+          
+
           tr.replaceSelectionWith(schema.text(colored)).setSelection(
             createSelection(
               tr,
@@ -172,6 +177,9 @@ export default function colorSyntaxPlugin(
       bgColor: ({selectedColor}, state, dispatch) => {
         const {tr, selection, schema} = state;
 
+        console.log('state:', state);
+        
+
         if (selectedColor) {
           const {from, to} = selection;
 
@@ -179,9 +187,14 @@ export default function colorSyntaxPlugin(
             htmlAttrs: {style: `background-color: ${selectedColor}`},
           };
 
+          console.log('mark:', schema);
+          
+
           const mark = schema.marks.span.create(attrs);
 
           tr.addMark(from, to, mark);
+
+          tr.addStoredMark(mark);
 
           dispatch!(tr);
 
