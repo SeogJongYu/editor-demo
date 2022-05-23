@@ -1,12 +1,13 @@
-import html from './htm';
 import isBoolean from 'tui-code-snippet/type/isBoolean';
 import isString from 'tui-code-snippet/type/isString';
 import isNumber from 'tui-code-snippet/type/isNumber';
-import { ComponentClass } from '@toast-ui/editor/types/ui';
-import { VNode } from './vnode';
+import {ComponentClass} from '@toast-ui/editor/types/ui';
+
+import html from './htm';
+import {VNode} from './vnode';
 
 function createTextNode(text: string) {
-  return new VNode('TEXT_NODE', { nodeValue: text }, []);
+  return new VNode('TEXT_NODE', {nodeValue: text}, []);
 }
 
 function excludeUnnecessaryChild(child: VNode, flatted: VNode[]) {
@@ -23,12 +24,16 @@ function excludeUnnecessaryChild(child: VNode, flatted: VNode[]) {
   }
 }
 
-function h(type: string | ComponentClass, props: Record<string, any>, ...children: VNode[]) {
+function h(
+  type: string | ComponentClass,
+  props: Record<string, any>,
+  ...children: VNode[]
+) {
   const flatted: VNode[] = [];
 
-  children.forEach((child) => {
+  children.forEach(child => {
     if (Array.isArray(child)) {
-      child.forEach((vnode) => {
+      child.forEach(vnode => {
         excludeUnnecessaryChild(vnode, flatted);
       });
     } else {
@@ -40,4 +45,7 @@ function h(type: string | ComponentClass, props: Record<string, any>, ...childre
 }
 
 // @ts-ignore
-export default html.bind(h) as (strings: TemplateStringsArray, ...values: any[]) => VNode;
+export default html.bind(h) as (
+  strings: TemplateStringsArray,
+  ...values: any[]
+) => VNode;

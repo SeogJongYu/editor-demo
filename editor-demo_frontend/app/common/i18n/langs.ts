@@ -17,6 +17,7 @@ export function addLangs(i18n: I18n) {
     'Text color': 'Text color',
     'Text background color': 'Text background color',
     'Text underline': 'Text underline',
+    'List icon': 'List icon',
   });
 
   i18n.setLanguage(['es', 'es-ES'], {

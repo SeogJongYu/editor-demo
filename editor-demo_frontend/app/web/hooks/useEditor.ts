@@ -5,6 +5,7 @@ import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 import {ExecCommand} from '@toast-ui/editor/types/ui';
 
 import {textDecoPopupBody} from '~/common/components/toolbar/textDecoPopupBody';
+import listIconPlugin from '~/common/plugin/listIconPlugin';
 
 import underlinePlugin from '../../common/plugin/textDecoPlugin';
 import backgroundColorPlugin from '../../common/plugin/backgroundColorPlugin';
@@ -31,7 +32,12 @@ import {TUIEditorState} from '../recoil/editorState';
 // }
 
 const EDITOR_INIT_OPTIONS: EditorOptions = {
-  plugins: [colorSyntax, backgroundColorPlugin, underlinePlugin],
+  plugins: [
+    colorSyntax,
+    backgroundColorPlugin,
+    underlinePlugin,
+    listIconPlugin,
+  ],
   el: document.querySelector('#editor') as HTMLDivElement,
   // previewStyle: 'vertical',
   // height: '800px',
@@ -70,6 +76,22 @@ export function useEditor() {
         //   },
         // ],
       ],
+      // customHTMLRenderer: {
+      //   htmlBlock: {
+      //     heading(node, context) {
+      //       console.log('node:', node);
+      //       console.log('context:', context);
+
+      //       const strongContent = node?.parent?.type === 'strong';
+
+      //       return {
+      //         type: context.entering ? 'openTag' : 'closeTag',
+      //         tagName: 'p',
+      //         classNames: [`dsadsadsad`],
+      //       };
+      //     },
+      //   },
+      // },
     });
 
     setEditorState(prev => ({

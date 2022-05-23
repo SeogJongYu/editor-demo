@@ -4,6 +4,7 @@
     "paths": {
       "~/*": ["./app/*"]
     },
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "typescript-styled-plugin",
