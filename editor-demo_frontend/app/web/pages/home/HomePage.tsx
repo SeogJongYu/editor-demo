@@ -15,6 +15,16 @@ export default function HomePage() {
           }}>
           TUI Editor Demo
         </div>
+        <ul className="ul-test">
+          <li>dfsd</li>
+          <li>dfsd</li>
+          <li>dfsd</li>
+        </ul>
+        <ol style={{}}>
+          <li>dfsfd</li>
+          <li>dfsfd</li>
+          <li>dfsfd</li>
+        </ol>
         <TUIEditor />
       </div>
     </Page>
