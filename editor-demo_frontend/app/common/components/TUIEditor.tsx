@@ -5,6 +5,10 @@ import 'tui-color-picker/dist/tui-color-picker.css';
 import {useEffect} from 'react';
 
 import {useEditor} from '~/web/hooks/useEditor';
+import Cat from '~/common/assets/cat.png';
+import Owl from '~/common/assets/owl.svg';
+
+import {svgIcon} from '../assets/svg/svgIcon';
 
 export default function TUIEditor() {
   const {core, setEditorState} = useEditor();
@@ -37,6 +41,9 @@ export default function TUIEditor() {
 
   return (
     <>
+      {/* <iframe src="http://www.example.com/" width="400" height="300"></iframe> */}
+      {svgIcon.happy}
+
       <button onClick={tuiEvent}>버튼</button>
       <div id="editor" />
     </>

@@ -41,3 +41,14 @@
   background-color: purple;
   color: white;
 }
+
+.custom-list > li::before {
+  background-color: red !important;
+  content: '😆' !important;
+}
+
+/* 커스텀 버튼모양을 el 요소를 통해 만들었을 때 버튼 수직얼라인 조정 */
+.toastui-editor-toolbar-item-wrapper {
+  display: flex !important;
+  align-items: center;
+}

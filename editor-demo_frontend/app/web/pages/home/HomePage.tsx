@@ -1,7 +1,10 @@
+import {useNavigate} from 'react-router-dom';
+
 import Page from '~/common/components/Page';
 import TUIEditor from '~/common/components/TUIEditor';
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <Page>
       <div className="pt-10">
@@ -15,16 +18,9 @@ export default function HomePage() {
           }}>
           TUI Editor Demo
         </div>
-        <ul className="ul-test">
-          <li>dfsd</li>
-          <li>dfsd</li>
-          <li>dfsd</li>
-        </ul>
-        <ol style={{}}>
-          <li>dfsfd</li>
-          <li>dfsfd</li>
-          <li>dfsfd</li>
-        </ol>
+        <button onClick={() => navigate('/editor')}>
+          번들에디터 사용 페이지로 이동
+        </button>
         <TUIEditor />
       </div>
     </Page>

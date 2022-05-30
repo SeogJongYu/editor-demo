@@ -1,5 +1,5 @@
 import ColorPicker from 'tui-color-picker';
-import type {Context} from '@toast-ui/toastmark';
+import type {Context} from '@toast-ui/editor/types/toastmark';
 import type {
   PluginContext,
   PluginInfo,
@@ -172,8 +172,6 @@ export default function colorSyntaxPlugin(
       bgColor: ({selectedColor}, state, dispatch) => {
         const {tr, selection, schema} = state;
 
-        console.log('state:', state);
-
         if (selectedColor) {
           const {from, to} = selection;
 
@@ -187,7 +185,7 @@ export default function colorSyntaxPlugin(
 
           tr.addMark(from, to, mark);
 
-          tr.addStoredMark(mark);
+          // tr.addStoredMark(mark);
 
           dispatch!(tr);
 

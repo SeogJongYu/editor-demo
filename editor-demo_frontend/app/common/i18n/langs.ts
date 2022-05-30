@@ -18,6 +18,7 @@ export function addLangs(i18n: I18n) {
     'Text background color': 'Text background color',
     'Text underline': 'Text underline',
     'List icon': 'List icon',
+    'Block quote': 'Block quote',
   });
 
   i18n.setLanguage(['es', 'es-ES'], {

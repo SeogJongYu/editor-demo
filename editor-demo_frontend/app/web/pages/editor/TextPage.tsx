@@ -7,9 +7,5 @@ import {useEditor} from '~/web/hooks/useEditor';
 export default function TextPage() {
   const {core, setEditorState} = useEditor();
 
-  return (
-    <div className="pt-10">
-      <TUIEditor />
-    </div>
-  );
+  return <div className="pt-10">커스텀 에디터 페이지</div>;
 }

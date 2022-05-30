@@ -2,7 +2,9 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "~/*": ["./app/*"]
+      "~/*": ["./app/*"],
+      "@/*": ["./app/common/library/TUI/apps/editor/src"],
+      "@t/*": ["./app/common/library/TUI/apps/editor/types"]
     },
     "jsx": "react-jsx",
     "plugins": [
