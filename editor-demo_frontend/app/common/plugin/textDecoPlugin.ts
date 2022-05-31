@@ -15,12 +15,13 @@ function createToolbarItemOption(
   i18n: I18n,
 ) {
   return {
-    name: 'underline',
-    tooltip: i18n.get('Text underline'),
-    className: `${PREFIX}toolbar-icons underline`,
+    name: 'decoration',
+    tooltip: 'Text decoration',
+    // tooltip: i18n.get('Text underline'),
+    className: `${PREFIX}toolbar-icons text-deco-icon-button`,
     text: 'U',
     popup: {
-      className: `${PREFIX}popup-textdeco`,
+      className: `${PREFIX}popup-text-deco`,
       body: textDecoContainer,
       style: {width: 'auto'},
     },
@@ -43,23 +44,28 @@ export default function textDecoPlugin(
 
   addLangs(i18n);
 
+  console.log('pmState:', pmState);
+
   const toolbarItem = createToolbarItemOption(container, i18n);
 
   container.addEventListener('click', e => {
-    if (findParentByClassName(e.target as HTMLElement, 'underline')) {
+    if (
+      findParentByClassName(e.target as HTMLElement, 'underline-custom-button')
+    ) {
       eventEmitter.emit('command', 'underline');
       eventEmitter.emit('closePopup');
     }
 
-    if (findParentByClassName(e.target as HTMLElement, 'strike')) {
-      eventEmitter.emit('command', 'strike');
+    if (
+      findParentByClassName(e.target as HTMLElement, 'strike-custom-button')
+    ) {
+      eventEmitter.emit('command', 'strikeCommand');
       eventEmitter.emit('closePopup');
     }
   });
 
   return {
-    markdownCommands: {},
-    wysiwygCommands: {
+    markdownCommands: {
       underline: (item, state, dispatch) => {
         const {tr, selection, schema} = state;
         const {from, to} = selection;
@@ -76,12 +82,24 @@ export default function textDecoPlugin(
 
         return true;
       },
-      strike: (item, state, dispatch) => {
+      strikeCommand: (item, state, dispatch) => {
+        eventEmitter.emit('command', 'strike');
+
+        return true;
+      },
+    },
+    wysiwygCommands: {
+      underline: (item, state, dispatch) => {
         const {tr, selection, schema} = state;
         const {from, to} = selection;
 
+        console.log('schema:', schema);
+        console.log('selection:', selection);
+
+        const newSchema = schema.nodes;
+
         const attrs = {
-          htmlAttrs: {style: 'text-decoration: line-through'},
+          htmlAttrs: {style: 'text-decoration: underline'},
         };
 
         const mark = schema.marks.span.create(attrs);
@@ -89,6 +107,11 @@ export default function textDecoPlugin(
         tr.addMark(from, to, mark);
 
         dispatch(tr);
+
+        return true;
+      },
+      strikeCommand: (item, state, dispatch) => {
+        eventEmitter.emit('command', 'strike');
 
         return true;
       },

@@ -1,29 +1,51 @@
-// Text Background Color
+/* ======= Text Background Color ======= */
 .toastui-editor-toolbar-icons.bg-color {
   background: none;
 }
 
-/* Text Decoration */
-.toastui-editor-toolbar-icons.underline {
+/* ======= Text Decoration ======= */
+.toastui-editor-toolbar-icons.text-deco-icon-button {
   background: none;
-}
-
-.custom-button {
-  background: none;
-  width: 62px;
-  padding: 4px;
-  cursor: pointer;
-}
-
-.custom-button .strike.icon {
-  text-decoration: line-through;
-}
-
-.underline {
   text-decoration: underline;
 }
 
-/* List Icon */
+.toastui-editor-popup-text-deco .toastui-editor-popup-body {
+  padding: 5px 0 !important;
+}
+
+.text-deco-icon-button {
+  text-decoration: und;
+}
+
+.text-deco-custom-ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.text-deco-custom-ul > li {
+  padding: 4px 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.text-deco-custom-ul > li:hover {
+  background-color: #dff4ff;
+}
+
+.strike-custom-button .icon {
+  text-decoration: line-through;
+}
+
+.underline-custom-button .icon {
+  text-decoration: underline;
+}
+
+.text-deco-custom-ul .text {
+  margin-left: 6px;
+}
+
+/* ======= List Icon ======= */
 .ul-test {
   list-style-type: none;
   padding-left: 24px;
@@ -51,4 +73,18 @@
 .toastui-editor-toolbar-item-wrapper {
   display: flex !important;
   align-items: center;
+}
+
+/* ======= Headings ======= */
+/* 이걸로 헤딩타입별 마진값 조절 */
+.toastui-editor-contents > h1 {
+  margin-top: 50px !important;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(5) {
+  display: none !important;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(6) {
+  display: none !important;
 }

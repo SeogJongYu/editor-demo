@@ -29,14 +29,11 @@ export default function TUIEditor() {
     const selectedText = core.getSelectedText();
     const selection = core.getSelection();
     // core.insertText('https://picsum.photos/200/300');
-    // console.log('elements:', elements);
-    // console.log('html:', html);
-    // console.log('markdown:', markdown);
+    console.log('elements:', elements);
+    console.log('html:', html);
+    console.log('markdown:', markdown);
     console.log('selectedText:', selectedText);
     console.log('selection:', selection);
-
-    //@ts-ignore
-    core.insertText(svgElement);
   }
 
   return (

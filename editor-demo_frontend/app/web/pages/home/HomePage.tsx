@@ -21,6 +21,13 @@ export default function HomePage() {
         <button onClick={() => navigate('/editor')}>
           번들에디터 사용 페이지로 이동
         </button>
+        <div>
+          dfs
+          <ul style={{listStyle: 'none'}}>
+            <li>sfdsd</li>
+            <li>sfdsd</li>
+          </ul>
+        </div>
         <TUIEditor />
       </div>
     </Page>

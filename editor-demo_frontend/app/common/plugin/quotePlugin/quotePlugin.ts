@@ -1,26 +1,20 @@
-import type {PluginContext, PluginInfo, I18n} from '@toast-ui/editor';
+import type {PluginContext, PluginInfo, I18n, Emitter} from '@toast-ui/editor';
 import type {Node as ProsemirrorNode} from 'prosemirror-model';
 import type {Decoration} from 'prosemirror-view';
 
-import {addLangs} from '../i18n/langs';
+import {addLangs} from '../../i18n/langs';
 
-import '../css/plugin.css';
+import '../../css/plugin.css';
 
 import {PluginOptions} from '~/@types/plugin-options';
 
-import {happySvgIcon} from '../components/toolbar/listIconPopupBody';
+import {happySvgIcon} from '../../components/toolbar/listIconPopupBody';
 
 import isString from 'tui-code-snippet/type/isString';
 
-const PREFIX = 'toastui-editor-';
+import {inputArrowPlugin, quoteWwPlugin} from './quoteWwPlugin';
 
-function createToolbarItemOption(container: HTMLDivElement, i18n: I18n) {
-  return {
-    name: 'block quote',
-    tooltip: i18n.get('Blockquote'),
-    className: `${PREFIX}toolbar-icons quote custom-blockquote`,
-  };
-}
+const PREFIX = 'toastui-editor-';
 
 export default function quotePlugin(
   context: PluginContext,
@@ -60,7 +54,7 @@ export default function quotePlugin(
         const {tr, selection, schema, doc} = state;
         eventEmitter.emit('command', 'blockQuote');
 
-        console.log({state});
+        // console.log({state});
 
         // const node = schema.text(payload.svg);
         // tr.replaceSelectionWith(node);
@@ -74,20 +68,24 @@ export default function quotePlugin(
       customQuote: ({isActive}, state, dispatch) => {
         const {tr, selection, schema, doc} = state;
         console.log({state});
-        console.log('content:', state.doc.content.toJSON());
+        console.log('tr:', state.tr);
+        // eventEmitter.holdEventInvoke(() => {});
+        // console.log('node:', schema.nodes());
 
-        if (isActive) {
-          return true;
-        }
+        // if (isActive) {
+        //   return true;
+        // }
 
-        if (!isActive) {
-          eventEmitter.emit('command', 'blockQuote');
-          return true;
-        }
+        // if (!isActive) {
+        //   eventEmitter.emit('command', 'blockQuote');
+        //   return true;
+        // }
 
         return true;
       },
     },
+    wysiwygPlugins: [() => inputArrowPlugin],
+    // wysiwygPlugins: [() => quoteWwPlugin(eventEmitter, context)],
     toolbarItems: [
       {
         groupIndex: 1,

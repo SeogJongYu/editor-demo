@@ -27,6 +27,8 @@
     "axios": "^0.24.0",
     "core-js": "^3.18.0",
     "node-html-parser": "^5.3.3",
+    "prosemirror-inputrules": "^1.2.0",
+    "prosemirror-state": "^1.4.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-hot-loader": "^4.12.21",
