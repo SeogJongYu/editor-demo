@@ -69,6 +69,7 @@ export default function quotePlugin(
         const {tr, selection, schema, doc} = state;
         console.log({state});
         console.log('tr:', state.tr);
+        eventEmitter.emit('command', 'blockQuote');
         // eventEmitter.holdEventInvoke(() => {});
         // console.log('node:', schema.nodes());
 

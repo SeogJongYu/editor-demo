@@ -2,16 +2,20 @@ import {useEffect, useMemo, useRef, useState} from 'react';
 import {useRecoilState} from 'recoil';
 import Editor, {EditorOptions, Emitter} from '@toast-ui/editor';
 import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
+// import customQuote from '@toast-ui/editor-plugin-custom-quote';
 
 import iconListPlugin from '~/common/plugin/iconListPlugin';
-import quotePlugin from '~/common/plugin/quotePlugin/quotePlugin';
+// import quotePlugin from '~/common/plugin/quotePlugin/quotePlugin';
 
 import underlinePlugin from '../../common/plugin/textDecoPlugin';
 import backgroundColorPlugin from '../../common/plugin/backgroundColorPlugin';
 import {TUIEditorState} from '../recoil/editorState';
 
+import customQuote from '../../../../../../fork-lib/tui.editor/plugins/custom-quote/dist/toastui-editor-plugin-custom-quote.js';
+
 const EDITOR_INIT_OPTIONS: EditorOptions = {
-  plugins: [colorSyntax, backgroundColorPlugin, underlinePlugin, quotePlugin],
+  //@ts-ignore
+  plugins: [colorSyntax, backgroundColorPlugin, underlinePlugin, customQuote],
   el: document.querySelector('#editor') as HTMLDivElement,
   previewStyle: 'vertical',
   height: '500px',
