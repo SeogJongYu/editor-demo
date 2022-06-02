@@ -19,7 +19,6 @@ function createToolbarItemOption(
     tooltip: 'Text decoration',
     // tooltip: i18n.get('Text underline'),
     className: `${PREFIX}toolbar-icons text-deco-icon-button`,
-    text: 'U',
     popup: {
       className: `${PREFIX}popup-text-deco`,
       body: textDecoContainer,

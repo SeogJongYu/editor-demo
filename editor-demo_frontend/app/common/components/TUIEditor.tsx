@@ -7,6 +7,8 @@ import {useEffect} from 'react';
 import {useEditor} from '~/web/hooks/useEditor';
 import Cat from '~/common/assets/cat.png';
 import Owl from '~/common/assets/owl.svg';
+import {ReactComponent as TextIcon} from '~/common/assets/editor_icon/icon_Text_BGColor.svg';
+import {ReactComponent as Qua} from '~/common/assets/editor_icon/icon_Quatation.svg';
 
 import {svgIcon} from '../assets/svg/svgIcon';
 
@@ -39,9 +41,22 @@ export default function TUIEditor() {
   return (
     <>
       {/* <iframe src="http://www.example.com/" width="400" height="300"></iframe> */}
-      {svgIcon.happy}
+      {/* {svgIcon.happy} */}
 
-      <button onClick={tuiEvent}>버튼</button>
+      {/* <button onClick={tuiEvent}>버튼</button> */}
+      <Qua />
+      <div
+        style={{
+          border: '1px solid black',
+          width: 30,
+          height: 30,
+          backgroundImage: `url(${require('~/common/assets/editor_icon/icon_Text_BGColor.svg')})`,
+          // background: 'url(~/common/assets/cat.png)',
+          backgroundSize: '20px 20px',
+          // background: `url(${Cat})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}></div>
       <div id="editor" />
     </>
   );

@@ -35,7 +35,7 @@ function createToolbarItemOption(
     name: 'bgColor',
     tooltip: i18n.get('Text background color'),
     className: `${PREFIX}toolbar-icons bg-color`,
-    text: 'BG',
+    // text: 'BG',
     popup: {
       className: `${PREFIX}popup-color`,
       body: colorPickerContainer,

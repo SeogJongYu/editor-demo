@@ -6,16 +6,16 @@ import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 
 import iconListPlugin from '~/common/plugin/iconListPlugin';
 // import quotePlugin from '~/common/plugin/quotePlugin/quotePlugin';
+import quotePlugin from '~/common/plugin/quotePlugin/quotePlugin';
 
 import underlinePlugin from '../../common/plugin/textDecoPlugin';
 import backgroundColorPlugin from '../../common/plugin/backgroundColorPlugin';
 import {TUIEditorState} from '../recoil/editorState';
 
-import customQuote from '../../../../../../fork-lib/tui.editor/plugins/custom-quote/dist/toastui-editor-plugin-custom-quote.js';
+// import customQuote from '../../../../../../fork-lib/tui.editor/plugins/custom-quote/dist/toastui-editor-plugin-custom-quote.js';
 
 const EDITOR_INIT_OPTIONS: EditorOptions = {
-  //@ts-ignore
-  plugins: [colorSyntax, backgroundColorPlugin, underlinePlugin, customQuote],
+  plugins: [colorSyntax, backgroundColorPlugin, underlinePlugin, quotePlugin],
   el: document.querySelector('#editor') as HTMLDivElement,
   previewStyle: 'vertical',
   height: '500px',
@@ -33,8 +33,8 @@ export function useEditor() {
       ...EDITOR_INIT_OPTIONS,
       el: document.querySelector('#editor') as HTMLDivElement,
       toolbarItems: [
-        ['heading', 'bold', 'italic', 'strike'],
-        ['hr', 'quote'],
+        ['heading', 'bold', 'italic'],
+        ['hr'],
         ['ul', 'ol', 'task', 'indent', 'outdent'],
         ['table', 'image', 'link'],
         ['code', 'codeblock'],
