@@ -5,6 +5,7 @@ import type {
   PluginInfo,
   HTMLMdNode,
   I18n,
+  EditorType,
 } from '@toast-ui/editor';
 import type {Transaction, Selection, TextSelection} from 'prosemirror-state';
 
@@ -32,10 +33,9 @@ function createToolbarItemOption(
   i18n: I18n,
 ) {
   return {
-    name: 'bgColor',
+    name: 'textBackgroundColor',
     tooltip: i18n.get('Text background color'),
     className: `${PREFIX}toolbar-icons bg-color`,
-    // text: 'BG',
     popup: {
       className: `${PREFIX}popup-color`,
       body: colorPickerContainer,
@@ -84,14 +84,6 @@ interface ColorPickerOption {
 let containerClassName: string;
 let currentEditorEl: HTMLElement;
 
-// @TODO: add custom syntax for plugin
-/**
- * Color syntax plugin
- * @param {Object} context - plugin context for communicating with editor
- * @param {Object} options - options for plugin
- * @param {Array.<string>} [options.preset] - preset for color palette (ex: ['#181818', '#292929'])
- * @param {boolean} [options.useCustomSyntax=false] - whether use custom syntax or not
- */
 export default function colorSyntaxPlugin(
   context: PluginContext,
   options: PluginOptions = {},
@@ -110,10 +102,7 @@ export default function colorSyntaxPlugin(
   const colorPicker = ColorPicker.create(colorPickerOption);
   const button = createApplyButton(i18n.get('OK'));
 
-  /**
-   * 타입 any 임시박아놓음
-   */
-  eventEmitter.listen('focus', (editType: any) => {
+  eventEmitter.listen('focus', (editType: EditorType) => {
     containerClassName = `${PREFIX}${
       editType === 'markdown' ? 'md' : 'ww'
     }-container`;
@@ -179,13 +168,9 @@ export default function colorSyntaxPlugin(
             htmlAttrs: {style: `background-color: ${selectedColor}`},
           };
 
-          console.log('mark:', schema);
-
           const mark = schema.marks.span.create(attrs);
 
           tr.addMark(from, to, mark);
-
-          // tr.addStoredMark(mark);
 
           dispatch!(tr);
 
@@ -193,28 +178,6 @@ export default function colorSyntaxPlugin(
         }
         return false;
       },
-      // bgColor: ({selectedColor}, {tr, selection, schema}, dispatch) => {
-      //   console.log({tr, selection, schema});
-
-      //   if (selectedColor) {
-      //     const {from, to} = selection;
-      //     console.log({from, to});
-
-      //     const attrs = {
-      //       htmlAttrs: {style: `background-color: ${selectedColor}`},
-      //     };
-      //     console.log('attrs:', attrs);
-
-      //     const mark = schema.marks.span.create(attrs);
-      //     console.log('mark:', mark);
-
-      //     tr.addMark(from, to, mark);
-      //     dispatch!(tr);
-
-      //     return true;
-      //   }
-      //   return false;
-      // },
     },
     toolbarItems: [
       {

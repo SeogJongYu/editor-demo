@@ -2,8 +2,6 @@ import '@toast-ui/editor/dist/toastui-editor.css';
 import 'tui-image-editor/dist/tui-image-editor.css';
 import 'tui-color-picker/dist/tui-color-picker.css';
 
-import {useEffect} from 'react';
-
 import {useEditor} from '~/web/hooks/useEditor';
 import Cat from '~/common/assets/cat.png';
 import Owl from '~/common/assets/owl.svg';

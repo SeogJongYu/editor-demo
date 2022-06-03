@@ -1,21 +1,16 @@
-import {useEffect, useMemo, useRef, useState} from 'react';
+import {useEffect} from 'react';
 import {useRecoilState} from 'recoil';
-import Editor, {EditorOptions, Emitter} from '@toast-ui/editor';
+import Editor, {EditorOptions} from '@toast-ui/editor';
 import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
-// import customQuote from '@toast-ui/editor-plugin-custom-quote';
 
-import iconListPlugin from '~/common/plugin/iconListPlugin';
-// import quotePlugin from '~/common/plugin/quotePlugin/quotePlugin';
 import quotePlugin from '~/common/plugin/quotePlugin/quotePlugin';
 
-import underlinePlugin from '../../common/plugin/textDecoPlugin';
+import textDecoPlugin from '../../common/plugin/textDecoPlugin/textDecoPlugin';
 import backgroundColorPlugin from '../../common/plugin/backgroundColorPlugin';
 import {TUIEditorState} from '../recoil/editorState';
 
-// import customQuote from '../../../../../../fork-lib/tui.editor/plugins/custom-quote/dist/toastui-editor-plugin-custom-quote.js';
-
 const EDITOR_INIT_OPTIONS: EditorOptions = {
-  plugins: [colorSyntax, backgroundColorPlugin, underlinePlugin, quotePlugin],
+  plugins: [colorSyntax, backgroundColorPlugin, textDecoPlugin, quotePlugin],
   el: document.querySelector('#editor') as HTMLDivElement,
   previewStyle: 'vertical',
   height: '500px',
@@ -53,28 +48,6 @@ export function useEditor() {
           },
         },
       ],
-      // customHTMLRenderer: {
-      //   htmlBlock: {
-      //     //@ts-ignore
-      //     iframe(node) {
-      //       console.log('node:', node);
-      //       return [
-      //         {
-      //           type: 'openTag',
-      //           tagName: 'iframe',
-      //           outerNewLine: true,
-      //           attributes: node.attrs,
-      //         },
-      //         {type: 'html', content: node.childrenHTML},
-      //         {type: 'closeTag', tagName: 'iframe', outerNewLine: true},
-      //       ];
-      //     },
-      //     //@ts-ignore
-      //     svg(node) {
-      //       console.log('svgNode:', node);
-      //     },
-      //   },
-      // },
     });
 
     setEditorState(prev => ({
@@ -84,15 +57,6 @@ export function useEditor() {
 
     return () => editor.destroy();
   }, [setEditorState]);
-
-  useEffect(() => {
-    if (!core) {
-      return;
-    }
-
-    const popup = document.querySelector('.toastui-editor-popup-add-heading');
-    console.log('popup:', popup);
-  });
 
   return {
     core,
