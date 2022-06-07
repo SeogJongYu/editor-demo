@@ -27,20 +27,24 @@
   text-decoration: und;
 }
 
-.text-deco-custom-ul {
+.text-deco-popup-ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.text-deco-custom-ul > li {
+.text-deco-popup-ul > li {
   padding: 4px 12px;
   cursor: pointer;
   font-weight: bold;
 }
 
-.text-deco-custom-ul > li:hover {
+.text-deco-popup-ul > li:hover {
   background-color: #dff4ff;
+}
+
+.text-deco-popup-ul .text {
+  margin-left: 6px;
 }
 
 .strike-custom-button .icon {
@@ -51,9 +55,6 @@
   text-decoration: underline;
 }
 
-.text-deco-custom-ul .text {
-  margin-left: 6px;
-}
 
 /* ======= List Icon ======= */
 .ul-test {
@@ -81,18 +82,18 @@
 
 /* 커스텀 버튼모양을 el 요소를 통해 만들었을 때 버튼 수직얼라인 조정 */
 .toastui-editor-toolbar-item-wrapper {
-  display: flex !important;
-  align-items: center;
+  /* display: flex !important;
+  align-items: center; */
 }
 
 /* ======= Headings ======= */
-/* 이걸로 헤딩타입별 마진값 조절 */
 .toastui-editor-contents > h1 {
   margin-top: 50px !important;
   color: #3d3c3f;
   font-weight: 800;
   line-height: 45px;
   font-size: 30px;
+  text-align: center;
 }
 .toastui-editor-contents > h2 {
   margin-top: 40px !important;
@@ -100,6 +101,7 @@
   font-weight: 800;
   line-height: 45px;
   font-size: 30px;
+  border-bottom: 1px solid #999;
 }
 .toastui-editor-contents > h3 {
   margin-top: 30px !important;
@@ -116,12 +118,93 @@
   font-size: 14px;
 }
 
+/* Headings Popup */
+.toastui-editor-popup-add-heading > div > ul {
+  width: 200px;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li {
+  margin-top: 4px;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(1) > h1 {
+  /* visibility: hidden; */
+  color: transparent;
+  border-bottom: 3px double #999;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(1) > h1:after {
+  color: #000;
+	visibility: visible;
+	position: absolute;
+	top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "제목1";
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(2) > h2 {
+  color: transparent;
+  border-bottom: 1px solid #999;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(2) > h2:after {
+  color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "제목2";
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(3) > h3 {
+  visibility: hidden;
+  position: relative;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(3) > h3:after {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "제목3";
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(4) > h4 {
+  visibility: hidden;
+  position: relative;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(4) > h4:after {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "제목4";
+}
+
 .toastui-editor-popup-add-heading > div > ul > li:nth-child(5) {
   display: none !important;
 }
 
 .toastui-editor-popup-add-heading > div > ul > li:nth-child(6) {
   display: none !important;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(7) > div {
+  visibility: hidden;
+  position: relative;
+}
+
+.toastui-editor-popup-add-heading > div > ul > li:nth-child(7) > div:after {
+	visibility: visible;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "본문";
 }
 
 /* Custom Quote 커스텀 인용구 */
