@@ -54,7 +54,17 @@ export default function textDecoPlugin(
   context: PluginContext,
   options: PluginOptions = {},
 ): PluginInfo {
-  const {eventEmitter, pmState, pmView} = context;
+  const {eventEmitter, pmState} = context;
+  const {groupIndex, itemIndex} = options;
+
+  const toolbarItemIndex =
+    groupIndex && itemIndex
+      ? {groupIndex, itemIndex}
+      : {
+          groupIndex: 0,
+          itemIndex: 5,
+        };
+
   const container = document.createElement('div');
 
   container.innerHTML = createTextDecoPopupBody();
@@ -132,8 +142,7 @@ export default function textDecoPlugin(
     },
     toolbarItems: [
       {
-        groupIndex: 0,
-        itemIndex: 6,
+        ...toolbarItemIndex,
         item: toolbarItem,
       },
     ],

@@ -99,9 +99,17 @@ export default function customColorSyntaxPlugin(
   options: PluginOptions = {},
 ): PluginInfo {
   const {eventEmitter, i18n, usageStatistics = true, pmState} = context;
-  const {preset} = options;
+  const {preset, groupIndex, itemIndex} = options;
   const container = document.createElement('div');
   const colorPickerOption: ColorPickerOption = {container, usageStatistics};
+
+  const toolbarItemIndex =
+    groupIndex && itemIndex
+      ? {groupIndex, itemIndex}
+      : {
+          groupIndex: 0,
+          itemIndex: 3,
+        };
 
   addLangs(i18n);
 
@@ -186,8 +194,7 @@ export default function customColorSyntaxPlugin(
     },
     toolbarItems: [
       {
-        groupIndex: 0,
-        itemIndex: 3,
+        ...toolbarItemIndex,
         item: toolbarItem,
       },
     ],

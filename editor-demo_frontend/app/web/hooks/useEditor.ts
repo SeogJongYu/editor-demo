@@ -27,7 +27,7 @@ export function useEditor() {
 
   // 에디터 코어 생성
   useEffect(() => {
-    const reWidgetRule = /\[(@\S+)\]\((\S+)\)/;
+    // const reWidgetRule = /\[(@\S+)\]\((\S+)\)/;
 
     const editor = new Editor({
       ...EDITOR_INIT_OPTIONS,
@@ -39,20 +39,20 @@ export function useEditor() {
         ['table', 'image', 'link'],
         ['code', 'codeblock'],
       ],
-      widgetRules: [
-        {
-          rule: reWidgetRule,
-          toDOM(text) {
-            const rule = reWidgetRule;
-            const matched = text.match(rule);
+      // widgetRules: [
+      //   {
+      //     rule: reWidgetRule,
+      //     toDOM(text) {
+      //       const rule = reWidgetRule;
+      //       const matched = text.match(rule);
 
-            const span = document.createElement('span');
+      //       const span = document.createElement('span');
 
-            span.innerHTML = `<a class="widget-anchor" style="background:purple" href="${matched?.[2]}">${matched?.[1]}</a>`;
-            return span;
-          },
-        },
-      ],
+      //       span.innerHTML = `<a class="widget-anchor" style="background:purple" href="${matched?.[2]}">${matched?.[1]}</a>`;
+      //       return span;
+      //     },
+      //   },
+      // ],
     });
 
     setEditorState(prev => ({

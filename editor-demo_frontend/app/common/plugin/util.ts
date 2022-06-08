@@ -65,7 +65,7 @@ export function toggleSpanMark(
     } else {
       let has = false;
       const tr = state.tr;
-      // 이전에 이미 추가된 span 스타일이 있는지 체크
+      // 이전에 이미 추가된 htmlAttrs style이 있는지 체크
       const {cssObj: prevCssObj} = getContentStyle(state);
       let newCssObj: Record<string, string> = {};
 
@@ -111,7 +111,7 @@ export function toggleSpanMark(
                 // 전달받은 attrs과 같은 key가 있고, value도 같을 때
                 if (Object.keys(prevCssObj).length === 1) {
                   // Style 속성이 하나만 있으면 Span Mark 제거
-                  tr.removeMark($from.pos, $to.pos, markType);
+                  tr.removeMark(from, to, markType);
                 }
 
                 if (Object.keys(prevCssObj).length > 1) {
@@ -119,7 +119,8 @@ export function toggleSpanMark(
                   newCssObj = {...prevCssObj};
                   delete newCssObj[prevKey];
                   markAttrs.htmlAttrs.style = convertCssObjToStr(newCssObj);
-                  tr.removeMark($from.pos, $to.pos, markType);
+
+                  tr.removeMark(from, to, markType);
                   tr.addMark(from, to, markType.create(markAttrs));
                 }
               }
@@ -129,6 +130,7 @@ export function toggleSpanMark(
                 newCssObj = {...prevCssObj};
                 newCssObj[prevKey] = attrs[prevKey];
                 markAttrs.htmlAttrs.style = convertCssObjToStr(newCssObj);
+
                 tr.addMark(from, to, markType.create(markAttrs));
               }
             }

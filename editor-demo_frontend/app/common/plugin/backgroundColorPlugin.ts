@@ -85,14 +85,22 @@ interface ColorPickerOption {
 let containerClassName: string;
 let currentEditorEl: HTMLElement;
 
-export default function colorSyntaxPlugin(
+export default function backgroundColorPlugin(
   context: PluginContext,
   options: PluginOptions = {},
 ): PluginInfo {
   const {eventEmitter, i18n, usageStatistics = true, pmState} = context;
-  const {preset} = options;
+  const {preset, groupIndex, itemIndex} = options;
   const container = document.createElement('div');
   const colorPickerOption: ColorPickerOption = {container, usageStatistics};
+
+  const toolbarItemIndex =
+    groupIndex && itemIndex
+      ? {groupIndex, itemIndex}
+      : {
+          groupIndex: 0,
+          itemIndex: 4,
+        };
 
   addLangs(i18n);
 
@@ -177,8 +185,7 @@ export default function colorSyntaxPlugin(
     },
     toolbarItems: [
       {
-        groupIndex: 0,
-        itemIndex: 4,
+        ...toolbarItemIndex,
         item: toolbarItem,
       },
     ],

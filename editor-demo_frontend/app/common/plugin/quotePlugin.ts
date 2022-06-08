@@ -6,7 +6,6 @@ import {PluginOptions} from '~/@types/plugin-options';
 import {addLangs} from '../i18n/langs';
 
 import '../css/plugin.css';
-import {findWrapping} from 'prosemirror-transform';
 
 const PREFIX = 'toastui-editor-';
 
@@ -58,14 +57,6 @@ export default function quotePlugin(
     },
     wysiwygCommands: {
       customQuote: (payload, state, dispatch) => {
-        console.log('state.schema.nodes:', state.schema.nodes);
-
-        // const {$from, $to} = state.selection;
-        // const range = $from.blockRange($to);
-        // const wrapping =
-        //   range && findWrapping(range, state.schema.nodes.bulletList);
-        // console.log('wrapping:', wrapping);
-
         wrapIn(state.schema.nodes.blockQuote)(state, dispatch);
 
         return true;
