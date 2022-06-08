@@ -1,20 +1,9 @@
 import type {PluginContext, PluginInfo} from '@toast-ui/editor';
-import {EditorCore} from '@toast-ui/editor';
 import type {Transaction, Selection, TextSelection} from 'prosemirror-state';
-import {
-  // toggleMark,
-  liftEmptyBlock,
-  selectAll,
-  selectNodeBackward,
-} from 'prosemirror-commands';
-import {DOMSerializer} from 'prosemirror-model';
-import {EditorView} from 'prosemirror-view';
 
 import type {PluginOptions} from '~/@types/plugin-options';
 
-import {findParentByClassName} from '../../utils/dom';
-
-import {getContentStyle, toggleMark} from './util';
+import {findParentByClassName, toggleSpanMark} from './util';
 
 const PREFIX = 'toastui-editor-';
 
@@ -125,63 +114,18 @@ export default function textDecoPlugin(
     },
     wysiwygCommands: {
       underline: (payload, state, dispatch) => {
-        const contentHTML = DOMSerializer.fromSchema(
-          state.schema,
-        ).serializeFragment(state.doc.content);
-        const contentStyle =
-          contentHTML.querySelector('span')?.getAttribute('style') ?? '';
-
-        const attrs = {
-          htmlAttrs: {
-            style: `text-decoration: underline; ${contentStyle}`,
-          },
+        const markAttrsObj = {
+          'text-decoration': 'underline',
         };
-        const mark = state.schema.marks.span.create(attrs);
 
-        toggleMark(mark.type, mark.attrs)(state, dispatch);
-        eventEmitter.emit('focus', 'wysiwyg');
-        // dispatch(state.tr.addStoredMark(mark));
+        toggleSpanMark(state.schema.marks['span'], markAttrsObj)(
+          state,
+          dispatch,
+        );
         return true;
       },
-      customStrike: (payload, state, dispatch) => {
-        console.log('state:', state);
-
-        const fragment = DOMSerializer.fromSchema(
-          state.schema,
-        ).serializeFragment(state.doc.content);
-
-        const span = fragment.querySelector('span');
-
-        const fragmentStyle =
-          fragment.querySelector('span')?.getAttribute('style') ?? '';
-
-        const all = window.getComputedStyle(
-          span as HTMLSpanElement,
-        ).backgroundColor;
-        const addedStyle = getContentStyle(state);
-
-        // console.log('addedStyle:', addedStyle);
-        // console.log('all:', all);
-
-        const hasMark = state.doc.rangeHasMark(
-          state.selection.from,
-          state.selection.to,
-          state.schema.marks.span,
-        );
-
-        // console.log({hasMark});
-
-        state.doc.nodesBetween(
-          state.selection.from,
-          state.selection.to,
-          (node, position) => {
-            console.log({node, position});
-          },
-        );
-
-        // const mark = state.doc.mark(state.schema.marks);
-
-        // eventEmitter.emit('command', 'strike');
+      customStrike: () => {
+        eventEmitter.emit('command', 'strike');
 
         return true;
       },

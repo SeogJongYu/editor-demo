@@ -5,7 +5,6 @@ import type {
   PluginInfo,
   HTMLMdNode,
   I18n,
-  EditorType,
 } from '@toast-ui/editor';
 import type {Transaction, Selection, TextSelection} from 'prosemirror-state';
 
@@ -15,8 +14,10 @@ import {addLangs} from '../i18n/langs';
 
 import {findParentByClassName, toggleSpanMark} from './util';
 
-import '../css/plugin.css';
-import '../css/customPlugin.css';
+/*
+npm 모듈 @toast-ui/editor-plugin-color-syntax 에서
+wysiwygCommands 내부만 변경함
+*/
 
 const PREFIX = 'toastui-editor-';
 
@@ -34,9 +35,9 @@ function createToolbarItemOption(
   i18n: I18n,
 ) {
   return {
-    name: 'textBackgroundColor',
-    tooltip: i18n.get('Text background color'),
-    className: `${PREFIX}toolbar-icons bg-color`,
+    name: 'color',
+    tooltip: i18n.get('Text color'),
+    className: `${PREFIX}toolbar-icons color`,
     popup: {
       className: `${PREFIX}popup-color`,
       body: colorPickerContainer,
@@ -85,7 +86,15 @@ interface ColorPickerOption {
 let containerClassName: string;
 let currentEditorEl: HTMLElement;
 
-export default function colorSyntaxPlugin(
+// @TODO: add custom syntax for plugin
+/**
+ * Color syntax plugin
+ * @param {Object} context - plugin context for communicating with editor
+ * @param {Object} options - options for plugin
+ * @param {Array.<string>} [options.preset] - preset for color palette (ex: ['#181818', '#292929'])
+ * @param {boolean} [options.useCustomSyntax=false] - whether use custom syntax or not
+ */
+export default function customColorSyntaxPlugin(
   context: PluginContext,
   options: PluginOptions = {},
 ): PluginInfo {
@@ -103,7 +112,7 @@ export default function colorSyntaxPlugin(
   const colorPicker = ColorPicker.create(colorPickerOption);
   const button = createApplyButton(i18n.get('OK'));
 
-  eventEmitter.listen('focus', (editType: EditorType) => {
+  eventEmitter.listen('focus', editType => {
     containerClassName = `${PREFIX}${
       editType === 'markdown' ? 'md' : 'ww'
     }-container`;
@@ -115,7 +124,7 @@ export default function colorSyntaxPlugin(
 
       currentEditorEl = getCurrentEditorEl(container, containerClassName);
 
-      eventEmitter.emit('command', 'bgColor', {selectedColor});
+      eventEmitter.emit('command', 'color', {selectedColor});
       eventEmitter.emit('closePopup');
       // force the current editor to focus for preventing to lose focus
       currentEditorEl.focus();
@@ -129,7 +138,7 @@ export default function colorSyntaxPlugin(
 
   return {
     markdownCommands: {
-      bgColor: ({selectedColor}, {tr, selection, schema}, dispatch) => {
+      color: ({selectedColor}, {tr, selection, schema}, dispatch) => {
         if (selectedColor) {
           const slice = selection.content();
           const textContent = slice.content.textBetween(
@@ -137,7 +146,7 @@ export default function colorSyntaxPlugin(
             slice.content.size,
             '\n',
           );
-          const openTag = `<span style="background-color: ${selectedColor}">`;
+          const openTag = `<span style="color: ${selectedColor}">`;
           const closeTag = `</span>`;
           const colored = `${openTag}${textContent}${closeTag}`;
 
@@ -159,10 +168,10 @@ export default function colorSyntaxPlugin(
       },
     },
     wysiwygCommands: {
-      bgColor: ({selectedColor}, state, dispatch) => {
+      color: ({selectedColor}, state, dispatch) => {
         if (selectedColor) {
           const markAttrsObj = {
-            'background-color': selectedColor,
+            color: selectedColor,
           };
 
           toggleSpanMark(state.schema.marks['span'], markAttrsObj)(
@@ -178,7 +187,7 @@ export default function colorSyntaxPlugin(
     toolbarItems: [
       {
         groupIndex: 0,
-        itemIndex: 4,
+        itemIndex: 3,
         item: toolbarItem,
       },
     ],

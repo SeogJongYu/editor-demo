@@ -1,16 +1,21 @@
 import {useEffect} from 'react';
 import {useRecoilState} from 'recoil';
 import Editor, {EditorOptions} from '@toast-ui/editor';
-import colorSyntax from '@toast-ui/editor-plugin-color-syntax';
 
-import quotePlugin from '~/common/plugin/quotePlugin/quotePlugin';
+import quotePlugin from '~/common/plugin/quotePlugin';
+import customColorSyntaxPlugin from '~/common/plugin/customColorSyntaxPlugin';
 
-import textDecoPlugin from '../../common/plugin/textDecoPlugin/textDecoPlugin';
+import textDecoPlugin from '../../common/plugin/textDecoPlugin';
 import backgroundColorPlugin from '../../common/plugin/backgroundColorPlugin';
 import {TUIEditorState} from '../recoil/editorState';
 
 const EDITOR_INIT_OPTIONS: EditorOptions = {
-  plugins: [colorSyntax, backgroundColorPlugin, textDecoPlugin, quotePlugin],
+  plugins: [
+    customColorSyntaxPlugin,
+    backgroundColorPlugin,
+    textDecoPlugin,
+    quotePlugin,
+  ],
   el: document.querySelector('#editor') as HTMLDivElement,
   previewStyle: 'vertical',
   height: '500px',

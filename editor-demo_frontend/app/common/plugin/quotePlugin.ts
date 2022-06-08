@@ -3,9 +3,9 @@ import {wrapIn, lift} from 'prosemirror-commands';
 
 import {PluginOptions} from '~/@types/plugin-options';
 
-import {addLangs} from '../../i18n/langs';
+import {addLangs} from '../i18n/langs';
 
-import '../../css/plugin.css';
+import '../css/plugin.css';
 import {findWrapping} from 'prosemirror-transform';
 
 const PREFIX = 'toastui-editor-';
