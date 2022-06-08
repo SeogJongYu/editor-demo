@@ -8,6 +8,8 @@ import {PluginOptions} from '~/@types/plugin-options';
 
 import {happySvgIcon} from '../components/toolbar/listIconPopupBody';
 
+import {getContentStyle} from './util';
+
 const PREFIX = 'toastui-editor-';
 
 function createToolbarItemOption(container: HTMLDivElement, i18n: I18n) {
@@ -61,14 +63,23 @@ export default function iconListPlugin(
     },
     wysiwygCommands: {
       listicon: (item, state, dispatch) => {
-        eventEmitter.emit('command', 'bulletList');
+        const {selection} = state;
+        // eventEmitter.emit('command', 'bulletList');
+        console.log('state:', state);
+        const {cssObj} = getContentStyle(state);
+        // console.log('cssObj:', cssObj);
+        const parentContent = state.selection.$from.parent.content;
+        //@ts-ignore
+        const parentMark = parentContent?.content?.[0]?.marks ?? null;
+        const parentMarkHtmlAttrs = parentMark?.[0]?.attrs.htmlAttrs;
+        console.log({parentContent, parentMark, parentMarkHtmlAttrs});
 
         return true;
       },
     },
     toolbarItems: [
       {
-        groupIndex: 2,
+        groupIndex: 1,
         itemIndex: 2,
         item: toolbarItem,
       },

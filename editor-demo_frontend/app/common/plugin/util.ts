@@ -66,7 +66,9 @@ export function toggleSpanMark(
       let has = false;
       const tr = state.tr;
       // 이전에 이미 추가된 htmlAttrs style이 있는지 체크
-      const {cssObj: prevCssObj} = getContentStyle(state);
+      const {cssObj: prevCssObj} = getParentMarkStyle(state);
+      console.log({prevCssObj});
+
       let newCssObj: Record<string, string> = {};
 
       for (let i = 0; !has && i < ranges.length; i++) {
@@ -79,6 +81,8 @@ export function toggleSpanMark(
 
         let from = $from.pos;
         let to = $to.pos;
+
+        console.log({$from, $to, from, to});
         const start = $from.nodeAfter;
         const end = $to.nodeBefore;
         const spaceStart =
@@ -92,6 +96,7 @@ export function toggleSpanMark(
         }
 
         if (Object.keys(prevCssObj).length === 0) {
+          console.log('1');
           // 이전에 Span 마크로 추가된 스타일이 없을때
           tr.addMark(from, to, markType.create(markAttrs));
         }
@@ -101,6 +106,7 @@ export function toggleSpanMark(
 
           for (const [prevKey, prevValue] of Object.entries(prevCssObj)) {
             if (!attrs?.[prevKey]) {
+              console.log('2');
               // 전달받은 attrs에 이전 key가 없을 때
               newCssObj = {...prevCssObj, ...attrs};
               markAttrs.htmlAttrs.style = convertCssObjToStr(newCssObj);
@@ -110,11 +116,13 @@ export function toggleSpanMark(
               if (attrs?.[prevKey] === prevValue) {
                 // 전달받은 attrs과 같은 key가 있고, value도 같을 때
                 if (Object.keys(prevCssObj).length === 1) {
+                  console.log('3');
                   // Style 속성이 하나만 있으면 Span Mark 제거
                   tr.removeMark(from, to, markType);
                 }
 
                 if (Object.keys(prevCssObj).length > 1) {
+                  console.log('4');
                   // Style 속성이 2개 이상이면 Span Mark의 해당 attr만 제거후 add Mark
                   newCssObj = {...prevCssObj};
                   delete newCssObj[prevKey];
@@ -126,6 +134,7 @@ export function toggleSpanMark(
               }
 
               if (attrs?.[prevKey] !== prevValue) {
+                console.log('5');
                 // 전달받은 attrs과 같은 key가 있고, value는 다를 때
                 newCssObj = {...prevCssObj};
                 newCssObj[prevKey] = attrs[prevKey];
@@ -179,6 +188,19 @@ export function getContentStyle(state: EditorState): ContentStyle {
   return {
     cssText,
     cssObj,
+  };
+}
+
+export function getParentMarkStyle(state: EditorState): ContentStyle {
+  const parentContent = state.selection.$from.parent.content;
+  //@ts-ignore
+  const parentMark = parentContent?.content?.[0]?.marks ?? null;
+  const parentMarkHtmlAttrs = parentMark?.[0]?.attrs.htmlAttrs;
+  console.log({parentContent, parentMark, parentMarkHtmlAttrs});
+  const styleStr = parentMarkHtmlAttrs?.style ?? '';
+  return {
+    cssText: styleStr,
+    cssObj: convertCssStrToObj(styleStr),
   };
 }
 

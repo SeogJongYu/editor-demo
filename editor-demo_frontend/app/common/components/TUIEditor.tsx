@@ -7,9 +7,18 @@ import {useEditor} from '~/web/hooks/useEditor';
 export default function TUIEditor() {
   const {core, setEditorState} = useEditor();
 
+  function getElement() {
+    setEditorState(prev => ({
+      ...prev,
+      contentData: core?.getHTML() ?? '',
+    }));
+  }
+
   return (
     <>
-      <div id="editor" />
+      <button onClick={getElement}>GET</button>
+      <div id="editor" spellCheck={false} />
+      <div style={{marginTop: '12px'}} id="editor-viewer" />
     </>
   );
 }

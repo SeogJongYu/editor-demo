@@ -1,9 +1,11 @@
 import {useEffect} from 'react';
 import {useRecoilState} from 'recoil';
 import Editor, {EditorOptions} from '@toast-ui/editor';
+import Viewer from '@toast-ui/editor/dist/toastui-editor-viewer';
 
 import quotePlugin from '~/common/plugin/quotePlugin';
 import customColorSyntaxPlugin from '~/common/plugin/customColorSyntaxPlugin';
+import iconListPlugin from '~/common/plugin/iconListPlugin';
 
 import textDecoPlugin from '../../common/plugin/textDecoPlugin';
 import backgroundColorPlugin from '../../common/plugin/backgroundColorPlugin';
@@ -15,6 +17,7 @@ const EDITOR_INIT_OPTIONS: EditorOptions = {
     backgroundColorPlugin,
     textDecoPlugin,
     quotePlugin,
+    iconListPlugin,
   ],
   el: document.querySelector('#editor') as HTMLDivElement,
   previewStyle: 'vertical',
@@ -23,7 +26,7 @@ const EDITOR_INIT_OPTIONS: EditorOptions = {
 };
 
 export function useEditor() {
-  const [{core}, setEditorState] = useRecoilState(TUIEditorState);
+  const [{core, contentData}, setEditorState] = useRecoilState(TUIEditorState);
 
   // 에디터 코어 생성
   useEffect(() => {
@@ -62,6 +65,18 @@ export function useEditor() {
 
     return () => editor.destroy();
   }, [setEditorState]);
+
+  useEffect(() => {
+    if (!core) {
+      return;
+    }
+    const viewer = new Viewer({
+      el: document.querySelector('#editor-viewer') as HTMLDivElement,
+      initialValue: contentData,
+    });
+
+    return () => viewer.destroy();
+  }, [contentData, core]);
 
   return {
     core,

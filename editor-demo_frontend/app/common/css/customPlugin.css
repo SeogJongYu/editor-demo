@@ -87,7 +87,7 @@
 }
 
 /* ======= Headings ======= */
-.toastui-editor-contents > h1 {
+.toastui-editor-contents h1 {
   margin-top: 50px !important;
   color: #3d3c3f;
   font-weight: 800;
@@ -95,7 +95,7 @@
   font-size: 30px;
   text-align: center;
 }
-.toastui-editor-contents > h2 {
+.toastui-editor-contents h2 {
   margin-top: 40px !important;
   color: #3d3c3f;
   font-weight: 800;
@@ -103,14 +103,14 @@
   font-size: 30px;
   border-bottom: 1px solid #999;
 }
-.toastui-editor-contents > h3 {
+.toastui-editor-contents h3 {
   margin-top: 30px !important;
   color: #3d3c3f;
   font-weight: 800;
   line-height: 36px;
   font-size: 22px;
 }
-.toastui-editor-contents > h4 {
+.toastui-editor-contents h4 {
   margin-top: 20px !important;
   color: #3d3c3f;
   font-weight: 800;
@@ -220,13 +220,13 @@
   background-size: 23px 23px;
 }
 
-.toastui-editor-contents > blockquote {
+.toastui-editor-contents blockquote {
   border: none;
   margin: 0;
   padding: 0;
 }
 
-.toastui-editor-contents > blockquote:before {
+.toastui-editor-contents blockquote:before {
   content: '       ';
   display: block;
   width: 100%;
@@ -239,6 +239,6 @@
   background-position: center;
 }
 
-.toastui-editor-contents > blockquote > p {
+.toastui-editor-contents blockquote > p {
   color: #000;
 }
