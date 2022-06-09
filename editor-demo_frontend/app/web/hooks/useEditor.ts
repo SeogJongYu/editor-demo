@@ -5,7 +5,6 @@ import Viewer from '@toast-ui/editor/dist/toastui-editor-viewer';
 
 import quotePlugin from '~/common/plugin/quotePlugin';
 import customColorSyntaxPlugin from '~/common/plugin/customColorSyntaxPlugin';
-import iconListPlugin from '~/common/plugin/iconListPlugin';
 
 import textDecoPlugin from '../../common/plugin/textDecoPlugin';
 import backgroundColorPlugin from '../../common/plugin/backgroundColorPlugin';
@@ -17,7 +16,6 @@ const EDITOR_INIT_OPTIONS: EditorOptions = {
     backgroundColorPlugin,
     textDecoPlugin,
     quotePlugin,
-    iconListPlugin,
   ],
   el: document.querySelector('#editor') as HTMLDivElement,
   previewStyle: 'vertical',
@@ -30,8 +28,6 @@ export function useEditor() {
 
   // 에디터 코어 생성
   useEffect(() => {
-    // const reWidgetRule = /\[(@\S+)\]\((\S+)\)/;
-
     const editor = new Editor({
       ...EDITOR_INIT_OPTIONS,
       el: document.querySelector('#editor') as HTMLDivElement,
@@ -42,20 +38,6 @@ export function useEditor() {
         ['table', 'image', 'link'],
         ['code', 'codeblock'],
       ],
-      // widgetRules: [
-      //   {
-      //     rule: reWidgetRule,
-      //     toDOM(text) {
-      //       const rule = reWidgetRule;
-      //       const matched = text.match(rule);
-
-      //       const span = document.createElement('span');
-
-      //       span.innerHTML = `<a class="widget-anchor" style="background:purple" href="${matched?.[2]}">${matched?.[1]}</a>`;
-      //       return span;
-      //     },
-      //   },
-      // ],
     });
 
     setEditorState(prev => ({

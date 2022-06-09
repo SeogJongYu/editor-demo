@@ -1,14 +1,10 @@
 import type {PluginContext, PluginInfo, I18n} from '@toast-ui/editor';
 
-import {addLangs} from '../i18n/langs';
-
-import '../css/plugin.css';
-
 import {PluginOptions} from '~/@types/plugin-options';
 
+import {addLangs} from '../i18n/langs';
+import '../css/plugin.css';
 import {happySvgIcon} from '../components/toolbar/listIconPopupBody';
-
-import {getContentStyle} from './util';
 
 const PREFIX = 'toastui-editor-';
 
@@ -63,17 +59,7 @@ export default function iconListPlugin(
     },
     wysiwygCommands: {
       listicon: (item, state, dispatch) => {
-        const {selection} = state;
         // eventEmitter.emit('command', 'bulletList');
-        console.log('state:', state);
-        const {cssObj} = getContentStyle(state);
-        // console.log('cssObj:', cssObj);
-        const parentContent = state.selection.$from.parent.content;
-        //@ts-ignore
-        const parentMark = parentContent?.content?.[0]?.marks ?? null;
-        const parentMarkHtmlAttrs = parentMark?.[0]?.attrs.htmlAttrs;
-        console.log({parentContent, parentMark, parentMarkHtmlAttrs});
-
         return true;
       },
     },

@@ -66,8 +66,26 @@ export function toggleSpanMark(
       let has = false;
       const tr = state.tr;
       // 이전에 이미 추가된 htmlAttrs style이 있는지 체크
-      const {cssObj: prevCssObj} = getParentMarkStyle(state);
-      console.log({prevCssObj});
+      let prevCssObj: Record<string, string>;
+
+      const {selection} = state;
+      const {$from, $to} = selection;
+
+      let textNodeCount = 0; // selection안에서 TextNode의 갯수
+
+      state.doc.nodesBetween($from.pos, $to.pos, node => {
+        if (node.type.name === 'text') {
+          textNodeCount++;
+        }
+      });
+
+      if (textNodeCount !== 1) {
+        prevCssObj = {};
+      } else {
+        prevCssObj = getMarkStyleFromStart(state).cssObj;
+      }
+
+      console.log('prevCssObj:', prevCssObj);
 
       let newCssObj: Record<string, string> = {};
 
@@ -82,7 +100,6 @@ export function toggleSpanMark(
         let from = $from.pos;
         let to = $to.pos;
 
-        console.log({$from, $to, from, to});
         const start = $from.nodeAfter;
         const end = $to.nodeBefore;
         const spaceStart =
@@ -96,7 +113,6 @@ export function toggleSpanMark(
         }
 
         if (Object.keys(prevCssObj).length === 0) {
-          console.log('1');
           // 이전에 Span 마크로 추가된 스타일이 없을때
           tr.addMark(from, to, markType.create(markAttrs));
         }
@@ -106,7 +122,6 @@ export function toggleSpanMark(
 
           for (const [prevKey, prevValue] of Object.entries(prevCssObj)) {
             if (!attrs?.[prevKey]) {
-              console.log('2');
               // 전달받은 attrs에 이전 key가 없을 때
               newCssObj = {...prevCssObj, ...attrs};
               markAttrs.htmlAttrs.style = convertCssObjToStr(newCssObj);
@@ -116,13 +131,11 @@ export function toggleSpanMark(
               if (attrs?.[prevKey] === prevValue) {
                 // 전달받은 attrs과 같은 key가 있고, value도 같을 때
                 if (Object.keys(prevCssObj).length === 1) {
-                  console.log('3');
                   // Style 속성이 하나만 있으면 Span Mark 제거
                   tr.removeMark(from, to, markType);
                 }
 
                 if (Object.keys(prevCssObj).length > 1) {
-                  console.log('4');
                   // Style 속성이 2개 이상이면 Span Mark의 해당 attr만 제거후 add Mark
                   newCssObj = {...prevCssObj};
                   delete newCssObj[prevKey];
@@ -134,7 +147,6 @@ export function toggleSpanMark(
               }
 
               if (attrs?.[prevKey] !== prevValue) {
-                console.log('5');
                 // 전달받은 attrs과 같은 key가 있고, value는 다를 때
                 newCssObj = {...prevCssObj};
                 newCssObj[prevKey] = attrs[prevKey];
@@ -191,16 +203,19 @@ export function getContentStyle(state: EditorState): ContentStyle {
   };
 }
 
-export function getParentMarkStyle(state: EditorState): ContentStyle {
-  const parentContent = state.selection.$from.parent.content;
-  //@ts-ignore
-  const parentMark = parentContent?.content?.[0]?.marks ?? null;
-  const parentMarkHtmlAttrs = parentMark?.[0]?.attrs.htmlAttrs;
-  console.log({parentContent, parentMark, parentMarkHtmlAttrs});
-  const styleStr = parentMarkHtmlAttrs?.style ?? '';
+/**
+ * Selection의 from position 바로 뒤에 있는 노드 Mark의 스타일을 가져옴
+ */
+export function getMarkStyleFromStart(state: EditorState): ContentStyle {
+  const {selection} = state;
+
+  const nodeAtFrom = state.doc.nodeAt(selection.from);
+  const mark = nodeAtFrom?.marks ?? [];
+  const markHtmlAttrStyle = mark?.[0]?.attrs?.htmlAttrs?.style ?? '';
+
   return {
-    cssText: styleStr,
-    cssObj: convertCssStrToObj(styleStr),
+    cssText: markHtmlAttrStyle,
+    cssObj: convertCssStrToObj(markHtmlAttrStyle),
   };
 }
 
